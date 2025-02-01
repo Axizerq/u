@@ -28,6 +28,23 @@
             height: 50px;
         }
 
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        #overlay.active {
+            opacity: 1;
+        }
+
         nav ul {
             list-style: none;
             margin: 0;
@@ -39,6 +56,7 @@
         nav ul li {
             position: relative;
             margin: 0 15px;
+            z-index: 1001;
         }
 
         nav ul li a {
@@ -391,6 +409,9 @@
             <p data-lang="stayInformed-text">Get the latest updates and news.</p>
             <button data-lang="learn-more">Learn More</button>
         </div>
+
+        <div id="overlay"></div>
+
     </section>
 
     <footer>
@@ -573,6 +594,9 @@
         const currentLangButton = languageSwitcher.querySelector("button");
         const langList = languageSwitcher.querySelector("ul");
 
+        const menuItems = document.querySelectorAll("nav ul li");
+        const overlay = document.getElementById("overlay");
+
         let currentLang = "en";
 
         function updateTexts(lang) {
@@ -595,6 +619,17 @@
 
         // Initialize with English
         updateTexts(currentLang);
+
+
+        menuItems.forEach((item) => {
+            item.addEventListener("mouseenter", () => {
+                overlay.classList.add("active");
+            });
+
+            item.addEventListener("mouseleave", () => {
+                overlay.classList.remove("active");
+            });
+        });
     </script>
 
 </body>
