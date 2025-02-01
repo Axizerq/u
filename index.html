@@ -302,6 +302,136 @@
         footer .social img:hover {
             opacity: 0.8;
         }
+
+
+        @media (max-width: 768px) {
+
+            body {
+                font-size: 14px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            nav ul li a {
+                padding: 10px;
+            }
+
+            .mission,
+            .aid,
+            .support {
+                padding: 20px 10px;
+            }
+
+            .get-involved {
+                padding: 20px 10px;
+            }
+
+            footer {
+                padding: 20px 10px;
+            }
+
+            .submenu li a {
+                color: white !important;
+                /* Белый цвет текста */
+            }
+
+            .submenu li a:hover {
+                background: rgba(255, 255, 255, 0.1);
+                /* Легкий фон при наведении */
+            }
+
+            /* Изменение фона подменю для лучшей видимости */
+            .submenu {
+                background: rgba(0, 0, 0, 0.8);
+                /* Темный фон для подменю */
+                border-radius: 5px;
+            }
+
+            /* Адаптация шапки */
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            header img {
+                margin-bottom: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .language-switcher {
+                margin-top: 10px;
+            }
+
+            /* Адаптация секций */
+            .mission,
+            .aid,
+            .support {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .mission img,
+            .aid img,
+            .support img {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            /* Адаптация карточек "Get Involved" */
+            .get-involved {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .get-involved .card {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            /* Адаптация футера */
+            footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            footer .column {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            /* Адаптация подменю */
+            .submenu {
+                position: static;
+                display: none;
+                background: #002244;
+                box-shadow: none;
+            }
+
+            nav ul li:hover .submenu {
+                display: none;
+            }
+
+            nav ul li:hover>.submenu {
+                display: block;
+            }
+        }
     </style>
 </head>
 
