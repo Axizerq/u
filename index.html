@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: #003366;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            position: relative;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            transition: background 0.3s ease;
+            border-radius: 5px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            list-style: none;
+            padding: 10px 0;
+            min-width: 200px;
+        }
+
+        .submenu li {
+            padding: 10px;
+        }
+
+        .submenu li a {
+            color: #003366;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .submenu li a:hover {
+            background: #f0f0f0;
+        }
+
+        nav ul li:hover .submenu {
+            display: block;
+        }
+
+        .language-switcher {
+            position: relative;
+        }
+
+        .language-switcher button {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .language-switcher button:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .language-switcher ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .language-switcher ul li {
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            color: #333;
+            /* Темный цвет текста */
+        }
+
+        .language-switcher ul li:hover {
+            background: #f0f0f0;
+        }
+
+        .language-switcher:hover ul {
+            display: block;
+        }
+
+        .mission,
+        .aid,
+        .support {
+            display: flex;
+            align-items: center;
+            padding: 40px 20px;
+            margin: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission img,
+        .aid img,
+        .support img {
+            width: 40%;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .mission h2,
+        .aid h2,
+        .support h2 {
+            font-size: 2rem;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        .mission p,
+        .aid p,
+        .support p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .mission button,
+        .aid button,
+        .support button {
+            background: #FF6B35;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .mission button:hover,
+        .aid button:hover,
+        .support button:hover {
+            background: #E65A2B;
+        }
+
+        .get-involved {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background: #003366;
+            color: white;
+            text-align: center;
+        }
+
+        .get-involved .card {
+            width: 30%;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .get-involved .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .get-involved .card h3 {
+            font-size: 1.5rem;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        .get-involved .card p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .get-involved .card button {
+            background: #FF6B35;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .get-involved .card button:hover {
+            background: #E65A2B;
+        }
+
+        footer {
+            background: #002244;
+            color: white;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        footer .column {
+            width: 20%;
+        }
+
+        footer h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin: 10px 0;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            opacity: 0.8;
+        }
+
+        footer .social img {
+            height: 20px;
+            margin-right: 10px;
+            transition: opacity 0.3s ease;
+        }
+
+        footer .social img:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="logo.png" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="#" data-lang="about">About Us</a>
+                    <ul class="submenu">
+                        <li><a href="#" data-lang="mission-link">Our Mission & History</a></li>
+                        <li><a href="#" data-lang="team-link">Our Team</a></li>
+                        <li><a href="#" data-lang="partners-link">Our Partners</a></li>
+                        <li><a href="#" data-lang="contact-link">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-lang="aid">Humanitarian Aid</a>
+                    <ul class="submenu">
+                        <li><a href="#" data-lang="how-we-help">How We Help</a></li>
+                        <li><a href="#" data-lang="reports-link">Reports & Results</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-lang="support">Support for Refugees</a>
+                    <ul class="submenu">
+                        <li><a href="#" data-lang="housing-link">Housing</a></li>
+                        <li><a href="#" data-lang="license-link">Driver’s License</a></li>
+                        <li><a href="#" data-lang="employment-link">Employment & Career</a></li>
+                        <li><a href="#" data-lang="education-link">Education</a></li>
+                        <li><a href="#" data-lang="language-link">English Language</a></li>
+                        <li><a href="#" data-lang="wellness-link">Youth Wellness Program</a></li>
+                        <li><a href="#" data-lang="assistance-link">How to Get Assistance</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-lang="involved">Get Involved</a>
+                    <ul class="submenu">
+                        <li><a href="#" data-lang="volunteer-link">Become a Volunteer</a></li>
+                        <li><a href="#" data-lang="donate-link">Make a Donation</a></li>
+                        <li><a href="#" data-lang="partner-link">Become a Partner</a></li>
+                        <li><a href="#" data-lang="newsletter-link">Sign up for Newsletter</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-lang="news">News & Events</a>
+                    <ul class="submenu">
+                        <li><a href="#" data-lang="events-link">Upcoming Events</a></li>
+                        <li><a href="#" data-lang="blog-link">Blog</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="language-switcher">
+            <button data-lang="current">EN</button>
+            <ul>
+                <li data-lang="en">English</li>
+                <li data-lang="uk">Українська</li>
+                <li data-lang="ru">Русский</li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="mission">
+        <img src="mission.jpg" alt="Mission">
+        <div>
+            <h2 data-lang="missionTitle">Our Mission</h2>
+            <p data-lang="missionText">Test text</p>
+            <a href="about-us.html"><button data-lang="details">Details</button></a>
+        </div>
+    </section>
+
+    <section class="aid">
+        <img src="aid.jpg" alt="Aid">
+        <div>
+            <h2 data-lang="aidTitle">Humanitarian Aid</h2>
+            <p data-lang="aidText">Test</p>
+            <a href="humanitarian-aid.html"><button data-lang="details">Details</button></a>
+        </div>
+    </section>
+
+    <section class="support">
+        <img src="support.jpg" alt="Support">
+        <div>
+            <h2 data-lang="supportTitle">Support for Refugees</h2>
+            <p data-lang="service1">1. Test</p>
+            <p data-lang="service2">2. Test</p>
+            <a href="support-for-refugees.html"><button data-lang="details">Details</button></a>
+        </div>
+    </section>
+
+    <section class="get-involved">
+        <div class="card">
+            <img src="volunteer.jpg" alt="Volunteer">
+            <h3 data-lang="volunteer">Volunteer</h3>
+            <p data-lang="volunteer-text">Join our team and make a difference.</p>
+            <button data-lang="learn-more">Learn More</button>
+        </div>
+        <div class="card">
+            <img src="partner.jpg" alt="Partner">
+            <h3 data-lang="partner">Become a Partner</h3>
+            <p data-lang="partner-text">Collaborate with us to create impact.</p>
+            <button data-lang="learn-more">Learn More</button>
+        </div>
+        <div class="card">
+            <img src="stay-informed.jpg" alt="Stay Informed">
+            <h3 data-lang="stayInformed">Stay Informed</h3>
+            <p data-lang="stayInformed-text">Get the latest updates and news.</p>
+            <button data-lang="learn-more">Learn More</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="column">
+            <h3 data-lang="about-us">About Us</h3>
+            <ul>
+                <li><a href="#" data-lang="mission-link">Our Mission</a></li>
+                <li><a href="#" data-lang="team-link">Our Team</a></li>
+                <li><a href="#" data-lang="careers-link">Careers</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3 data-lang="our-work">Our Work</h3>
+            <ul>
+                <li><a href="#" data-lang="crisis-link">Crisis Response</a></li>
+                <li><a href="#" data-lang="education-link">Education</a></li>
+                <li><a href="#" data-lang="health-link">Health</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3 data-lang="get-involved-footer">Get Involved</h3>
+            <ul>
+                <li><a href="#" data-lang="donate-link">Donate</a></li>
+                <li><a href="#" data-lang="volunteer-link">Volunteer</a></li>
+                <li><a href="#" data-lang="partner-link">Partner</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3 data-lang="follow-us">Follow Us</h3>
+            <div class="social">
+                <a href="#"><img src="instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                about: "About Us",
+                aid: "Humanitarian Aid",
+                support: "Support for Refugees",
+                involved: "Get Involved",
+                news: "News & Events",
+                missionTitle: "Our Mission",
+                missionText: "Test text",
+                aidTitle: "Humanitarian Aid",
+                aidText: "Test",
+                supportTitle: "Support for Refugees",
+                service1: "1. Test",
+                service2: "2. Test",
+                details: "Details",
+                volunteer: "Volunteer",
+                volunteerText: "Join our team and make a difference.",
+                partner: "Become a Partner",
+                partnerText: "Collaborate with us to create impact.",
+                stayInformed: "Stay Informed",
+                stayInformedText: "Get the latest updates and news.",
+                learnMore: "Learn More",
+                aboutUs: "About Us",
+                missionLink: "Our Mission",
+                teamLink: "Our Team",
+                careersLink: "Careers",
+                ourWork: "Our Work",
+                crisisLink: "Crisis Response",
+                educationLink: "Education",
+                healthLink: "Health",
+                getInvolvedFooter: "Get Involved",
+                donateLink: "Donate",
+                volunteerLink: "Volunteer",
+                partnerLink: "Partner",
+                followUs: "Follow Us",
+                howWeHelp: "How We Help",
+                reportsLink: "Reports & Results",
+                housingLink: "Housing",
+                licenseLink: "Driver’s License",
+                employmentLink: "Employment & Career",
+                languageLink: "English Language",
+                wellnessLink: "Youth Wellness Program",
+                assistanceLink: "How to Get Assistance",
+                newsletterLink: "Sign up for Newsletter",
+                eventsLink: "Upcoming Events",
+                blogLink: "Blog",
+            },
+            uk: {
+                about: "Про нас",
+                aid: "Гуманітарна допомога",
+                support: "Підтримка біженців",
+                involved: "Долучитися",
+                news: "Новини та події",
+                missionTitle: "Наша місія",
+                missionText: "Тестовий текст",
+                aidTitle: "Гуманітарна допомога",
+                aidText: "Тест",
+                supportTitle: "Підтримка біженців",
+                service1: "1. Тест",
+                service2: "2. Тест",
+                details: "Детальніше",
+                volunteer: "Волонтер",
+                volunteerText: "Приєднуйтесь до нашої команди.",
+                partner: "Стати партнером",
+                partnerText: "Співпрацюйте з нами.",
+                stayInformed: "Будьте в курсі",
+                stayInformedText: "Отримуйте останні новини.",
+                learnMore: "Дізнатися більше",
+                aboutUs: "Про нас",
+                missionLink: "Наша місія",
+                teamLink: "Наша команда",
+                careersLink: "Кар’єра",
+                ourWork: "Наша робота",
+                crisisLink: "Реагування на кризи",
+                educationLink: "Освіта",
+                healthLink: "Здоров’я",
+                getInvolvedFooter: "Долучитися",
+                donateLink: "Пожертвувати",
+                volunteerLink: "Волонтер",
+                partnerLink: "Партнер",
+                followUs: "Слідкуйте за нами",
+                howWeHelp: "Як ми допомагаємо",
+                reportsLink: "Звіти та результати",
+                housingLink: "Житло",
+                licenseLink: "Посвідчення водія",
+                employmentLink: "Робота та кар’єра",
+                languageLink: "Англійська мова",
+                wellnessLink: "Програма для молоді",
+                assistanceLink: "Як отримати допомогу",
+                newsletterLink: "Підписатися на розсилку",
+                eventsLink: "Майбутні події",
+                blogLink: "Блог",
+            },
+            ru: {
+                about: "О нас",
+                aid: "Гуманитарная помощь",
+                support: "Поддержка беженцев",
+                involved: "Присоединиться",
+                news: "Новости и события",
+                missionTitle: "Наша миссия",
+                missionText: "Тестовый текст",
+                aidTitle: "Гуманитарная помощь",
+                aidText: "Тест",
+                supportTitle: "Поддержка беженцев",
+                service1: "1. Тест",
+                service2: "2. Тест",
+                details: "Подробнее",
+                volunteer: "Волонтер",
+                volunteerText: "Присоединяйтесь к нашей команде.",
+                partner: "Стать партнером",
+                partnerText: "Сотрудничайте с нами.",
+                stayInformed: "Будьте в курсе",
+                stayInformedText: "Получайте последние новости.",
+                learnMore: "Узнать больше",
+                aboutUs: "О нас",
+                missionLink: "Наша миссия",
+                teamLink: "Наша команда",
+                careersLink: "Карьера",
+                ourWork: "Наша работа",
+                crisisLink: "Реагирование на кризисы",
+                educationLink: "Образование",
+                healthLink: "Здоровье",
+                getInvolvedFooter: "Присоединиться",
+                donateLink: "Пожертвовать",
+                volunteerLink: "Волонтер",
+                partnerLink: "Партнер",
+                followUs: "Следите за нами",
+                howWeHelp: "Как мы помогаем",
+                reportsLink: "Отчеты и результаты",
+                housingLink: "Жилье",
+                licenseLink: "Водительские права",
+                employmentLink: "Работа и карьера",
+                languageLink: "Английский язык",
+                wellnessLink: "Программа для молодежи",
+                assistanceLink: "Как получить помощь",
+                newsletterLink: "Подписаться на рассылку",
+                eventsLink: "Предстоящие события",
+                blogLink: "Блог",
+            },
+        };
+
+        const languageSwitcher = document.querySelector(".language-switcher");
+        const currentLangButton = languageSwitcher.querySelector("button");
+        const langList = languageSwitcher.querySelector("ul");
+
+        let currentLang = "en";
+
+        function updateTexts(lang) {
+            document.querySelectorAll("[data-lang]").forEach((element) => {
+                const key = element.getAttribute("data-lang");
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            currentLangButton.textContent = lang.toUpperCase();
+        }
+
+        langList.querySelectorAll("li").forEach((item) => {
+            item.addEventListener("click", () => {
+                const lang = item.getAttribute("data-lang");
+                currentLang = lang;
+                updateTexts(lang);
+            });
+        });
+
+        // Initialize with English
+        updateTexts(currentLang);
+    </script>
+
+</body>
+
+</html>
