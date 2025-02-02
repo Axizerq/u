@@ -19,13 +19,17 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background: #003366;
+            /*background: #003366;*/
+            background: #b5ebeb;
             color: white;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         header img {
             height: 50px;
+            transform: scale(5.5);
+            /* Увеличение в 2 раза */
+            transform-origin: left center;
         }
 
         #overlay {
@@ -225,7 +229,7 @@
         }
 
         .get-involved .card img {
-            width: 100%;
+            width: 30%;
             border-radius: 10px;
             margin-bottom: 15px;
         }
@@ -438,7 +442,7 @@
 <body>
 
     <header>
-        <img src="logo.png" alt="Logo">
+        <img src="img/logo.png" alt="Logo">
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -527,19 +531,19 @@
 
     <section class="get-involved">
         <div class="card">
-            <img src="volunteer.jpg" alt="Volunteer">
+            <img src="img/volunteer.webp" alt="Volunteer">
             <h3 data-lang="volunteer">Volunteer</h3>
             <p data-lang="volunteer-text">Join our team and make a difference.</p>
             <button data-lang="learn-more">Learn More</button>
         </div>
         <div class="card">
-            <img src="partner.jpg" alt="Partner">
+            <img src="img/partner.webp" alt="Partner">
             <h3 data-lang="partner">Become a Partner</h3>
             <p data-lang="partner-text">Collaborate with us to create impact.</p>
             <button data-lang="learn-more">Learn More</button>
         </div>
         <div class="card">
-            <img src="stay-informed.jpg" alt="Stay Informed">
+            <img src="img/infomed.webp" alt="Stay Informed">
             <h3 data-lang="stayInformed">Stay Informed</h3>
             <p data-lang="stayInformed-text">Get the latest updates and news.</p>
             <button data-lang="learn-more">Learn More</button>
