@@ -1,8 +1,8 @@
 /*
  * {
     outline: 1px solid red;
-    }
-    /* Подсветка всех элементов */
+}
+*/
 
 html,
 body {
@@ -10,7 +10,6 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    /* Скрываем горизонтальную прокрутку */
 }
 
 body {
@@ -21,22 +20,45 @@ body {
     background-color: #f9f9f9;
 }
 
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 10px;
     background: #208edd;
     color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: transparent;
+    position: relative;
+    z-index: 1001;
 }
 
 header img {
     height: 50px;
-    transform: scale(7.5);
-    /* Увеличение в 2 раза */
+    width: auto;
+    transform: scale(2);
     transform-origin: left center;
-    margin-right: 220px;
+    margin-right: 20px;
+    margin-bottom: -30px;
+}
+
+.mission::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.mission h2,
+.mission p,
+.mission button {
+    position: relative;
+    z-index: 2;
 }
 
 #overlay {
@@ -56,6 +78,7 @@ header img {
     opacity: 1;
 }
 
+/* Navigation */
 nav ul {
     list-style: none;
     margin: 0;
@@ -114,6 +137,7 @@ nav ul li:hover .submenu {
     display: block;
 }
 
+/* Language Switcher */
 .language-switcher {
     position: relative;
 }
@@ -151,7 +175,6 @@ nav ul li:hover .submenu {
     cursor: pointer;
     transition: background 0.3s ease;
     color: #333;
-    /* Темный цвет текста */
 }
 
 .language-switcher ul li:hover {
@@ -162,6 +185,7 @@ nav ul li:hover .submenu {
     display: block;
 }
 
+/* Mission, Aid, Support Sections */
 .mission,
 .aid,
 .support {
@@ -169,21 +193,25 @@ nav ul li:hover .submenu {
     align-items: center;
     padding: 40px 20px;
     margin: 0;
-    /* Убираем отступы */
     background: transparent;
-    /* Прозрачный фон */
     border-radius: 0;
-    /* Убираем скругление углов */
     box-shadow: none;
-    /* Убираем тень */
 }
 
-.mission img,
-.aid img,
-.support img {
-    width: 40%;
-    border-radius: 10px;
-    margin-right: 20px;
+.mission {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.mission img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    border-radius: 0;
 }
 
 .mission h2,
@@ -222,21 +250,7 @@ nav ul li:hover .submenu {
     background: #E65A2B;
 }
 
-.mission {
-    /* background: #208edd; /* Фон как у header */
-    color: white;
-    /* Белый текст для контраста */
-    padding-top: 0;
-    /* Убираем отступ сверху */
-}
-
-.mission h2,
-.mission p {
-    color: #003366;
-    ;
-    /* Белый текст для контраста */
-}
-
+/* Get Involved Section */
 .get-involved {
     display: flex;
     justify-content: space-around;
@@ -287,6 +301,7 @@ nav ul li:hover .submenu {
     background: #E65A2B;
 }
 
+/* Footer */
 footer {
     background: #0a1836;
     color: white;
@@ -333,20 +348,15 @@ footer .social img:hover {
     opacity: 0.8;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
     body {
         font-size: 14px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
     }
 
     header,
     footer,
     section {
-        width: 100%;
-        max-width: 100%;
         padding: 10px;
     }
 
@@ -376,33 +386,15 @@ footer .social img:hover {
         padding: 20px 10px;
     }
 
-    .submenu li a {
-        color: white !important;
-    }
-
-    .submenu li a:hover {
-        background: rgba(255, 255, 255, 0.1);
-    }
-
     .submenu {
         background: rgba(0, 0, 0, 0.8);
-        border-radius: 5px;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 100%;
     }
 
     header img {
         margin-bottom: 1px;
         margin-left: 80px;
         transform: scale(2);
-        display: block;
         height: 150px;
-        align-items: center;
     }
 
     nav ul {
@@ -433,6 +425,13 @@ footer .social img:hover {
         margin-bottom: 20px;
     }
 
+    .mission div {
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        margin: 20px;
+    }
+
     .get-involved {
         flex-direction: column;
         align-items: center;
@@ -453,278 +452,4 @@ footer .social img:hover {
         width: 80%;
         margin-bottom: 20px;
     }
-
-    .submenu {
-        position: static;
-        display: none;
-        background: #002244;
-        box-shadow: none;
-    }
-
-    nav ul li:hover .submenu {
-        display: none;
-    }
-
-    nav ul li:hover>.submenu {
-        display: block;
-    }
-
-
-    /* ABOUT US */
-
-    /* Стили для раздела "Our Team" */
-    .team {
-        padding: 40px 20px;
-        background: #f9f9f9;
-        text-align: center;
-    }
-
-    .team h2 {
-        font-size: 2rem;
-        color: #003366;
-        margin-bottom: 20px;
-    }
-
-    .team p {
-        font-size: 1.1rem;
-        color: #555;
-        margin-bottom: 30px;
-    }
-
-    .team-members {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-
-    .member {
-        width: 30%;
-        margin-bottom: 20px;
-    }
-
-    .member img {
-        width: 100%;
-        border-radius: 10px;
-        margin-bottom: 15px;
-    }
-
-    .member h3 {
-        font-size: 1.2rem;
-        color: #003366;
-        margin-bottom: 5px;
-    }
-
-    .member p {
-        font-size: 1rem;
-        color: #555;
-    }
-
-    /* Стили для раздела "Our Partners" */
-    .partner {
-        padding: 40px 20px;
-        background: #fff;
-        text-align: center;
-    }
-
-    .partner h2 {
-        font-size: 2rem;
-        color: #003366;
-        margin-bottom: 20px;
-    }
-
-    .partner p {
-        font-size: 1.1rem;
-        color: #555;
-        margin-bottom: 30px;
-    }
-
-    .partners-list {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-
-    .partners-list img {
-        width: 20%;
-        margin-bottom: 20px;
-    }
-
-    /* Стили для раздела "Contact Us" */
-    .contact {
-        padding: 40px 20px;
-        background: #f9f9f9;
-        text-align: center;
-    }
-
-    .contact h2 {
-        font-size: 2rem;
-        color: #003366;
-        margin-bottom: 20px;
-    }
-
-    .contact p {
-        font-size: 1.1rem;
-        color: #555;
-        margin-bottom: 30px;
-    }
-
-    .contact form {
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    .contact input,
-    .contact textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 1rem;
-    }
-
-    .contact textarea {
-        height: 150px;
-    }
-
-    .contact button {
-        background: #003366;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: background 0.3s ease;
-    }
-
-    .contact button:hover {
-        background: #E65A2B;
-    }
-
-    /* Адаптивные стили для мобильных устройств */
-    @media (max-width: 768px) {
-        .team-members {
-            flex-direction: column;
-        }
-
-        .member {
-            width: 100%;
-        }
-
-        .partners-list img {
-            width: 40%;
-        }
-    }
-
-
-
-    /* ABOUT US */
-
-    /* Добавьте эти стили в конец файла styles.css */
-
-    /* Стили для раздела "Our Team" */
-    nav ul li:hover .submenu {
-        display: block;
-    }
-
-    .submenu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: white;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        list-style: none;
-        padding: 10px 0;
-        min-width: 200px;
-    }
-
-    .submenu li {
-        padding: 10px;
-    }
-
-    .submenu li a {
-        color: #003366;
-        padding: 10px 15px;
-        display: block;
-    }
-
-    .submenu li a:hover {
-        background: #f0f0f0;
-    }
-
-    /* Стили для формы "Contact Us" */
-    .contact {
-        padding: 40px 20px;
-        background: #f9f9f9;
-        text-align: center;
-    }
-
-    .contact h2 {
-        font-size: 2rem;
-        color: #003366;
-        margin-bottom: 20px;
-    }
-
-    .contact p {
-        font-size: 1.1rem;
-        color: #555;
-        margin-bottom: 30px;
-    }
-
-    .contact form {
-        max-width: 600px;
-        margin: 0 auto;
-        text-align: left;
-    }
-
-    .contact .form-group {
-        margin-bottom: 20px;
-    }
-
-    .contact input,
-    .contact textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 1rem;
-    }
-
-    .contact textarea {
-        height: 150px;
-        resize: vertical;
-    }
-
-    .contact button {
-        background: #003366;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: background 0.3s ease;
-    }
-
-    .contact button:hover {
-        background: #E65A2B;
-    }
-
-    /* Адаптивные стили для мобильных устройств */
-    @media (max-width: 768px) {
-        .contact form {
-            padding: 0 10px;
-        }
-
-        .contact input,
-        .contact textarea {
-            width: 100%;
-        }
-    }
-
 }
