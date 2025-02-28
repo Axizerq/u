@@ -201,6 +201,10 @@ nav ul li:hover .submenu {
 .mission {
     height: 100vh;
     overflow: hidden;
+    padding: 20px;
+    /* Уменьшаем отступы */
+    margin-bottom: 20px;
+    /* Уменьшаем отступ снизу */
 }
 
 .mission img {
@@ -369,6 +373,8 @@ footer .social img:hover {
     /* Начальная прозрачность */
     margin: 20px;
     /* Небольшие отступы от краев */
+    border-radius: 15px;
+    /* Закругляем углы */
 }
 
 /* Анимация для картинки Aid */
@@ -529,6 +535,8 @@ footer .social img:hover {
         /* Ограничиваем максимальную ширину */
         margin: 10px 0;
         /* Уменьшаем отступы */
+        border-radius: 10px;
+        /* Закругляем углы для мобильных устройств */
     }
 
     .aid div,
