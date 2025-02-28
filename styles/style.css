@@ -381,6 +381,7 @@ footer .social img:hover {
 .aid img {
     transform: translateX(-100%);
     /* Начальное положение слева за пределами экрана */
+    margin-top: -10%;
 }
 
 .aid img.slide-in {
@@ -394,6 +395,7 @@ footer .social img:hover {
 .support img {
     transform: translateX(100%);
     /* Начальное положение справа за пределами экрана */
+    margin-top: -5%;
 }
 
 .support img.slide-in {
@@ -423,6 +425,7 @@ footer .social img:hover {
     /* Текстовый контент занимает 60% ширины */
     padding: 20px;
 }
+
 
 
 
