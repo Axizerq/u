@@ -426,7 +426,20 @@ footer .social img:hover {
     padding: 20px;
 }
 
-
+/* Псевдоэлемент для градиента внизу картинки */
+.mission::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    /* Высота градиента */
+    background: linear-gradient(to bottom, rgba(249, 249, 249, 0), rgba(249, 249, 249, 1));
+    /* Градиент от прозрачного к цвету фона */
+    z-index: 2;
+    /* Градиент поверх затемнения */
+}
 
 
 
@@ -474,6 +487,7 @@ footer .social img:hover {
         flex-direction: column;
         text-align: center;
         padding: 20px 10px;
+        height: 70vh;
     }
 
     .mission img,
@@ -494,6 +508,11 @@ footer .social img:hover {
     .aid p,
     .support p {
         font-size: 1rem;
+    }
+
+    .mission::before {
+        height: 20%;
+        /* Меньше градиент для мобильных устройств */
     }
 
     /* Get Involved adjustments */
