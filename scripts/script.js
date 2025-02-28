@@ -6,7 +6,7 @@ const translations = {
         involved: "Get Involved",
         news: "News & Events",
         missionTitle: "Our Mission",
-        missionText: "Test text",
+        missionText: "Housing search Employment Obtaining a driver's license Popularization of Ukrainian culture",
         aidTitle: "Humanitarian Aid",
         aidText: "Test",
         supportTitle: "Support for Refugees",
@@ -182,3 +182,35 @@ menuItems.forEach((item) => {
         overlay.classList.remove("active");
     });
 });
+
+
+// Функция для проверки видимости элемента
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom >= 0 &&
+        rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
+        rect.right >= 0
+    );
+}
+
+// Функция для обработки прокрутки страницы
+function handleScroll() {
+    const aidImage = document.querySelector('.aid img');
+    const supportImage = document.querySelector('.support img');
+
+    if (isElementInViewport(aidImage)) {
+        aidImage.classList.add('slide-in');
+    }
+
+    if (isElementInViewport(supportImage)) {
+        supportImage.classList.add('slide-in');
+    }
+}
+
+// Добавляем обработчик события прокрутки
+window.addEventListener('scroll', handleScroll);
+
+// Вызываем handleScroll при загрузке страницы, чтобы проверить видимость элементов
+window.addEventListener('load', handleScroll);

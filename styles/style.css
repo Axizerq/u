@@ -218,7 +218,8 @@ nav ul li:hover .submenu {
 .aid h2,
 .support h2 {
     font-size: 2rem;
-    color: #003366;
+    /* color: #003366; */
+    color: #f4dc96;
     margin-bottom: 10px;
 }
 
@@ -226,7 +227,8 @@ nav ul li:hover .submenu {
 .aid p,
 .support p {
     font-size: 1.1rem;
-    color: #555;
+    color: orangered;
+    /* #555 */
     line-height: 1.6;
 }
 
@@ -348,55 +350,101 @@ footer .social img:hover {
     opacity: 0.8;
 }
 
+
+
+
+
+/* Стили для картинок в секциях Aid и Support */
+.aid img,
+.support img {
+    width: 40%;
+    /* Картинка занимает 40% ширины */
+    max-width: 40%;
+    /* Ограничиваем максимальную ширину */
+    height: auto;
+    /* Сохраняем пропорции */
+    position: relative;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    opacity: 0;
+    /* Начальная прозрачность */
+    margin: 20px;
+    /* Небольшие отступы от краев */
+}
+
+/* Анимация для картинки Aid */
+.aid img {
+    transform: translateX(-100%);
+    /* Начальное положение слева за пределами экрана */
+}
+
+.aid img.slide-in {
+    transform: translateX(0);
+    /* Конечное положение */
+    opacity: 1;
+    /* Появление картинки */
+}
+
+/* Анимация для картинки Support */
+.support img {
+    transform: translateX(100%);
+    /* Начальное положение справа за пределами экрана */
+}
+
+.support img.slide-in {
+    transform: translateX(0);
+    /* Конечное положение */
+    opacity: 1;
+    /* Появление картинки */
+}
+
+/* Стили для контейнеров секций Aid и Support */
+.aid,
+.support {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+    margin: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Стили для текстового контента в секциях Aid и Support */
+.aid div,
+.support div {
+    width: 60%;
+    /* Текстовый контент занимает 60% ширины */
+    padding: 20px;
+}
+
+
+
+
+
+
+
 /* Media Queries */
 @media (max-width: 768px) {
     body {
         font-size: 14px;
     }
 
-    header,
-    footer,
-    section {
+    /* Header adjustments */
+    header {
+        flex-direction: column;
+        align-items: center;
         padding: 10px;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-
-    nav ul li a {
-        padding: 10px;
-    }
-
-    .mission,
-    .aid,
-    .support {
-        padding: 20px 10px;
-    }
-
-    .get-involved {
-        padding: 20px 10px;
-    }
-
-    footer {
-        padding: 20px 10px;
-    }
-
-    .submenu {
-        background: rgba(0, 0, 0, 0.8);
     }
 
     header img {
-        margin-bottom: 1px;
-        margin-left: 80px;
-        transform: scale(2);
-        height: 150px;
+        height: 40px;
+        transform: scale(1.5);
+        margin-bottom: 10px;
+        margin-left: 0;
     }
 
+    /* Navigation adjustments */
     nav ul {
         flex-direction: column;
         align-items: center;
@@ -406,15 +454,17 @@ footer .social img:hover {
         margin: 10px 0;
     }
 
-    .language-switcher {
-        margin-top: 10px;
+    nav ul li a {
+        padding: 8px 12px;
     }
 
+    /* Mission, Aid, Support adjustments */
     .mission,
     .aid,
     .support {
         flex-direction: column;
         text-align: center;
+        padding: 20px 10px;
     }
 
     .mission img,
@@ -425,31 +475,74 @@ footer .social img:hover {
         margin-bottom: 20px;
     }
 
-    .mission div {
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 10px;
-        margin: 20px;
+    .mission h2,
+    .aid h2,
+    .support h2 {
+        font-size: 1.8rem;
     }
 
+    .mission p,
+    .aid p,
+    .support p {
+        font-size: 1rem;
+    }
+
+    /* Get Involved adjustments */
     .get-involved {
         flex-direction: column;
         align-items: center;
+        padding: 20px 10px;
     }
 
     .get-involved .card {
-        width: 80%;
+        width: 90%;
         margin-bottom: 20px;
     }
 
+    /* Footer adjustments */
     footer {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 20px 10px;
     }
 
     footer .column {
-        width: 80%;
+        width: 100%;
         margin-bottom: 20px;
     }
+
+    footer .social img {
+        height: 30px;
+    }
+
+
+
+
+
+
+    .aid img,
+    .support img {
+        width: 100%;
+        /* Картинки занимают всю ширину на мобильных устройствах */
+        max-width: 100%;
+        /* Ограничиваем максимальную ширину */
+        margin: 10px 0;
+        /* Уменьшаем отступы */
+    }
+
+    .aid div,
+    .support div {
+        width: 100%;
+        /* Текстовый контент занимает всю ширину */
+    }
+
+    .aid,
+    .support {
+        flex-direction: column;
+        /* Меняем направление на вертикальное */
+        text-align: center;
+        /* Выравниваем текст по центру */
+    }
+
 }
