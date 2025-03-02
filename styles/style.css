@@ -17,7 +17,8 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
+    background: linear-gradient(to bottom, #f5f5f5, #eaeaea);
 }
 
 /* Header */
@@ -227,11 +228,19 @@ nav ul li:hover .submenu {
     margin-bottom: 10px;
 }
 
-.mission p,
 .aid p,
 .support p {
     font-size: 1.1rem;
-    color: orangered;
+    color: #333;
+    /* color: orangered; */
+    /* #555 */
+    line-height: 1.6;
+}
+
+.mission p {
+    font-size: 1.1rem;
+    color: red;
+    /* color: orangered; */
     /* #555 */
     line-height: 1.6;
 }
@@ -454,7 +463,7 @@ footer .social img:hover {
     width: 100%;
     height: 25%;
     /* Высота градиента */
-    background: linear-gradient(to bottom, rgba(249, 249, 249, 0), rgba(249, 249, 249, 1));
+    background: linear-gradient(to bottom, rgba(249, 249, 249, 0), #f5f5f5);
     /* Градиент от прозрачного к цвету фона */
     z-index: 2;
     /* Градиент поверх затемнения */
