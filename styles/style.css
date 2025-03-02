@@ -361,9 +361,9 @@ footer .social img:hover {
 /* Стили для картинок в секциях Aid и Support */
 .aid img,
 .support img {
-    width: 40%;
+    width: 50%;
     /* Картинка занимает 40% ширины */
-    max-width: 40%;
+    max-width: 50%;
     /* Ограничиваем максимальную ширину */
     height: auto;
     /* Сохраняем пропорции */
@@ -434,6 +434,7 @@ footer .social img:hover {
     /* Центрирование текста */
 }
 
+.aid div,
 .support div {
     margin-top: -150px;
     /* Поднимаем блок на 50px вверх */
