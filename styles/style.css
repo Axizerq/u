@@ -424,6 +424,24 @@ footer .social img:hover {
     width: 60%;
     /* Текстовый контент занимает 60% ширины */
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Выравнивание по вертикали */
+    align-items: center;
+    /* Выравнивание по горизонтали */
+    text-align: center;
+    /* Центрирование текста */
+}
+
+.support div {
+    margin-top: -150px;
+    /* Поднимаем блок на 50px вверх */
+}
+
+.support div p {
+    margin: 3px 0;
+    /* Отступы между пунктами */
 }
 
 /* Псевдоэлемент для градиента внизу картинки */
