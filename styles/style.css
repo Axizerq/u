@@ -242,7 +242,7 @@ nav ul li:hover .submenu {
     color: red;
     /* color: orangered; */
     /* #555 */
-    line-height: 1.6;
+    line-height: 1.0;
 }
 
 .mission button,
@@ -472,6 +472,78 @@ footer .social img:hover {
 
 
 
+.mission img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    border-radius: 0;
+}
+
+.mission-content {
+    position: absolute;
+    top: 65%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 50%;
+    /* Ширина прямоугольника */
+    padding: 20px;
+    background-color: #f4dc96;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    height: auto;
+    /* Высота будет определяться содержимым */
+    max-height: 50%;
+    /* Ограничиваем максимальную высоту */
+    overflow: hidden;
+    /* Скрываем лишнее содержимое, если оно выходит за пределы */
+    text-align: center;
+    /* Центрируем текст и кнопку */
+}
+
+.mission-content h2,
+.mission-content p,
+.mission-content button {
+    position: relative;
+    z-index: 3;
+}
+
+.mission-content h2 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.mission-content p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.0;
+    margin-bottom: 10px;
+}
+
+.mission-content button {
+    background: #003366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.mission-content button:hover {
+    background: #E65A2B;
+}
+
+
+
+
 
 
 /* Media Queries */
@@ -601,6 +673,25 @@ footer .social img:hover {
         /* Меняем направление на вертикальное */
         text-align: center;
         /* Выравниваем текст по центру */
+    }
+
+    .mission-content {
+        width: 80%;
+        /* Увеличиваем ширину для мобильных устройств */
+        top: 45%;
+        /* Сдвигаем блок выше */
+        left: 10%;
+        /* Центрируем блок */
+        transform: translateY(-50%);
+        padding: 15px;
+    }
+
+    .mission-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .mission-content p {
+        font-size: 1rem;
     }
 
 }
