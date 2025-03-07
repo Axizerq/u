@@ -520,7 +520,7 @@ footer .social img:hover {
 .mission-content p {
     font-size: 1.1rem;
     color: #333;
-    line-height: 1.0;
+    line-height: 1.5;
     margin-bottom: 10px;
 }
 
@@ -542,6 +542,22 @@ footer .social img:hover {
 }
 
 
+/* Стили для кнопки-бургера */
+.menu-toggle {
+    display: none;
+    /* По умолчанию скрываем на десктопе */
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
 
 
 
@@ -549,7 +565,7 @@ footer .social img:hover {
 /* Media Queries */
 @media (max-width: 768px) {
     body {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     /* Header adjustments */
@@ -564,6 +580,29 @@ footer .social img:hover {
         transform: scale(1.5);
         margin-bottom: 10px;
         margin-left: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+        /* Показываем кнопку на мобильных устройствах */
+    }
+
+    nav {
+        display: none;
+        /* Скрываем меню по умолчанию на мобильных устройствах */
+        width: 100%;
+        background: #003366;
+        /* Фон меню */
+        position: absolute;
+        top: 60px;
+        /* Отступ от верхнего края */
+        left: 0;
+        z-index: 1000;
+    }
+
+    nav.active {
+        display: block;
+        /* Показываем меню при активации */
     }
 
     /* Navigation adjustments */
@@ -588,12 +627,15 @@ footer .social img:hover {
         text-align: center;
         padding: 20px 10px;
         height: 70vh;
+        margin-bottom: 20px;
+        /* */
     }
 
-    .mission img,
+    /*.mission img, */
     .aid img,
     .support img {
         width: 100%;
+        max-width: 100%;
         margin-right: 0;
         margin-bottom: 20px;
     }
@@ -601,13 +643,13 @@ footer .social img:hover {
     .mission h2,
     .aid h2,
     .support h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .mission p,
     .aid p,
     .support p {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .mission::before {
@@ -644,7 +686,29 @@ footer .social img:hover {
         height: 30px;
     }
 
+    .submenu {
+        display: none;
+        /* Скрываем подменю по умолчанию */
+        position: static;
+        /* Убираем абсолютное позиционирование */
+        width: 100%;
+        /* Подменю занимает всю ширину */
+    }
 
+    nav ul li:hover .submenu {
+        display: block;
+        /* Показываем подменю при наведении */
+    }
+
+    .mission button,
+    .aid button,
+    .support button,
+    .get-involved .card button {
+        padding: 15px 25px;
+        /* Увеличиваем размер кнопок */
+        font-size: 1.2rem;
+        /* Увеличиваем размер текста на кнопках */
+    }
 
 
 
@@ -665,6 +729,8 @@ footer .social img:hover {
     .support div {
         width: 100%;
         /* Текстовый контент занимает всю ширину */
+        padding: 20px;
+        /* Увеличиваем отступы внутри текстового блока */
     }
 
     .aid,
@@ -683,15 +749,17 @@ footer .social img:hover {
         left: 10%;
         /* Центрируем блок */
         transform: translateY(-50%);
-        padding: 15px;
+        padding-bottom: 145px;
+        margin-top: 115px;
+
     }
 
     .mission-content h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .mission-content p {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
 }

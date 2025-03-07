@@ -6,10 +6,8 @@ const translations = {
         involved: "Get Involved",
         news: "News & Events",
         missionTitle: "Our Mission",
-        missionText: "The Utah Ukrainian Association is a nonprofit uniting Utah's Ukrainian community to",
-        missionText2: " support Ukraine and help newcomers adapt to life in the U.S. We provide housing, ",
-        missionText3: "job, and education assistance, organize cultural events, and collaborate on ",
-        missionText4: "humanitarian missions. Join us in fostering unity and sharing Ukrainian culture!",
+        missionText: "The Utah Ukrainian Association is a nonprofit uniting Utah's Ukrainian community to support Ukraine and help newcomers adapt to life in the U.S. We provide housing, job, and education assistance, organize cultural events, and collaborate on humanitarian missions.",
+        missionText2: "Join us in fostering unity and sharing Ukrainian culture!",
         aidTitle: "Humanitarian Aid",
         aidText: "Test",
         supportTitle: "Support for Refugees",
@@ -59,10 +57,8 @@ const translations = {
         involved: "Долучитися",
         news: "Новини та події",
         missionTitle: "Наша місія",
-        missionText: "Асоціація українців Юти — це неприбуткова організація, яка об'єднує українську громаду Юти для підтримки України",
-        missionText2: " та допомоги новоприбулим адаптуватися до життя в США. Ми надаємо житло, ",
-        missionText3: "допомогу в працевлаштуванні та освіті, організовуємо культурні заходи та співпрацюємо в гуманітарних",
-        missionText4: " місіях. Приєднуйтесь до нас у зміцненні єдності та поширенні української культури!",
+        missionText: "Асоціація українців Юти — це неприбуткова організація, яка об'єднує українську громаду Юти для підтримки України та допомоги новоприбулим адаптуватися до життя в США. Ми надаємо житло, допомогу в працевлаштуванні та освіті, організовуємо культурні заходи та співпрацюємо в гуманітарних місіях.",
+        missionText2: "Приєднуйтесь до нас у зміцненні єдності та поширенні української культури!",
         aidTitle: "Гуманітарна допомога",
         aidText: "Тест",
         supportTitle: "Підтримка біженців",
@@ -112,10 +108,8 @@ const translations = {
         involved: "Присоединиться",
         news: "Новости и события",
         missionTitle: "Наша миссия",
-        missionText: "Ассоциация украинцев Юты — это некоммерческая организация, объединяющая украинское сообщество Юты для поддержки Украины и помощи новоприбывшим",
-        missionText2: " адаптироваться к жизни в США. Мы предоставляем жилье, ",
-        missionText3: "помощь в трудоустройстве и образовании, организуем культурные мероприятия и сотрудничаем в гуманитарных",
-        missionText4: " миссиях. Присоединяйтесь к нам в укреплении единства и распространении украинской культуры!",
+        missionText: "Ассоциация украинцев Юты — некоммерческая организация, объединяющая украинское сообщество Юты для поддержки Украины и помощи новоприбывшим адаптироваться к жизни в США. Мы предоставляем жилье, помощь в трудоустройстве и образовании, а так же сотрудничаем в гуманитарных миссиях.",
+        missionText2: "Присоединяйтесь к нам в укреплении единства и распространении украинской культуры!",
         aidTitle: "Гуманитарная помощь",
         aidText: "Тест",
         supportTitle: "Поддержка беженцев",
@@ -232,3 +226,23 @@ window.addEventListener('scroll', handleScroll);
 
 // Вызываем handleScroll при загрузке страницы, чтобы проверить видимость элементов
 window.addEventListener('load', handleScroll);
+
+
+
+const mobileMenu = document.getElementById("mobile-menu");
+const navMenu = document.getElementById("nav-menu");
+
+// Функция для переключения меню
+function toggleMenu() {
+    navMenu.classList.toggle("active"); // Добавляем/убираем класс "active"
+}
+
+// Добавляем обработчик события на кнопку-бургер
+mobileMenu.addEventListener("click", toggleMenu);
+
+// Закрываем меню при клике вне его области
+document.addEventListener("click", (event) => {
+    if (!navMenu.contains(event.target) && !mobileMenu.contains(event.target)) {
+        navMenu.classList.remove("active"); // Закрываем меню
+    }
+});
