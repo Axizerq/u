@@ -751,33 +751,34 @@ footer .social img:hover {
         padding: 10px;
         /* Уменьшаем внутренние отступы */
     }
-}
 
-.aid,
-.support {
-    flex-direction: column;
-    /* Меняем направление на вертикальное */
-    text-align: center;
-    /* Выравниваем текст по центру */
-}
+    .aid,
+    .support {
+        flex-direction: column;
+        /* Меняем направление на вертикальное */
+        text-align: center;
+        /* Выравниваем текст по центру */
+    }
 
-.mission-content {
-    width: 80%;
-    /* Увеличиваем ширину для мобильных устройств */
-    top: 45%;
-    /* Сдвигаем блок выше */
-    left: 10%;
-    /* Центрируем блок */
-    transform: translateY(-50%);
-    padding-bottom: 145px;
-    margin-top: 115px;
+    .mission-content {
+        width: 80%;
+        /* Увеличиваем ширину для мобильных устройств */
+        top: 45%;
+        /* Сдвигаем блок выше */
+        left: 10%;
+        /* Центрируем блок */
+        transform: translateY(-50%);
+        padding-bottom: 145px;
+        margin-top: 115px;
 
-}
+    }
 
-.mission-content h2 {
-    font-size: 2rem;
-}
+    .mission-content h2 {
+        font-size: 2rem;
+    }
 
-.mission-content p {
-    font-size: 1.2rem;
+    .mission-content p {
+        font-size: 1.2rem;
+    }
+
 }
