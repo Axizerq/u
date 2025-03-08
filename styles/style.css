@@ -725,6 +725,10 @@ footer .social img:hover {
         /* Закругляем углы для мобильных устройств */
     }
 
+    .aid img {
+        margin-top: -10px;
+    }
+
     .aid div,
     .support div {
         width: 100%;
@@ -734,7 +738,7 @@ footer .social img:hover {
     }
 
     .aid div {
-        margin-top: -80px;
+        margin-top: -20px;
         /* Поднимаем текстовый блок внутри .aid */
         padding: 10px;
         /* Уменьшаем внутренние отступы */
