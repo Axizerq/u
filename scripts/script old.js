@@ -184,7 +184,7 @@ langList.querySelectorAll("li").forEach((item) => {
 // Initialize with English
 updateTexts(currentLang);
 
-// Затемнение фона при наведении на пункты меню (для ПК)
+
 menuItems.forEach((item) => {
     item.addEventListener("mouseenter", () => {
         overlay.classList.add("active");
@@ -194,6 +194,7 @@ menuItems.forEach((item) => {
         overlay.classList.remove("active");
     });
 });
+
 
 // Функция для проверки видимости элемента
 function isElementInViewport(el) {
@@ -226,28 +227,22 @@ window.addEventListener('scroll', handleScroll);
 // Вызываем handleScroll при загрузке страницы, чтобы проверить видимость элементов
 window.addEventListener('load', handleScroll);
 
+
+
 const mobileMenu = document.getElementById("mobile-menu");
 const navMenu = document.getElementById("nav-menu");
 
-// Функция для переключения меню и затемнения фона (для мобильных устройств)
+// Функция для переключения меню
 function toggleMenu() {
-    navMenu.classList.toggle("active");
-
-    // Затемнение фона при открытии меню (для мобильных устройств)
-    if (navMenu.classList.contains("active")) {
-        overlay.classList.add("active");
-    } else {
-        overlay.classList.remove("active");
-    }
+    navMenu.classList.toggle("active"); // Добавляем/убираем класс "active"
 }
 
 // Добавляем обработчик события на кнопку-бургер
 mobileMenu.addEventListener("click", toggleMenu);
 
-// Закрываем меню и убираем затемнение при клике вне его области
+// Закрываем меню при клике вне его области
 document.addEventListener("click", (event) => {
     if (!navMenu.contains(event.target) && !mobileMenu.contains(event.target)) {
         navMenu.classList.remove("active"); // Закрываем меню
-        overlay.classList.remove("active"); // Убираем затемнение
     }
 });

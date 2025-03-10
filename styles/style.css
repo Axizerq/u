@@ -40,7 +40,7 @@ header img {
     width: auto;
     transform: scale(2);
     transform-origin: left center;
-    margin-right: 20px;
+    margin-right: 180px;
     margin-bottom: -30px;
 }
 
@@ -223,9 +223,38 @@ nav ul li:hover .submenu {
 .aid h2,
 .support h2 {
     font-size: 2rem;
-    /* color: #003366; */
-    color: #f4dc96;
+    /* color: #003366; 
+    color: #f4dc96; */
     margin-bottom: 10px;
+    color: #183980;
+    /* Темно-синий цвет текста */
+    position: relative;
+    /* Позиционируем относительно родителя */
+    z-index: 2;
+    /* Поднимаем текст над фоном */
+    padding: 10px 20px;
+    /* Добавляем отступы для текста */
+    display: inline-block;
+    /* Чтобы фон не растягивался на всю ширину */
+}
+
+/* Косой прямоугольник для заголовков */
+.aid h2::before,
+.support h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20px;
+    /* Сдвигаем прямоугольник влево */
+    width: calc(100% + 40px);
+    /* Увеличиваем ширину прямоугольника */
+    height: 100%;
+    background-color: #f4dc96;
+    /* Цвет фона */
+    transform: skewX(-20deg);
+    /* Наклон прямоугольника */
+    z-index: -1;
+    /* Прямоугольник под текстом */
 }
 
 .aid p,
@@ -643,7 +672,16 @@ footer .social img:hover {
     .mission h2,
     .aid h2,
     .support h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        padding: 8px 15px;
+    }
+
+    .aid h2::before,
+    .support h2::before {
+        left: -10px;
+        /* Уменьшаем сдвиг для мобильных устройств */
+        width: calc(100% + 20px);
+        /* Уменьшаем ширину прямоугольника */
     }
 
     .mission p,
@@ -738,7 +776,7 @@ footer .social img:hover {
     }
 
     .aid div {
-        margin-top: -20px;
+        margin-top: -0px;
         /* Поднимаем текстовый блок внутри .aid */
         padding: 10px;
         /* Уменьшаем внутренние отступы */
@@ -785,4 +823,215 @@ footer .social img:hover {
         font-size: 1.2rem;
     }
 
+}
+
+
+
+
+@media (max-width: 768px) and (orientation: landscape) {
+
+    /* Общие стили для горизонтального режима */
+    body {
+        font-size: 14px;
+        /* Уменьшаем размер шрифта для экономии места */
+    }
+
+    /* Хедер */
+    header {
+        padding: 5px 10px;
+        /* Уменьшаем отступы */
+        flex-direction: row;
+        /* Элементы хедера в строку */
+        align-items: center;
+        /* Центрируем элементы */
+    }
+
+    header img {
+        height: 30px;
+        /* Уменьшаем размер логотипа */
+        transform: scale(1.2);
+        /* Масштабируем логотип */
+        margin-bottom: 0;
+        /* Убираем отступ снизу */
+        margin-right: 10px;
+        /* Добавляем отступ справа */
+    }
+
+    /* Навигационное меню */
+    nav ul {
+        flex-direction: row;
+        /* Меню в строку для горизонтального режима */
+        flex-wrap: wrap;
+        /* Разрешаем перенос пунктов меню на новую строку */
+    }
+
+    nav ul li {
+        margin: 0 5px;
+        /* Уменьшаем отступы между пунктами меню */
+    }
+
+    nav ul li a {
+        padding: 5px 10px;
+        /* Уменьшаем отступы внутри пунктов меню */
+        font-size: 0.9rem;
+        /* Уменьшаем размер шрифта */
+    }
+
+    .submenu {
+        top: 100%;
+        /* Подменю появляется под пунктом меню */
+        left: 0;
+        min-width: 150px;
+        /* Уменьшаем ширину подменю */
+    }
+
+    /* Секция Mission */
+    .mission {
+        height: 60vh;
+        /* Уменьшаем высоту секции */
+        padding: 10px;
+        /* Уменьшаем отступы */
+    }
+
+    .mission-content {
+        width: 70%;
+        /* Уменьшаем ширину блока */
+        top: 50%;
+        /* Центрируем блок */
+        left: 15%;
+        /* Центрируем блок */
+        padding: 15px;
+        /* Уменьшаем отступы */
+    }
+
+    .mission h2 {
+        font-size: 1.5rem;
+        /* Уменьшаем размер заголовка */
+    }
+
+    .mission p {
+        font-size: 1rem;
+        /* Уменьшаем размер текста */
+    }
+
+    .mission button {
+        padding: 8px 16px;
+        /* Уменьшаем размер кнопки */
+        font-size: 0.9rem;
+        /* Уменьшаем размер текста на кнопке */
+    }
+
+    /* Секции Aid и Support */
+    .aid,
+    .support {
+        flex-direction: row;
+        /* Элементы в строку для горизонтального режима */
+        padding: 20px 10px;
+        /* Уменьшаем отступы */
+    }
+
+    .aid img,
+    .support img {
+        width: 40%;
+        /* Уменьшаем ширину картинок */
+        margin: 10px;
+        /* Уменьшаем отступы */
+    }
+
+    .aid div,
+    .support div {
+        width: 50%;
+        /* Уменьшаем ширину текстового блока */
+        padding: 10px;
+        /* Уменьшаем отступы */
+    }
+
+    .aid h2,
+    .support h2 {
+        font-size: 1.5rem;
+        /* Уменьшаем размер заголовка */
+    }
+
+    .aid p,
+    .support p {
+        font-size: 1rem;
+        /* Уменьшаем размер текста */
+    }
+
+    .aid button,
+    .support button {
+        padding: 8px 16px;
+        /* Уменьшаем размер кнопки */
+        font-size: 0.9rem;
+        /* Уменьшаем размер текста на кнопке */
+    }
+
+    /* Секция Get Involved */
+    .get-involved {
+        flex-direction: row;
+        /* Карточки в строку для горизонтального режима */
+        padding: 20px 10px;
+        /* Уменьшаем отступы */
+    }
+
+    .get-involved .card {
+        width: 30%;
+        /* Уменьшаем ширину карточек */
+        margin-bottom: 10px;
+        /* Уменьшаем отступы */
+    }
+
+    .get-involved .card h3 {
+        font-size: 1.2rem;
+        /* Уменьшаем размер заголовка */
+    }
+
+    .get-involved .card p {
+        font-size: 0.9rem;
+        /* Уменьшаем размер текста */
+    }
+
+    .get-involved .card button {
+        padding: 8px 16px;
+        /* Уменьшаем размер кнопки */
+        font-size: 0.9rem;
+        /* Уменьшаем размер текста на кнопке */
+    }
+
+    /* Футер */
+    footer {
+        padding: 10px;
+        /* Уменьшаем отступы */
+    }
+
+    footer .column {
+        width: 25%;
+        /* Уменьшаем ширину колонок */
+    }
+
+    footer h3 {
+        font-size: 1rem;
+        /* Уменьшаем размер заголовка */
+    }
+
+    footer ul li {
+        margin: 5px 0;
+        /* Уменьшаем отступы между пунктами */
+    }
+
+    footer .social img {
+        height: 30px;
+        /* Уменьшаем размер иконок */
+    }
+
+    /* Кнопка переключения языка */
+    .language-switcher button {
+        padding: 3px 8px;
+        /* Уменьшаем размер кнопки */
+    }
+
+    .language-switcher ul {
+        top: 100%;
+        /* Выпадающий список под кнопкой */
+    }
 }
