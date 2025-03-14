@@ -568,6 +568,15 @@ footer .social img:hover {
     /* Отступы между пунктами */
 }
 
+.support {
+    margin-top: -200px;
+    /* Сдвигаем блок вверх на 50px */
+}
+
+.aid {
+    margin-top: 100px;
+}
+
 /* Псевдоэлемент для градиента внизу картинки */
 /* .mission::before {
     content: '';
