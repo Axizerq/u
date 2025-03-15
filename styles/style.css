@@ -247,11 +247,11 @@ nav ul li:hover .submenu {
 
 .donate-link {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 10px;
     /* Внутренние отступы */
-    background-color: #8d7455;
+    background-color: #f4e594;
     /* Цвет хаки */
-    color: white;
+    color: #183980;
     /* Белый текст */
     text-transform: uppercase;
     /* Текст в верхнем регистре */
@@ -378,6 +378,134 @@ nav ul li:hover .submenu {
 .support button:hover {
     background: #E65A2B;
 }
+
+
+/* Стили для нового раздела Events */
+.events {
+    background-color: #84abda;
+    /* Фон раздела */
+    color: white;
+    /* Цвет текста */
+    padding: 40px 20px;
+    /* Отступы внутри раздела */
+    text-align: center;
+    /* Центрирование текста */
+}
+
+.events-content {
+    max-width: 1200px;
+    /* Максимальная ширина контента */
+    margin: 0 auto;
+    /* Центрирование контента */
+}
+
+.events h2 {
+    font-size: 2rem;
+    /* Крупный размер шрифта */
+    font-weight: bold;
+    /* Жирный шрифт */
+    text-transform: uppercase;
+    /* Заглавные буквы */
+    color: white;
+    /* Белый цвет текста */
+    text-align: left;
+    /* Выравнивание по левому краю */
+    padding-left: 20px;
+    /* Отступ слева */
+    padding-top: 0px;
+    /* Отступ сверху, чтобы опустить текст ниже верхнего края */
+    margin-bottom: 100px;
+    /* Отступ снизу */
+    position: relative;
+    /* Позиционирование относительно родителя */
+    z-index: 1;
+    /* Поднимаем текст над другими элементами */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Тень текста для эффекта */
+    letter-spacing: 2px;
+    /* Расстояние между буквами */
+    display: inline-block;
+    margin-left: -85px;
+}
+
+/* Подчеркивание заголовка */
+.events h2::after {
+    content: '';
+    /* Обязательно для псевдоэлемента */
+    position: absolute;
+    /* Абсолютное позиционирование */
+    left: 0;
+    /* Начинается с левого края */
+    bottom: -10px;
+    /* Расположение под текстом */
+    width: 100%;
+    /* Ширина подчеркивания */
+    height: 10px;
+    /* Толщина линии */
+    background-color: #f4dc96;
+    /* Цвет линии */
+    transform: scaleX(0.9);
+    /* Уменьшаем ширину до последней буквы "N" */
+    transform-origin: left;
+    /* Трансформация начинается слева */
+}
+
+.events-content {
+    text-align: left;
+    /* Выравнивание по левому краю */
+    max-width: 1200px;
+    /* Максимальная ширина контента */
+    margin: 0 auto;
+    /* Центрирование контейнера, но не текста внутри */
+    padding-left: 20px;
+    /* Отступ слева для контента */
+}
+
+.event-list {
+    display: flex;
+    /* Горизонтальное расположение событий */
+    justify-content: space-around;
+    /* Равномерное распределение пространства */
+    flex-wrap: wrap;
+    /* Перенос на новую строку, если не хватает места */
+}
+
+.event {
+    width: 30%;
+    /* Ширина каждого события */
+    margin-bottom: 20px;
+    /* Отступ снизу */
+    text-align: center;
+    /* Центрирование текста */
+}
+
+.event img {
+    width: 100px;
+    /* Размер картинки */
+    height: 100px;
+    /* Размер картинки */
+    border-radius: 50%;
+    /* Круглая картинка */
+    margin-bottom: 15px;
+    /* Отступ снизу */
+}
+
+.event h3 {
+    font-size: 1.5rem;
+    /* Размер заголовка события */
+    margin-bottom: 10px;
+    /* Отступ снизу */
+}
+
+.event p {
+    font-size: 1.1rem;
+    /* Размер текста события */
+    margin: 5px 0;
+    /* Отступы между строками */
+}
+
+
+
 
 /* Get Involved Section */
 .get-involved {
@@ -571,10 +699,11 @@ footer .social img:hover {
 .support {
     margin-top: -200px;
     /* Сдвигаем блок вверх на 50px */
+    margin-bottom: -30px;
 }
 
 .aid {
-    margin-top: 100px;
+    margin-top: 120px;
 }
 
 /* Псевдоэлемент для градиента внизу картинки */
