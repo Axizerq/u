@@ -305,8 +305,9 @@ nav ul li:hover .submenu {
 }
 
 .mission h2,
-.aid h2,
-.support h2 {
+/*.aid h2,
+.support h2 */
+    {
     font-size: 2rem;
     /* color: #003366; 
     color: #f4dc96; */
@@ -323,24 +324,7 @@ nav ul li:hover .submenu {
     /* Чтобы фон не растягивался на всю ширину */
 }
 
-/* Косой прямоугольник для заголовков */
-.aid h2::before,
-.support h2::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -20px;
-    /* Сдвигаем прямоугольник влево */
-    width: calc(100% + 40px);
-    /* Увеличиваем ширину прямоугольника */
-    height: 100%;
-    background-color: #f4dc96;
-    /* Цвет фона */
-    transform: skewX(-20deg);
-    /* Наклон прямоугольника */
-    z-index: -1;
-    /* Прямоугольник под текстом */
-}
+
 
 .aid p,
 .support p {
@@ -448,6 +432,41 @@ nav ul li:hover .submenu {
     /* Уменьшаем ширину до последней буквы "N" */
     transform-origin: left;
     /* Трансформация начинается слева */
+}
+
+.support h2,
+.aid h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #003366;
+    text-align: left;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    position: absolute;
+    /* Абсолютное позиционирование */
+    top: -100px;
+    /* Отступ сверху */
+    left: 00px;
+    /* Отступ слева */
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 2px;
+    display: inline-block;
+}
+
+
+.support h2::after,
+.aid h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 10px;
+    background-color: #f4dc96;
+    transform: scaleX(0.9);
+    transform-origin: left;
 }
 
 .events-content {
@@ -657,8 +676,8 @@ footer .social img:hover {
 }
 
 /* Стили для контейнеров секций Aid и Support */
-.aid,
-.support {
+.support,
+.aid {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -667,22 +686,23 @@ footer .social img:hover {
     background: transparent;
     border-radius: 0;
     box-shadow: none;
+    position: relative;
+    /* Добавляем относительное позиционирование */
 }
 
 /* Стили для текстового контента в секциях Aid и Support */
 .aid div,
 .support div {
+    max-width: 1200px;
     width: 60%;
-    /* Текстовый контент занимает 60% ширины */
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Выравнивание по вертикали */
     align-items: center;
-    /* Выравнивание по горизонтали */
     text-align: center;
-    /* Центрирование текста */
+    margin-top: 80px;
+    /* Отступ сверху для текста и кнопок */
 }
 
 .aid div,
