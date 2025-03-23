@@ -4,54 +4,28 @@
 }
 */
 
-/* Стили для новой надписи */
 .website-notice {
     text-align: center;
-    /* Центрирование текста */
     padding: 20px;
-    /* Отступы вокруг текста */
     background-color: red;
-    /* Фон, чтобы выделить надпись */
     color: #003366;
-    /* Цвет текста */
     font-size: 1.2rem;
-    /* Размер текста */
     font-weight: bold;
-    /* Жирный шрифт */
     position: relative;
-    /* Позиционирование */
-    z-index: 1000;
-    /* Чтобы надпись была поверх других элементов */
-    margin-top: 40px;
-    /* Отступ сверху */
-    margin-bottom: 20px;
-    /* Отступ снизу */
     z-index: 9999;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .website-notice a {
     color: #04f12b;
-    /* Цвет ссылки */
     text-decoration: none;
-    /* Убираем подчеркивание */
     font-weight: bold;
-    /* Жирный шрифт для ссылки */
 }
 
 .website-notice a:hover {
     text-decoration: underline;
-    /* Подчеркивание при наведении */
 }
-
-
-
-
-
-
-
-
-
-
 
 html,
 body {
@@ -66,11 +40,9 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    /* background-color: #f9f9f9; */
     background: linear-gradient(to bottom, #f5f5f5, #eaeaea);
 }
 
-/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -78,10 +50,9 @@ header {
     padding: 10px 10px;
     background: #208edd;
     color: white;
-    /*  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  визуальная линия под меню в шапке*/
-    background: transparent;
     position: relative;
     z-index: 1001;
+    background: transparent;
 }
 
 header img {
@@ -128,7 +99,6 @@ header img {
     opacity: 1;
 }
 
-/* Navigation */
 nav ul {
     list-style: none;
     margin: 0;
@@ -187,7 +157,6 @@ nav ul li:hover .submenu {
     display: block;
 }
 
-/* Language Switcher */
 .language-switcher {
     position: relative;
 }
@@ -235,43 +204,28 @@ nav ul li:hover .submenu {
     display: block;
 }
 
-/* Стили для кнопки Donate */
 .donate-button {
-
     position: relative;
     top: 10px;
-    /* Сдвигаем вниз на 5px */
     left: -10px;
-    /* Сдвигаем влево на 10px */
 }
 
 .donate-link {
     display: inline-block;
     padding: 10px 10px;
-    /* Внутренние отступы */
     background-color: #f4e594;
-    /* Цвет хаки */
     color: #183980;
-    /* Белый текст */
     text-transform: uppercase;
-    /* Текст в верхнем регистре */
     font-weight: bold;
-    /* Жирный шрифт */
     text-decoration: none;
-    /* Убираем подчеркивание */
     border-radius: 25px;
-    /* Полукруглые края */
     transition: background-color 0.3s ease;
-    /* Плавное изменение цвета */
 }
 
 .donate-link:hover {
     background-color: #6B5A45;
-    /* Темнее хаки при наведении */
 }
 
-
-/* Mission, Aid, Support Sections */
 .mission,
 .aid,
 .support {
@@ -280,17 +234,13 @@ nav ul li:hover .submenu {
     padding: 40px 20px;
     margin: 0;
     background: transparent;
-    border-radius: 0;
-    box-shadow: none;
 }
 
 .mission {
     height: 100vh;
     overflow: hidden;
     padding: 20px;
-    /* Уменьшаем отступы */
     margin-bottom: 20px;
-    /* Уменьшаем отступ снизу */
 }
 
 .mission img {
@@ -301,45 +251,30 @@ nav ul li:hover .submenu {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    border-radius: 0;
 }
 
 .mission h2,
-/*.aid h2,
-.support h2 */
-    {
+.aid h2,
+.support h2 {
     font-size: 2rem;
-    /* color: #003366; 
-    color: #f4dc96; */
     margin-bottom: 10px;
     color: #183980;
-    /* Темно-синий цвет текста */
     position: relative;
-    /* Позиционируем относительно родителя */
     z-index: 2;
-    /* Поднимаем текст над фоном */
     padding: 10px 20px;
-    /* Добавляем отступы для текста */
     display: inline-block;
-    /* Чтобы фон не растягивался на всю ширину */
 }
-
-
 
 .aid p,
 .support p {
     font-size: 1.5rem;
     color: #333;
-    /* color: orangered; */
-    /* #555 */
     line-height: 1.6;
 }
 
 .mission p {
     font-size: 1.1rem;
     color: red;
-    /* color: orangered; */
-    /* #555 */
     line-height: 1.0;
 }
 
@@ -363,75 +298,44 @@ nav ul li:hover .submenu {
     background: #E65A2B;
 }
 
-
-/* Стили для нового раздела Events */
 .events {
     background-color: #84abda;
-    /* Фон раздела */
     color: white;
-    /* Цвет текста */
     padding: 40px 20px;
-    /* Отступы внутри раздела */
     text-align: center;
-    /* Центрирование текста */
 }
 
 .events-content {
     max-width: 1200px;
-    /* Максимальная ширина контента */
     margin: 0 auto;
-    /* Центрирование контента */
 }
 
 .events h2 {
     font-size: 2rem;
-    /* Крупный размер шрифта */
     font-weight: bold;
-    /* Жирный шрифт */
     text-transform: uppercase;
-    /* Заглавные буквы */
     color: white;
-    /* Белый цвет текста */
     text-align: left;
-    /* Выравнивание по левому краю */
     padding-left: 20px;
-    /* Отступ слева */
-    padding-top: 0px;
-    /* Отступ сверху, чтобы опустить текст ниже верхнего края */
     margin-bottom: 100px;
-    /* Отступ снизу */
     position: relative;
-    /* Позиционирование относительно родителя */
     z-index: 1;
-    /* Поднимаем текст над другими элементами */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    /* Тень текста для эффекта */
     letter-spacing: 2px;
-    /* Расстояние между буквами */
     display: inline-block;
     margin-left: -85px;
 }
 
-/* Подчеркивание заголовка */
 .events h2::after {
     content: '';
-    /* Обязательно для псевдоэлемента */
     position: absolute;
-    /* Абсолютное позиционирование */
     left: 0;
-    /* Начинается с левого края */
     bottom: -10px;
-    /* Расположение под текстом */
     width: 100%;
-    /* Ширина подчеркивания */
     height: 10px;
-    /* Толщина линии */
     background-color: #f4dc96;
-    /* Цвет линии */
     transform: scaleX(0.9);
-    /* Уменьшаем ширину до последней буквы "N" */
     transform-origin: left;
-    /* Трансформация начинается слева */
 }
 
 .support h2,
@@ -444,17 +348,13 @@ nav ul li:hover .submenu {
     padding-left: 20px;
     margin-bottom: 20px;
     position: absolute;
-    /* Абсолютное позиционирование */
-    top: -100px;
-    /* Отступ сверху */
+    top: -80px;
     left: 00px;
-    /* Отступ слева */
     z-index: 1;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     letter-spacing: 2px;
     display: inline-block;
 }
-
 
 .support h2::after,
 .aid h2::after {
@@ -471,62 +371,40 @@ nav ul li:hover .submenu {
 
 .events-content {
     text-align: left;
-    /* Выравнивание по левому краю */
     max-width: 1200px;
-    /* Максимальная ширина контента */
     margin: 0 auto;
-    /* Центрирование контейнера, но не текста внутри */
     padding-left: 20px;
-    /* Отступ слева для контента */
 }
 
 .event-list {
     display: flex;
-    /* Горизонтальное расположение событий */
     justify-content: space-around;
-    /* Равномерное распределение пространства */
     flex-wrap: wrap;
-    /* Перенос на новую строку, если не хватает места */
 }
 
 .event {
     width: 30%;
-    /* Ширина каждого события */
     margin-bottom: 20px;
-    /* Отступ снизу */
     text-align: center;
-    /* Центрирование текста */
 }
 
 .event img {
     width: 100px;
-    /* Размер картинки */
     height: 100px;
-    /* Размер картинки */
     border-radius: 50%;
-    /* Круглая картинка */
     margin-bottom: 15px;
-    /* Отступ снизу */
 }
 
 .event h3 {
     font-size: 1.5rem;
-    /* Размер заголовка события */
     margin-bottom: 10px;
-    /* Отступ снизу */
 }
 
 .event p {
     font-size: 1.1rem;
-    /* Размер текста события */
     margin: 5px 0;
-    /* Отступы между строками */
 }
 
-
-
-
-/* Get Involved Section */
 .get-involved {
     display: flex;
     justify-content: space-around;
@@ -577,7 +455,6 @@ nav ul li:hover .submenu {
     background: #E65A2B;
 }
 
-/* Footer */
 footer {
     background: #0a1836;
     color: white;
@@ -624,58 +501,38 @@ footer .social img:hover {
     opacity: 0.8;
 }
 
-
-
-
-
-/* Стили для картинок в секциях Aid и Support */
 .aid img,
 .support img {
     width: 50%;
-    /* Картинка занимает 40% ширины */
     max-width: 50%;
-    /* Ограничиваем максимальную ширину */
     height: auto;
-    /* Сохраняем пропорции */
     position: relative;
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
     opacity: 0;
-    /* Начальная прозрачность */
     margin: 20px;
-    /* Небольшие отступы от краев */
     border-radius: 15px;
-    /* Закругляем углы */
 }
 
-/* Анимация для картинки Aid */
 .aid img {
     transform: translateX(-100%);
-    /* Начальное положение слева за пределами экрана */
     margin-top: -10%;
 }
 
 .aid img.slide-in {
     transform: translateX(0);
-    /* Конечное положение */
     opacity: 1;
-    /* Появление картинки */
 }
 
-/* Анимация для картинки Support */
 .support img {
     transform: translateX(100%);
-    /* Начальное положение справа за пределами экрана */
     margin-top: -5%;
 }
 
 .support img.slide-in {
     transform: translateX(0);
-    /* Конечное положение */
     opacity: 1;
-    /* Появление картинки */
 }
 
-/* Стили для контейнеров секций Aid и Support */
 .support,
 .aid {
     display: flex;
@@ -684,13 +541,9 @@ footer .social img:hover {
     padding: 40px 20px;
     margin: 0;
     background: transparent;
-    border-radius: 0;
-    box-shadow: none;
     position: relative;
-    /* Добавляем относительное позиционирование */
 }
 
-/* Стили для текстового контента в секциях Aid и Support */
 .aid div,
 .support div {
     max-width: 1200px;
@@ -702,57 +555,24 @@ footer .social img:hover {
     align-items: center;
     text-align: center;
     margin-top: 80px;
-    /* Отступ сверху для текста и кнопок */
 }
 
 .aid div,
 .support div {
     margin-top: -150px;
-    /* Поднимаем блок на 50px вверх */
 }
 
 .support div p {
     margin: 3px 0;
-    /* Отступы между пунктами */
 }
 
 .support {
     margin-top: -200px;
-    /* Сдвигаем блок вверх на 50px */
     margin-bottom: -30px;
 }
 
 .aid {
     margin-top: 120px;
-}
-
-/* Псевдоэлемент для градиента внизу картинки */
-/* .mission::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 25%;
-    /* Высота градиента */
-/* background: linear-gradient(to bottom, rgba(249, 249, 249, 0), #f5f5f5);
-/* Градиент от прозрачного к цвету фона */
-/* z-index: 2;
-/* Градиент поверх затемнения Добавить } */
-
-
-
-
-
-.mission img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    border-radius: 0;
 }
 
 .mission-content {
@@ -761,19 +581,14 @@ footer .social img:hover {
     left: 0;
     transform: translateY(-50%);
     width: 50%;
-    /* Ширина прямоугольника */
     padding: 20px;
     background-color: #f4dc96;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 2;
     height: auto;
-    /* Высота будет определяться содержимым */
     max-height: 50%;
-    /* Ограничиваем максимальную высоту */
     overflow: hidden;
-    /* Скрываем лишнее содержимое, если оно выходит за пределы */
     text-align: center;
-    /* Центрируем текст и кнопку */
 }
 
 .mission-content h2,
@@ -813,11 +628,8 @@ footer .social img:hover {
     background: #E65A2B;
 }
 
-
-/* Стили для кнопки-бургера */
 .menu-toggle {
     display: none;
-    /* По умолчанию скрываем на десктопе */
     flex-direction: column;
     cursor: pointer;
     padding: 10px;
@@ -831,38 +643,25 @@ footer .social img:hover {
     transition: 0.4s;
 }
 
-
-
-
-/* Media Queries */
 @media (max-width: 768px) {
-
-
     .website-notice {
         font-size: 1rem;
-        /* Уменьшаем размер текста на мобильных устройствах */
         padding: 15px;
-        /* Уменьшаем отступы */
     }
 
     .donate-button {
         margin: 10px 0;
-        /* Уменьшаем отступы на мобильных устройствах */
     }
 
     .donate-link {
         padding: 8px 16px;
-        /* Уменьшаем отступы на мобильных устройствах */
         font-size: 0.9rem;
-        /* Уменьшаем размер текста */
     }
-
 
     body {
         font-size: 16px;
     }
 
-    /* Header adjustments */
     header {
         flex-direction: column;
         align-items: center;
@@ -878,28 +677,22 @@ footer .social img:hover {
 
     .menu-toggle {
         display: flex;
-        /* Показываем кнопку на мобильных устройствах */
     }
 
     nav {
         display: none;
-        /* Скрываем меню по умолчанию на мобильных устройствах */
         width: 100%;
         background: #003366;
-        /* Фон меню */
         position: absolute;
         top: 60px;
-        /* Отступ от верхнего края */
         left: 0;
         z-index: 1000;
     }
 
     nav.active {
         display: block;
-        /* Показываем меню при активации */
     }
 
-    /* Navigation adjustments */
     nav ul {
         flex-direction: column;
         align-items: center;
@@ -913,7 +706,6 @@ footer .social img:hover {
         padding: 8px 12px;
     }
 
-    /* Mission, Aid, Support adjustments */
     .mission,
     .aid,
     .support {
@@ -922,10 +714,8 @@ footer .social img:hover {
         padding: 20px 10px;
         height: 70vh;
         margin-bottom: 20px;
-        /* */
     }
 
-    /*.mission img, */
     .aid img,
     .support img {
         width: 100%;
@@ -941,26 +731,12 @@ footer .social img:hover {
         padding: 8px 15px;
     }
 
-    .aid h2::before,
-    .support h2::before {
-        left: -10px;
-        /* Уменьшаем сдвиг для мобильных устройств */
-        width: calc(100% + 20px);
-        /* Уменьшаем ширину прямоугольника */
-    }
-
     .mission p,
     .aid p,
     .support p {
         font-size: 1.2rem;
     }
 
-    .mission::before {
-        height: 20%;
-        /* Меньше градиент для мобильных устройств */
-    }
-
-    /* Get Involved adjustments */
     .get-involved {
         flex-direction: column;
         align-items: center;
@@ -972,7 +748,6 @@ footer .social img:hover {
         margin-bottom: 20px;
     }
 
-    /* Footer adjustments */
     footer {
         flex-direction: column;
         align-items: center;
@@ -991,16 +766,12 @@ footer .social img:hover {
 
     .submenu {
         display: none;
-        /* Скрываем подменю по умолчанию */
         position: static;
-        /* Убираем абсолютное позиционирование */
         width: 100%;
-        /* Подменю занимает всю ширину */
     }
 
     nav ul li:hover .submenu {
         display: block;
-        /* Показываем подменю при наведении */
     }
 
     .mission button,
@@ -1008,24 +779,15 @@ footer .social img:hover {
     .support button,
     .get-involved .card button {
         padding: 15px 25px;
-        /* Увеличиваем размер кнопок */
         font-size: 1.2rem;
-        /* Увеличиваем размер текста на кнопках */
     }
-
-
-
 
     .aid img,
     .support img {
         width: 100%;
-        /* Картинки занимают всю ширину на мобильных устройствах */
         max-width: 100%;
-        /* Ограничиваем максимальную ширину */
         margin: 10px 0;
-        /* Уменьшаем отступы */
         border-radius: 10px;
-        /* Закругляем углы для мобильных устройств */
     }
 
     .aid img {
@@ -1035,49 +797,36 @@ footer .social img:hover {
     .aid div,
     .support div {
         width: 100%;
-        /* Текстовый контент занимает всю ширину */
         padding: 20px;
-        /* Увеличиваем отступы внутри текстового блока */
     }
 
     .aid div {
         margin-top: -0px;
-        /* Поднимаем текстовый блок внутри .aid */
         padding: 10px;
-        /* Уменьшаем внутренние отступы */
     }
 
     .aid {
         height: auto;
-        /* Убираем фиксированную высоту */
     }
 
     .support div {
         margin-top: -70px;
-        /* Поднимаем текстовый блок внутри .aid */
         padding: 10px;
-        /* Уменьшаем внутренние отступы */
     }
 
     .aid,
     .support {
         flex-direction: column;
-        /* Меняем направление на вертикальное */
         text-align: center;
-        /* Выравниваем текст по центру */
     }
 
     .mission-content {
         width: 80%;
-        /* Увеличиваем ширину для мобильных устройств */
         top: 45%;
-        /* Сдвигаем блок выше */
         left: 10%;
-        /* Центрируем блок */
         transform: translateY(-50%);
         padding-bottom: 145px;
         margin-top: 115px;
-
     }
 
     .mission-content h2 {
@@ -1087,216 +836,153 @@ footer .social img:hover {
     .mission-content p {
         font-size: 1.2rem;
     }
-
 }
 
-
-
-
 @media (max-width: 768px) and (orientation: landscape) {
-
-    /* Общие стили для горизонтального режима */
     body {
         font-size: 14px;
-        /* Уменьшаем размер шрифта для экономии места */
     }
 
-    /* Хедер */
     header {
         padding: 5px 10px;
-        /* Уменьшаем отступы */
         flex-direction: row;
-        /* Элементы хедера в строку */
         align-items: center;
-        /* Центрируем элементы */
     }
 
     header img {
         height: 30px;
-        /* Уменьшаем размер логотипа */
         transform: scale(1.2);
-        /* Масштабируем логотип */
         margin-bottom: 0;
-        /* Убираем отступ снизу */
         margin-right: 10px;
-        /* Добавляем отступ справа */
     }
 
-    /* Навигационное меню */
     nav ul {
         flex-direction: row;
-        /* Меню в строку для горизонтального режима */
         flex-wrap: wrap;
-        /* Разрешаем перенос пунктов меню на новую строку */
     }
 
     nav ul li {
         margin: 0 5px;
-        /* Уменьшаем отступы между пунктами меню */
     }
 
     nav ul li a {
         padding: 5px 10px;
-        /* Уменьшаем отступы внутри пунктов меню */
         font-size: 0.9rem;
-        /* Уменьшаем размер шрифта */
     }
 
     .submenu {
         top: 100%;
-        /* Подменю появляется под пунктом меню */
         left: 0;
         min-width: 150px;
-        /* Уменьшаем ширину подменю */
     }
 
-    /* Секция Mission */
     .mission {
         height: 60vh;
-        /* Уменьшаем высоту секции */
         padding: 10px;
-        /* Уменьшаем отступы */
     }
 
     .mission-content {
         width: 70%;
-        /* Уменьшаем ширину блока */
         top: 50%;
-        /* Центрируем блок */
         left: 15%;
-        /* Центрируем блок */
         padding: 15px;
-        /* Уменьшаем отступы */
     }
 
     .mission h2 {
         font-size: 1.5rem;
-        /* Уменьшаем размер заголовка */
     }
 
     .mission p {
         font-size: 1rem;
-        /* Уменьшаем размер текста */
     }
 
     .mission button {
         padding: 8px 16px;
-        /* Уменьшаем размер кнопки */
         font-size: 0.9rem;
-        /* Уменьшаем размер текста на кнопке */
     }
 
-    /* Секции Aid и Support */
     .aid,
     .support {
         flex-direction: row;
-        /* Элементы в строку для горизонтального режима */
         padding: 20px 10px;
-        /* Уменьшаем отступы */
     }
 
     .aid img,
     .support img {
         width: 40%;
-        /* Уменьшаем ширину картинок */
         margin: 10px;
-        /* Уменьшаем отступы */
     }
 
     .aid div,
     .support div {
         width: 50%;
-        /* Уменьшаем ширину текстового блока */
         padding: 10px;
-        /* Уменьшаем отступы */
     }
 
     .aid h2,
     .support h2 {
         font-size: 1.5rem;
-        /* Уменьшаем размер заголовка */
     }
 
     .aid p,
     .support p {
         font-size: 1rem;
-        /* Уменьшаем размер текста */
     }
 
     .aid button,
     .support button {
         padding: 8px 16px;
-        /* Уменьшаем размер кнопки */
         font-size: 0.9rem;
-        /* Уменьшаем размер текста на кнопке */
     }
 
-    /* Секция Get Involved */
     .get-involved {
         flex-direction: row;
-        /* Карточки в строку для горизонтального режима */
         padding: 20px 10px;
-        /* Уменьшаем отступы */
     }
 
     .get-involved .card {
         width: 30%;
-        /* Уменьшаем ширину карточек */
         margin-bottom: 10px;
-        /* Уменьшаем отступы */
     }
 
     .get-involved .card h3 {
         font-size: 1.2rem;
-        /* Уменьшаем размер заголовка */
     }
 
     .get-involved .card p {
         font-size: 0.9rem;
-        /* Уменьшаем размер текста */
     }
 
     .get-involved .card button {
         padding: 8px 16px;
-        /* Уменьшаем размер кнопки */
         font-size: 0.9rem;
-        /* Уменьшаем размер текста на кнопке */
     }
 
-    /* Футер */
     footer {
         padding: 10px;
-        /* Уменьшаем отступы */
     }
 
     footer .column {
         width: 25%;
-        /* Уменьшаем ширину колонок */
     }
 
     footer h3 {
         font-size: 1rem;
-        /* Уменьшаем размер заголовка */
     }
 
     footer ul li {
         margin: 5px 0;
-        /* Уменьшаем отступы между пунктами */
     }
 
     footer .social img {
         height: 30px;
-        /* Уменьшаем размер иконок */
     }
 
-    /* Кнопка переключения языка */
     .language-switcher button {
         padding: 3px 8px;
-        /* Уменьшаем размер кнопки */
     }
 
     .language-switcher ul {
         top: 100%;
-        /* Выпадающий список под кнопкой */
     }
 }
