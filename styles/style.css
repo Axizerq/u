@@ -422,6 +422,7 @@ nav ul li:hover .submenu {
     background: white;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
 .get-involved .card img {
@@ -669,15 +670,18 @@ footer .social img:hover {
 
     header {
         flex-direction: column;
-        align-items: center;
-        padding: 10px;
+        padding: 15px 10px;
+        text-align: center;
     }
 
     header img {
-        height: 40px;
+        height: 50px;
         transform: scale(1.5);
-        margin-bottom: 10px;
-        margin-left: 0;
+        margin: 0 auto 15px;
+        display: block;
+        transform-origin: center;
+        margin-bottom: 0px;
+
     }
 
     .menu-toggle {
@@ -734,6 +738,10 @@ footer .social img:hover {
     .support h2 {
         font-size: 1.8rem;
         padding: 8px 15px;
+    }
+
+    .support h2 {
+        top: 20px;
     }
 
     .mission p,
