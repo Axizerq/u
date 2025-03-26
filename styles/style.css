@@ -715,6 +715,10 @@ footer .social img:hover {
         padding: 8px 12px;
     }
 
+    .donate-link {
+        margin-left: 20px;
+    }
+
     .mission,
     .aid,
     .support {
@@ -804,7 +808,7 @@ footer .social img:hover {
     }
 
     .aid img {
-        margin-top: -10px;
+        margin-top: -50px;
     }
 
     .aid div,
