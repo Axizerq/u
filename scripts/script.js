@@ -251,3 +251,34 @@ document.addEventListener("click", (event) => {
         overlay.classList.remove("active"); // Убираем затемнение
     }
 });
+
+
+
+
+
+
+
+const eventList = document.querySelector('.event-list');
+const events = document.querySelectorAll('.event');
+const dots = document.querySelectorAll('.event-dot');
+let currentEvent = 0;
+
+function updateCarousel() {
+    eventList.style.transform = `translateX(-${currentEvent * 100}%)`;
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentEvent);
+    });
+}
+
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentEvent = index;
+        updateCarousel();
+    });
+});
+
+// Для автоматической прокрутки (опционально)
+setInterval(() => {
+    currentEvent = (currentEvent + 1) % events.length;
+    updateCarousel();
+}, 5000);
