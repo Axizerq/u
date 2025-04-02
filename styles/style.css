@@ -332,20 +332,6 @@ nav ul li:hover .submenu {
     margin-left: -85px;
 }
 
-.events h2::after,
-.support h2::after,
-.aid h2::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 100%;
-    height: 10px;
-    background-color: #f4dc96;
-    transform: scaleX(0.9);
-    transform-origin: left;
-}
-
 .support h2,
 .aid h2 {
     font-size: 2rem;
@@ -361,6 +347,20 @@ nav ul li:hover .submenu {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     letter-spacing: 2px;
     display: inline-block;
+}
+
+.events h2::after,
+.support h2::after,
+.aid h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 10px;
+    background-color: #f4dc96;
+    transform: scaleX(0.9);
+    transform-origin: left;
 }
 
 .support h2 {
