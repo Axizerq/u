@@ -4,28 +4,69 @@
 }
 */
 
-.website-notice {
-    text-align: center;
-    padding: 20px;
-    background-color: red;
-    color: #003366;
-    font-size: 1.2rem;
-    font-weight: bold;
-    position: relative;
+
+/* уведомление*/
+.website-notice-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 9999;
-    margin-top: 40px;
-    margin-bottom: 20px;
 }
 
-.website-notice a {
+.website-notice-popup {
+    background-color: #f4dc96;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 80%;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.website-notice-popup p {
+    color: #003366;
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.website-notice-popup a {
     color: #04f12b;
     text-decoration: none;
     font-weight: bold;
 }
 
-.website-notice a:hover {
+.website-notice-popup a:hover {
     text-decoration: underline;
 }
+
+.close-notice {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #003366;
+    font-weight: bold;
+    background: none;
+    border: none;
+    padding: 5px 10px;
+}
+
+.close-notice:hover {
+    color: #E65A2B;
+}
+
+/* конец уведомления */
+
+
 
 html,
 body {
@@ -61,7 +102,7 @@ header img {
     transform: scale(2);
     transform-origin: left center;
     margin-right: 180px;
-    margin-bottom: -30px;
+    margin-bottom: -50px;
 }
 
 .mission::after {
@@ -582,7 +623,7 @@ footer .social img:hover {
 }
 
 .support {
-    margin-top: -200px;
+    margin-top: -40px;
     margin-bottom: -30px;
 }
 
@@ -591,20 +632,19 @@ footer .social img:hover {
 }
 
 .mission-content {
-    position: absolute;
-    top: 65%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 50%;
-    padding: 20px;
-    background-color: #f4dc96;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
     z-index: 2;
-    height: auto;
-    max-height: 50%;
-    overflow: hidden;
-    text-align: center;
-    border-radius: 5px;
+    max-width: 800px;
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -10vh;
+    /* Добавлено: поднимаем блок на 10% высоты экрана */
+    transform: translateY(-50px);
 }
 
 .mission-content h2,
@@ -615,16 +655,21 @@ footer .social img:hover {
 }
 
 .mission-content h2 {
-    font-size: 2rem;
-    color: #003366;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
 .mission-content p {
-    font-size: 1.1rem;
-    color: #333;
+    font-size: 1.2rem;
+    color: white;
     line-height: 1.5;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 600px;
 }
 
 .mission-content button {
@@ -856,10 +901,11 @@ footer .social img:hover {
     }
 
     .mission-content {
-        width: 80%;
+        width: 90%;
         top: 45%;
         left: 10%;
         transform: translateY(-50%);
+        padding: 15px;
         padding-bottom: 145px;
         margin-top: 115px;
     }
@@ -869,7 +915,8 @@ footer .social img:hover {
     }
 
     .mission-content p {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        max-width: 100%;
     }
 }
 

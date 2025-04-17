@@ -184,7 +184,7 @@ langList.querySelectorAll("li").forEach((item) => {
 // Initialize with English
 updateTexts(currentLang);
 
-
+// Затемнение фона при наведении на пункты меню (для ПК)
 menuItems.forEach((item) => {
     item.addEventListener("mouseenter", () => {
         overlay.classList.add("active");
@@ -194,7 +194,6 @@ menuItems.forEach((item) => {
         overlay.classList.remove("active");
     });
 });
-
 
 // Функция для проверки видимости элемента
 function isElementInViewport(el) {
@@ -227,22 +226,88 @@ window.addEventListener('scroll', handleScroll);
 // Вызываем handleScroll при загрузке страницы, чтобы проверить видимость элементов
 window.addEventListener('load', handleScroll);
 
-
-
 const mobileMenu = document.getElementById("mobile-menu");
 const navMenu = document.getElementById("nav-menu");
 
-// Функция для переключения меню
+// Функция для переключения меню и затемнения фона (для мобильных устройств)
 function toggleMenu() {
-    navMenu.classList.toggle("active"); // Добавляем/убираем класс "active"
+    navMenu.classList.toggle("active");
+
+    // Затемнение фона при открытии меню (для мобильных устройств)
+    if (navMenu.classList.contains("active")) {
+        overlay.classList.add("active");
+    } else {
+        overlay.classList.remove("active");
+    }
 }
 
 // Добавляем обработчик события на кнопку-бургер
 mobileMenu.addEventListener("click", toggleMenu);
 
-// Закрываем меню при клике вне его области
+// Закрываем меню и убираем затемнение при клике вне его области
 document.addEventListener("click", (event) => {
     if (!navMenu.contains(event.target) && !mobileMenu.contains(event.target)) {
         navMenu.classList.remove("active"); // Закрываем меню
+        overlay.classList.remove("active"); // Убираем затемнение
+    }
+});
+
+// Mobile Events Slider
+function initMobileEventSlider() {
+    const eventList = document.querySelector(".event-list");
+    const events = document.querySelectorAll(".event");
+
+    if (!eventList || events.length <= 1) return;
+
+    let currentIndex = 0;
+
+    // Wrap in slider container
+    const sliderWrapper = document.createElement("div");
+    sliderWrapper.classList.add("event-slider-wrapper");
+
+    const prevBtn = document.createElement("button");
+    prevBtn.textContent = "←";
+    prevBtn.className = "event-slider-btn prev";
+
+    const nextBtn = document.createElement("button");
+    nextBtn.textContent = "→";
+    nextBtn.className = "event-slider-btn next";
+
+    const sliderViewport = document.createElement("div");
+    sliderViewport.classList.add("event-slider-viewport");
+    sliderViewport.appendChild(eventList);
+
+    sliderWrapper.appendChild(prevBtn);
+    sliderWrapper.appendChild(sliderViewport);
+    sliderWrapper.appendChild(nextBtn);
+
+    eventList.parentNode.insertBefore(sliderWrapper, eventList);
+
+    function updateSlider() {
+        const offset = -currentIndex * 100;
+        eventList.style.transform = `translateX(${offset}%)`;
+    }
+
+    prevBtn.addEventListener("click", () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+    });
+
+    nextBtn.addEventListener("click", () => {
+        if (currentIndex < events.length - 1) {
+            currentIndex++;
+            updateSlider();
+        }
+    });
+
+    updateSlider();
+}
+
+// Initialize slider only on mobile
+window.addEventListener("load", () => {
+    if (window.innerWidth <= 768) {
+        initMobileEventSlider();
     }
 });

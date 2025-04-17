@@ -6,7 +6,7 @@ const translations = {
         involved: "Get Involved",
         news: "News & Events",
         missionTitle: "Our Mission",
-        missionText: "The Utah Ukrainian Association is a nonprofit uniting Utah's Ukrainian community to support Ukraine and help newcomers adapt to life in the U.S. We provide housing, job, and education assistance, organize cultural events, and collaborate on humanitarian missions.",
+        missionText: "The Utah Ukrainian Association is a nonprofit uniting Utah's Ukrainian community to support Ukraine and help newcomers adapt to life in the U.S.",
         missionText2: "Join us in fostering unity and sharing Ukrainian culture!",
         aidTitle: "Humanitarian Aid",
         aidText: "Test",
@@ -57,7 +57,7 @@ const translations = {
         involved: "Долучитися",
         news: "Новини та події",
         missionTitle: "Наша місія",
-        missionText: "Асоціація українців Юти — це неприбуткова організація, яка об'єднує українську громаду Юти для підтримки України та допомоги новоприбулим адаптуватися до життя в США. Ми надаємо житло, допомогу в працевлаштуванні та освіті, організовуємо культурні заходи та співпрацюємо в гуманітарних місіях.",
+        missionText: "Асоціація українців Юти — це неприбуткова організація, яка об'єднує українську громаду Юти для підтримки України та допомоги новоприбулим адаптуватися до життя в США.",
         missionText2: "Приєднуйтесь до нас у зміцненні єдності та поширенні української культури!",
         aidTitle: "Гуманітарна допомога",
         aidText: "Тест",
@@ -240,6 +240,25 @@ function toggleMenu() {
         overlay.classList.remove("active");
     }
 }
+
+
+
+// Обработка закрытия уведомления
+const websiteNoticeOverlay = document.getElementById('websiteNoticeOverlay');
+const closeNotice = document.getElementById('closeNotice');
+
+function closeNoticeHandler() {
+    websiteNoticeOverlay.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Разрешаем прокрутку
+}
+
+closeNotice.addEventListener('click', closeNoticeHandler);
+
+// При открытии сайта блокируем прокрутку
+document.body.style.overflow = 'hidden';
+
+
+
 
 // Добавляем обработчик события на кнопку-бургер
 mobileMenu.addEventListener("click", toggleMenu);
