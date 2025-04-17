@@ -147,22 +147,38 @@ nav ul {
     top: 10px;
     display: flex;
     position: relative;
+    flex-wrap: nowrap;
+    /* Добавлено для переноса пунктов меню */
+    max-width: 100%;
+    /* Ограничиваем ширину */
+    -webkit-overflow-scrolling: touch;
+    /* Плавная прокрутка на iOS */
+    scrollbar-width: none;
+    /* Скрываем scrollbar в Firefox */
+}
+
+nav ul::-webkit-scrollbar {
+    display: none;
+    /* Скрываем scrollbar в Chrome/Safari */
 }
 
 nav ul li {
     position: relative;
-    margin: 0 10px;
+    margin: 0 8px;
     z-index: 1001;
     white-space: nowrap;
+    flex-shrink: 0;
+    /* Запрещаем сжатие элементов */
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
-    padding: 10px 15px;
+    padding: 10px 12px;
     transition: background 0.3s ease;
     border-radius: 5px;
     display: block;
+    font-size: 0.9rem;
 }
 
 nav ul li a:hover {
@@ -180,6 +196,12 @@ nav ul li a:hover {
     list-style: none;
     padding: 10px 0;
     min-width: 200px;
+    max-width: 300px;
+    /* Ограничиваем ширину подменю */
+    overflow: hidden;
+    /* Скрываем выходящий за пределы текст */
+    text-overflow: ellipsis;
+    /* Добавляем многоточие если текст не помещается */
 }
 
 .submenu li {
@@ -188,8 +210,10 @@ nav ul li a:hover {
 
 .submenu li a {
     color: #003366;
-    padding: 10px 15px;
+    padding: 8px 15px;
     display: block;
+    white-space: normal;
+    font-size: 0.9rem;
 }
 
 .submenu li a:hover {
@@ -202,7 +226,8 @@ nav ul li:hover .submenu {
 
 .language-switcher {
     position: relative;
-    top: 10px;
+    margin-right: 15px;
+    /* Отступ от края */
 }
 
 .language-switcher button {
@@ -903,11 +928,10 @@ footer .social img:hover {
     .mission-content {
         width: 90%;
         top: 45%;
-        left: 10%;
         transform: translateY(-50%);
         padding: 15px;
         padding-bottom: 145px;
-        margin-top: 115px;
+        margin-top: 70px;
     }
 
     .mission-content h2 {
@@ -959,19 +983,20 @@ footer .social img:hover {
     }
 
     .mission {
-        height: 60vh;
-        padding: 10px;
+        height: 70vh;
+        position: relative;
+        overflow: hidden;
     }
 
     .mission-content {
-        width: 70%;
+        width: 95%;
         top: 50%;
-        left: 15%;
+        left: -15%;
         padding: 15px;
     }
 
     .mission h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .mission p {
@@ -1061,10 +1086,22 @@ footer .social img:hover {
     }
 
     .language-switcher button {
-        padding: 3px 8px;
+        position: static;
+        /* Меняем позиционирование */
+        margin: 15px auto;
+        /* Центрируем */
+        width: 100%;
+        text-align: center;
     }
 
     .language-switcher ul {
-        top: 100%;
+        left: 50%;
+        /* Центрируем */
+        transform: translateX(-50%);
+        /* Точное центрирование */
+        right: auto;
+        /* Сбрасываем правое позиционирование */
+        width: 200px;
+        /* Фиксированная ширина */
     }
 }

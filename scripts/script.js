@@ -167,7 +167,22 @@ function updateTexts(lang) {
     document.querySelectorAll("[data-lang]").forEach((element) => {
         const key = element.getAttribute("data-lang");
         if (translations[lang][key]) {
-            element.textContent = translations[lang][key];
+            // Для пунктов главного меню ограничиваем длину текста
+            if (element.closest('nav > ul > li > a')) {
+                const maxLength = {
+                    'en': 20,
+                    'uk': 20,
+                    'ru': 20
+                }[lang];
+
+                let text = translations[lang][key];
+                if (text.length > maxLength) {
+                    text = text.slice(0, maxLength) + '...';
+                }
+                element.textContent = text;
+            } else {
+                element.textContent = translations[lang][key];
+            }
         }
     });
     currentLangButton.textContent = lang.toUpperCase();
