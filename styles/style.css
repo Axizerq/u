@@ -226,8 +226,7 @@ nav ul li:hover .submenu {
 
 .language-switcher {
     position: relative;
-    margin-right: 15px;
-    /* Отступ от края */
+    top: 10px;
 }
 
 .language-switcher button {
@@ -1086,22 +1085,10 @@ footer .social img:hover {
     }
 
     .language-switcher button {
-        position: static;
-        /* Меняем позиционирование */
-        margin: 15px auto;
-        /* Центрируем */
-        width: 100%;
-        text-align: center;
+        padding: 3px 8px;
     }
 
     .language-switcher ul {
-        left: 50%;
-        /* Центрируем */
-        transform: translateX(-50%);
-        /* Точное центрирование */
-        right: auto;
-        /* Сбрасываем правое позиционирование */
-        width: 200px;
-        /* Фиксированная ширина */
+        top: 100%;
     }
 }
