@@ -942,6 +942,45 @@ footer .social img:hover {
         font-size: 1rem;
         max-width: 100%;
     }
+
+
+    .events {
+        overflow: hidden;
+        /* Ограничиваем область событий */
+        touch-action: pan-y;
+        /* Разрешаем только вертикальные жесты для всей страницы */
+    }
+
+    .events-content {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        scrollbar-width: none;
+        width: 100%;
+        /* touch-action: pan-x; /* Разрешаем горизонтальные жесты только для событий */
+    }
+
+    .events-content::-webkit-scrollbar {
+        display: none;
+    }
+
+    .event-list {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .event {
+        width: 100vw;
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+
 }
 
 @media (max-width: 768px) and (orientation: landscape) {

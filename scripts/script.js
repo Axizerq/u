@@ -285,3 +285,39 @@ document.addEventListener("click", (event) => {
         overlay.classList.remove("active"); // Убираем затемнение
     }
 });
+
+
+
+// Добавьте этот код в конец файла script.js
+
+function setupEventSwipe() {
+    if (window.innerWidth > 768) return;
+
+    const eventsContent = document.querySelector('.events-content');
+    let startX = 0;
+    let isScrolling = false;
+
+    eventsContent.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].pageX;
+        isScrolling = true;
+    }, { passive: true });
+
+    eventsContent.addEventListener('touchmove', (e) => {
+        if (!isScrolling) return;
+        // Разрешаем прокрутку только если движение преимущественно горизонтальное
+        const xDiff = Math.abs(e.touches[0].pageX - startX);
+        const yDiff = Math.abs(e.touches[0].pageY - startY);
+
+        if (xDiff > yDiff) {
+            e.preventDefault(); // Блокируем вертикальную прокрутку только для горизонтального свайпа
+        }
+    }, { passive: false }); // Важно: passive: false для возможности preventDefault
+
+    eventsContent.addEventListener('touchend', () => {
+        isScrolling = false;
+    }, { passive: true });
+}
+
+// Инициализация при загрузке и изменении размера
+window.addEventListener('load', setupEventSwipe);
+window.addEventListener('resize', setupEventSwipe);
