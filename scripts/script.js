@@ -321,3 +321,43 @@ function setupEventSwipe() {
 // Инициализация при загрузке и изменении размера
 window.addEventListener('load', setupEventSwipe);
 window.addEventListener('resize', setupEventSwipe);
+
+function initSwipeIndicators() {
+    if (window.innerWidth > 768) return;
+
+    const eventsContent = document.querySelector('.events-content');
+    const indicatorsContainer = document.querySelector('.swipe-indicators');
+    const events = document.querySelectorAll('.event');
+
+    // Создаем индикаторы
+    indicatorsContainer.innerHTML = '';
+    events.forEach((_, index) => {
+        const indicator = document.createElement('div');
+        indicator.className = 'swipe-indicator' + (index === 0 ? ' active' : '');
+        indicatorsContainer.appendChild(indicator);
+    });
+
+    // Обновляем индикаторы при прокрутке
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const index = Array.from(events).indexOf(entry.target);
+                document.querySelectorAll('.swipe-indicator').forEach((indicator, i) => {
+                    indicator.classList.toggle('active', i === index);
+                });
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    events.forEach(event => observer.observe(event));
+}
+
+// Инициализировать при загрузке и изменении размера
+window.addEventListener('load', () => {
+    initSwipeIndicators();
+    setupEventSwipe();
+});
+
+window.addEventListener('resize', initSwipeIndicators);

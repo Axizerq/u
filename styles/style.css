@@ -980,6 +980,27 @@ footer .social img:hover {
         box-sizing: border-box;
     }
 
+    .swipe-indicators {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 0 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    .swipe-indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+    }
+
+    .swipe-indicator.active {
+        background-color: #f4dc96;
+    }
 
 }
 
