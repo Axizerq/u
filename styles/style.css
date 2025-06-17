@@ -394,16 +394,17 @@ nav ul li:hover .submenu {
     text-align: left;
     padding: 0;
     padding-left: 20px;
-    margin: -20px 0 15px 0 !important;
+    margin: 0px 0 15px 0 !important;
     position: relative;
     display: block;
     width: 100%;
     box-sizing: border-box;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
     letter-spacing: 2px;
     left: 0 !important;
 }
 
+/* Yelow line 
 .events h2::after {
     content: '';
     position: absolute;
@@ -413,7 +414,7 @@ nav ul li:hover .submenu {
     height: 10px;
     background-color: #f4dc96;
     transform-origin: left;
-}
+} */
 
 .support h2,
 .aid h2 {
@@ -424,14 +425,16 @@ nav ul li:hover .submenu {
     text-align: left;
     padding-left: 20px;
     margin-bottom: 20px;
+    margin-top: 50px;
     position: absolute;
     left: 00px;
     z-index: 1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
     letter-spacing: 2px;
     display: inline-block;
 }
 
+/* Yelow Line
 .support h2::after,
 .aid h2::after {
     content: '';
@@ -443,7 +446,7 @@ nav ul li:hover .submenu {
     background-color: #f4dc96;
     transform: scaleX(0.9);
     transform-origin: left;
-}
+} */
 
 .support h2 {
     top: -80px;

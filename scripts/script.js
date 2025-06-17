@@ -4,7 +4,7 @@ const translations = {
         aid: "Humanitarian Aid",
         support: "Support for Refugees",
         involved: "Get Involved",
-        news: "News & Events",
+        news: "News",
         missionTitle: "Our Mission",
         missionText: "The Utah Ukrainian Association is a nonprofit uniting Utah's Ukrainian community to support Ukraine and help newcomers adapt to life in the U.S.",
         missionText2: "Join us in fostering unity and sharing Ukrainian culture!",
