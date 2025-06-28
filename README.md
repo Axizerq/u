@@ -2,3 +2,5 @@ Creating a convenient and functional website from scratch for the Ukrainian Asso
 A hub for Utah's Ukrainian community, providing news, cultural events, resources, and support for Ukrainians in the state.
 
 HTML / CSS / JavaScript
+
+utahukrainians.org
