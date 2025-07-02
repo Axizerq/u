@@ -361,3 +361,34 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('resize', initSwipeIndicators);
+
+
+
+//
+
+
+// Фиксация шапки при прокрутке
+const header = document.querySelector('header');
+let lastScrollTop = 0;
+
+window.addEventListener('scroll', function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const logo = document.querySelector('header img');
+
+    // Изменяем стиль шапки при прокрутке
+    if (scrollTop > 50) {
+        header.classList.add('scrolled');
+        logo.src = "img/Logo_black.webp"; // Меняем на черный логотип
+    } else {
+        header.classList.remove('scrolled');
+        logo.src = "img/Logo_white.webp"; // Возвращаем белый логотип
+    }
+
+    lastScrollTop = scrollTop;
+});
+
+// Инициализация при загрузке
+if (window.pageYOffset > 50) {
+    header.classList.add('scrolled');
+    document.querySelector('header img').src = "img/Logo_black.webp";
+}
