@@ -8,6 +8,9 @@
     <title>UUA</title>
     <link rel="stylesheet" href="styles/style.css">
 
+    <link rel="preload" href="img/Logo_black.webp" as="image">
+    <link rel="preload" href="img/Logo_white.webp" as="image">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
@@ -17,7 +20,10 @@
 <body>
 
     <header>
-        <img src="img/Logo_white.webp" alt="Logo">
+        <div class="logo-container">
+            <img src="img/Logo_white.webp" class="logo white-logo">
+            <img src="img/Logo_black.webp" class="logo black-logo">
+        </div>
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
             <span class="bar"></span>

@@ -167,17 +167,16 @@ function updateTexts(lang) {
     document.querySelectorAll("[data-lang]").forEach((element) => {
         const key = element.getAttribute("data-lang");
         if (translations[lang][key]) {
-            // Для пунктов главного меню ограничиваем длину текста
             if (element.closest('nav > ul > li > a')) {
                 const maxLength = {
                     'en': 20,
-                    'uk': 20,
-                    'ru': 20
+                    'uk': 13,
+                    'ru': 12
                 }[lang];
 
                 let text = translations[lang][key];
                 if (text.length > maxLength) {
-                    text = text.slice(0, maxLength) + '...';
+                    text = text.slice(0, maxLength) + '..';
                 }
                 element.textContent = text;
             } else {
@@ -186,6 +185,7 @@ function updateTexts(lang) {
         }
     });
     currentLangButton.textContent = lang.toUpperCase();
+    checkMenuOverflow();
 }
 
 langList.querySelectorAll("li").forEach((item) => {
@@ -196,10 +196,8 @@ langList.querySelectorAll("li").forEach((item) => {
     });
 });
 
-// Initialize with English
 updateTexts(currentLang);
 
-// Затемнение фона при наведении на пункты меню (для ПК)
 menuItems.forEach((item) => {
     item.addEventListener("mouseenter", () => {
         overlay.classList.add("active");
@@ -210,7 +208,6 @@ menuItems.forEach((item) => {
     });
 });
 
-// Функция для проверки видимости элемента
 function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
@@ -221,7 +218,6 @@ function isElementInViewport(el) {
     );
 }
 
-// Функция для обработки прокрутки страницы
 function handleScroll() {
     const aidImage = document.querySelector('.aid img');
     const supportImage = document.querySelector('.support img');
@@ -235,60 +231,33 @@ function handleScroll() {
     }
 }
 
-// Добавляем обработчик события прокрутки
 window.addEventListener('scroll', handleScroll);
-
-// Вызываем handleScroll при загрузке страницы, чтобы проверить видимость элементов
 window.addEventListener('load', handleScroll);
 
 const mobileMenu = document.getElementById("mobile-menu");
 const navMenu = document.getElementById("nav-menu");
 
-// Функция для переключения меню и затемнения фона (для мобильных устройств)
 function toggleMenu() {
     navMenu.classList.toggle("active");
-
-    // Затемнение фона при открытии меню (для мобильных устройств)
-    if (navMenu.classList.contains("active")) {
-        overlay.classList.add("active");
-    } else {
-        overlay.classList.remove("active");
-    }
+    overlay.classList.toggle("active");
 }
-
-
-
-// Обработка закрытия уведомления
-const websiteNoticeOverlay = document.getElementById('websiteNoticeOverlay');
-const closeNotice = document.getElementById('closeNotice');
 
 function closeNoticeHandler() {
-    websiteNoticeOverlay.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Разрешаем прокрутку
+    document.getElementById('websiteNoticeOverlay').style.display = 'none';
+    document.body.style.overflow = 'auto';
 }
 
-closeNotice.addEventListener('click', closeNoticeHandler);
-
-// При открытии сайта блокируем прокрутку
+document.getElementById('closeNotice').addEventListener('click', closeNoticeHandler);
 document.body.style.overflow = 'hidden';
 
-
-
-
-// Добавляем обработчик события на кнопку-бургер
 mobileMenu.addEventListener("click", toggleMenu);
 
-// Закрываем меню и убираем затемнение при клике вне его области
 document.addEventListener("click", (event) => {
     if (!navMenu.contains(event.target) && !mobileMenu.contains(event.target)) {
-        navMenu.classList.remove("active"); // Закрываем меню
-        overlay.classList.remove("active"); // Убираем затемнение
+        navMenu.classList.remove("active");
+        overlay.classList.remove("active");
     }
 });
-
-
-
-// Добавьте этот код в конец файла script.js
 
 function setupEventSwipe() {
     if (window.innerWidth > 768) return;
@@ -304,23 +273,18 @@ function setupEventSwipe() {
 
     eventsContent.addEventListener('touchmove', (e) => {
         if (!isScrolling) return;
-        // Разрешаем прокрутку только если движение преимущественно горизонтальное
         const xDiff = Math.abs(e.touches[0].pageX - startX);
         const yDiff = Math.abs(e.touches[0].pageY - startY);
 
         if (xDiff > yDiff) {
-            e.preventDefault(); // Блокируем вертикальную прокрутку только для горизонтального свайпа
+            e.preventDefault();
         }
-    }, { passive: false }); // Важно: passive: false для возможности preventDefault
+    }, { passive: false });
 
     eventsContent.addEventListener('touchend', () => {
         isScrolling = false;
     }, { passive: true });
 }
-
-// Инициализация при загрузке и изменении размера
-window.addEventListener('load', setupEventSwipe);
-window.addEventListener('resize', setupEventSwipe);
 
 function initSwipeIndicators() {
     if (window.innerWidth > 768) return;
@@ -329,7 +293,6 @@ function initSwipeIndicators() {
     const indicatorsContainer = document.querySelector('.swipe-indicators');
     const events = document.querySelectorAll('.event');
 
-    // Создаем индикаторы
     indicatorsContainer.innerHTML = '';
     events.forEach((_, index) => {
         const indicator = document.createElement('div');
@@ -337,7 +300,6 @@ function initSwipeIndicators() {
         indicatorsContainer.appendChild(indicator);
     });
 
-    // Обновляем индикаторы при прокрутке
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -347,14 +309,11 @@ function initSwipeIndicators() {
                 });
             }
         });
-    }, {
-        threshold: 0.5
-    });
+    }, { threshold: 0.5 });
 
     events.forEach(event => observer.observe(event));
 }
 
-// Инициализировать при загрузке и изменении размера
 window.addEventListener('load', () => {
     initSwipeIndicators();
     setupEventSwipe();
@@ -362,33 +321,33 @@ window.addEventListener('load', () => {
 
 window.addEventListener('resize', initSwipeIndicators);
 
-
-
-//
-
-
-// Фиксация шапки при прокрутке
 const header = document.querySelector('header');
-let lastScrollTop = 0;
+const blackLogo = new Image();
+blackLogo.src = "img/Logo_black.webp";
+const whiteLogo = new Image();
+whiteLogo.src = "img/Logo_white.webp";
 
-window.addEventListener('scroll', function () {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const logo = document.querySelector('header img');
+function updateHeader() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Изменяем стиль шапки при прокрутке
     if (scrollTop > 50) {
         header.classList.add('scrolled');
-        logo.src = "img/Logo_black.webp"; // Меняем на черный логотип
     } else {
         header.classList.remove('scrolled');
-        logo.src = "img/Logo_white.webp"; // Возвращаем белый логотип
     }
+}
 
-    lastScrollTop = scrollTop;
-});
+window.addEventListener('scroll', updateHeader);
+updateHeader();
 
-// Инициализация при загрузке
-if (window.pageYOffset > 50) {
-    header.classList.add('scrolled');
-    document.querySelector('header img').src = "img/Logo_black.webp";
+function checkMenuOverflow() {
+    const nav = document.querySelector('nav');
+    const navUl = nav.querySelector('ul');
+    const header = document.querySelector('header');
+
+    if (navUl.scrollWidth > nav.offsetWidth) {
+        header.classList.add('menu-overflow');
+    } else {
+        header.classList.remove('menu-overflow');
+    }
 }

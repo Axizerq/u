@@ -6,6 +6,7 @@
 
 
 /* уведомление*/
+/* уведомление*/
 .website-notice-overlay {
     position: fixed;
     top: 0;
@@ -66,8 +67,6 @@
 
 /* конец уведомления */
 
-
-
 html,
 body {
     width: 100%;
@@ -93,25 +92,20 @@ header {
     color: white;
     z-index: 1001;
     background: transparent;
-
     height: 70px;
-    /* Фиксированная высота шапки */
     box-sizing: border-box;
-
     position: fixed;
     top: 0;
     width: 100%;
-    transition: all 0.3s ease;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, background-color;
 }
 
-
-/* Стиль для шапки при прокрутке */
 header.scrolled {
     background-color: white !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Изменяем цвет текста при прокрутке */
 header.scrolled nav ul li a {
     color: #333 !important;
 }
@@ -119,10 +113,8 @@ header.scrolled nav ul li a {
 header.scrolled .language-switcher button {
     color: white !important;
     background-color: #003366;
-
 }
 
-/* Для мобильного меню - меняем цвет полосок бургер-меню */
 header.scrolled .menu-toggle .bar {
     background-color: #333;
 }
@@ -143,24 +135,45 @@ header.scrolled .menu-toggle .bar {
 }
 
 header.scrolled img {
-    content: url("img/Logo_black.webp");
     transform: scale(1) translateY(-25px) !important;
-    /* Уменьшаем в 2 раза (было scale(1.5)) */
     transition: transform 0.3s ease;
-    /* Плавное изменение размера */
 }
 
+.logo-container {
+    position: relative;
+    height: 50px;
+    margin-top: 40px;
+    margin-left: 0px;
+}
 
+.logo {
+    position: absolute;
+    transition: opacity 0.2s ease;
+    top: 5px;
+}
 
+.white-logo {
+    opacity: 1;
+}
 
+.black-logo {
+    opacity: 0;
+}
+
+header.scrolled .white-logo {
+    opacity: 0;
+}
+
+header.scrolled .black-logo {
+    opacity: 1;
+}
 
 header img {
     height: 50px;
     width: auto;
     transform: scale(2);
     transform-origin: left center;
-    margin-right: 180px;
-    margin-bottom: -50px;
+    transition: transform 0.15s ease-out, opacity 0.15s ease-out;
 }
 
 .mission::after {
@@ -201,25 +214,18 @@ header img {
 nav ul {
     list-style: none;
     align-items: center;
-    /*
-    margin: 0;
-    padding: 0;
-    top: 10px; */
     display: flex;
     position: relative;
     flex-wrap: nowrap;
-    /* Добавлено для переноса пунктов меню */
     max-width: 100%;
-    /* Ограничиваем ширину */
     -webkit-overflow-scrolling: touch;
-    /* Плавная прокрутка на iOS */
     scrollbar-width: none;
-    /* Скрываем scrollbar в Firefox */
+    margin-left: 260px;
+    padding-left: 0;
 }
 
 nav ul::-webkit-scrollbar {
     display: none;
-    /* Скрываем scrollbar в Chrome/Safari */
 }
 
 nav ul li {
@@ -228,7 +234,6 @@ nav ul li {
     z-index: 1001;
     white-space: nowrap;
     flex-shrink: 0;
-    /* Запрещаем сжатие элементов */
 }
 
 nav ul li a {
@@ -238,7 +243,7 @@ nav ul li a {
     transition: background 0.3s ease;
     border-radius: 5px;
     display: block;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
 }
 
 nav ul li a:hover {
@@ -250,18 +255,21 @@ nav ul li a:hover {
     position: absolute;
     top: 100%;
     left: 0;
+    right: 0;
+    margin: 0 auto;
+    /* Центрируем подменю */
+    width: max-content;
+    /* Ширина по содержимому */
+    min-width: 180px;
+    max-width: 300px;
     background: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    list-style: none;
     padding: 10px 0;
-    min-width: 200px;
-    max-width: 300px;
-    /* Ограничиваем ширину подменю */
-    overflow: hidden;
-    /* Скрываем выходящий за пределы текст */
-    text-overflow: ellipsis;
-    /* Добавляем многоточие если текст не помещается */
+    list-style: none;
+    z-index: 1002;
+    text-align: left;
+    /* Выравнивание текста по левому краю */
 }
 
 .submenu li {
@@ -273,7 +281,7 @@ nav ul li a:hover {
     padding: 8px 15px;
     display: block;
     white-space: normal;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
 }
 
 .submenu li a:hover {
@@ -285,8 +293,8 @@ nav ul li:hover .submenu {
 }
 
 .language-switcher {
-
-
+    position: relative;
+    z-index: 1002;
     height: 100%;
     display: flex;
     align-items: center;
@@ -309,7 +317,7 @@ nav ul li:hover .submenu {
 .language-switcher ul {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 78%;
     right: 0;
     background-color: white;
     border: 1px solid #ddd;
@@ -339,10 +347,6 @@ nav ul li:hover .submenu {
     height: 100%;
     display: flex;
     align-items: center;
-    /*position: relative;
-    top: 0px;
-    left: -10px; */
-
 }
 
 .donate-link {
@@ -354,12 +358,26 @@ nav ul li:hover .submenu {
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
-    /* border-radius: 25px; закругление кнопки*/
     transition: background-color 0.3s ease;
 }
 
 .donate-link:hover {
     background-color: #ee9325;
+}
+
+header.menu-overflow nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+header.menu-overflow nav ul li {
+    margin: 5px;
+}
+
+header.menu-overflow .donate-button {
+    margin: 10px auto;
+    order: 1;
 }
 
 .mission,
@@ -389,11 +407,7 @@ nav ul li:hover .submenu {
     z-index: -1;
 }
 
-.mission h2
-
-/*.aid h2,
-.support h2 */
-    {
+.mission h2 {
     font-size: 2rem;
     margin-bottom: 10px;
     color: #183980;
@@ -466,22 +480,9 @@ nav ul li:hover .submenu {
     display: block;
     width: 100%;
     box-sizing: border-box;
-    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
     letter-spacing: 2px;
     left: 0 !important;
 }
-
-/* Yelow line 
-.events h2::after {
-    content: '';
-    position: absolute;
-    left: 0 !important;
-    bottom: -10px;
-    width: 210px;
-    height: 10px;
-    background-color: #f4dc96;
-    transform-origin: left;
-} */
 
 .support h2,
 .aid h2 {
@@ -496,24 +497,9 @@ nav ul li:hover .submenu {
     position: absolute;
     left: 00px;
     z-index: 1;
-    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
     letter-spacing: 2px;
     display: inline-block;
 }
-
-/* Yelow Line
-.support h2::after,
-.aid h2::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 100%;
-    height: 10px;
-    background-color: #f4dc96;
-    transform: scaleX(0.9);
-    transform-origin: left;
-} */
 
 .support h2 {
     top: -80px;
@@ -525,7 +511,7 @@ nav ul li:hover .submenu {
 
 .event-list {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 40px;
 }
@@ -537,8 +523,8 @@ nav ul li:hover .submenu {
 }
 
 .event img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 5%;
     margin-bottom: 15px;
 }
@@ -738,7 +724,6 @@ footer .social img:hover {
     align-items: center;
     justify-content: center;
     margin-top: -10vh;
-    /* Добавлено: поднимаем блок на 10% высоты экрана */
     transform: translateY(-50px);
 }
 
@@ -831,7 +816,6 @@ footer .social img:hover {
         display: block;
         transform-origin: center;
         margin-bottom: 0px;
-
     }
 
     .menu-toggle {
@@ -1013,12 +997,9 @@ footer .social img:hover {
         max-width: 100%;
     }
 
-
     .events {
         overflow: hidden;
-        /* Ограничиваем область событий */
         touch-action: pan-y;
-        /* Разрешаем только вертикальные жесты для всей страницы */
     }
 
     .events-content {
@@ -1028,7 +1009,6 @@ footer .social img:hover {
         display: flex;
         scrollbar-width: none;
         width: 100%;
-        /* touch-action: pan-x; /* Разрешаем горизонтальные жесты только для событий */
     }
 
     .events-content::-webkit-scrollbar {
@@ -1071,7 +1051,6 @@ footer .social img:hover {
     .swipe-indicator.active {
         background-color: #f4dc96;
     }
-
 }
 
 @media (max-width: 768px) and (orientation: landscape) {
