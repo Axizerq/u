@@ -5,24 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/favicon.ico" type="favicon">
-    <title>UUA</title>
+    <title>UUA Events Calendar</title>
     <link rel="stylesheet" href="styles/style.css">
 
-    <link rel="preload" href="img/Logo_black.webp" as="image">
-    <link rel="preload" href="img/Logo_white.webp" as="image">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
-
     <header>
         <div class="logo-container">
-            <img src="img/Logo_white.webp" class="logo white-logo">
-            <img src="img/Logo_black.webp" class="logo black-logo">
+            <a href="index.html" class="logo-link">
+                <img src="img/Logo_white.webp" class="logo white-logo">
+                <img src="img/Logo_black.webp" class="logo black-logo">
+            </a>
         </div>
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -86,108 +83,63 @@
         </div>
     </header>
 
-
-    <div class="website-notice-overlay" id="websiteNoticeOverlay">
-        <div class="website-notice-popup">
-            <button class="close-notice" id="closeNotice">&times;</button>
-            <p>We are working on improving our website. Follow us on Facebook <a
-                    href="https://www.facebook.com/loveukrainians" target="_blank">@utahukrainians</a></p>
-        </div>
-    </div>
-
     <div style="height: 70px;" id="header-spacer"></div>
 
-    <section class="mission">
-        <img src="img/index_pic_new.webp" alt="Mission">
-        <div class="mission-content">
-            <h2 data-lang="missionTitle">Our Mission</h2>
-            <p data-lang="missionText">Text Area</p>
-            <p data-lang="missionText2">Text Area 2</p>
-            <a href="about-us.html"><button data-lang="details">Details</button></a>
-        </div>
-    </section>
+    <div class="hero-container">
+        <img src="img/index_pic_new.webp" alt="Calendar Background" class="hero-background">
+        <div class="hero-overlay"></div>
+        <main class="calendar-container">
+            <div class="calendar-header">
+                <button id="prev-year"><i class="fas fa-angle-double-left"></i></button>
+                <button id="prev-month"><i class="fas fa-angle-left"></i></button>
+                <h1 id="current-month-year">May 2023</h1>
+                <button id="next-month"><i class="fas fa-angle-right"></i></button>
+                <button id="next-year"><i class="fas fa-angle-double-right"></i></button>
+                <button id="today-btn">Today</button>
+            </div>
 
-    <section class="support">
-        <div>
-            <h2 data-lang="supportTitle">Support for Refugees</h2>
-            <p data-lang="service1">1. Housing</p>
-            <p data-lang="service2">2. Driver's license</p>
-            <p data-lang="service3">3. Resume and Job</p>
-            <p data-lang="service4">4. Training and Studying</p>
-            <p data-lang="service5">5. English language</p>
-            <a href="support-for-refugees.html"><button data-lang="details">Details</button></a>
-        </div>
-        <img src="img/support.webp" alt="Support">
-    </section>
+            <div class="wall-calendar">
+                <div class="calendar-grid">
+                    <div class="day-names">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="days-grid" id="days-grid">
+                        <!-- Days will be populated by JavaScript -->
+                    </div>
+                </div>
 
-    <section class="events">
-        <h2>Our Events</h2>
-        <div class="events-content">
-            <div class="event-list">
-                <div class="event">
-                    <img src="img/UVU_sqaure.webp" alt="Event 1">
-                    <h3>May 21, 5:30pm</h3>
-                    <p>UVU Campus Tour</p>
-                    <p>Welcome Center, UVU Admissions office — Woodbury Building, WB 128</p>
-                </div>
-                <div class="event">
-                    <img src="img/ESL_square.webp" Event 2">
-                    <h3>May 22, 6:00pm</h3>
-                    <p>English Speaking Club</p>
-                    <p>Murray Park, Pavilion 1</p>
-                </div>
-                <div class="event">
-                    <img src="img/Refugee_Day.webp" alt="Event 3">
-                    <h3>June 20, 4:00pm-10pm</h3>
-                    <p>Free Festival: World Refugee Day</p>
-                    <p>Big Cottonwood Regional Park</p>
+                <div class="calendar-notes">
+                    <h3>Upcoming Events</h3>
+                    <div class="events-list" id="events-list">
+                        <!-- Upcoming events will be populated by JavaScript -->
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="swipe-indicators"></div>
-    </section>
+        </main>
+    </div>
 
-    <section class="aid">
-        <img src="img/aid.webp" alt="Aid">
-        <div>
-            <h2 data-lang="aidTitle">Humanitarian Aid</h2>
-            <p data-lang="aidText">Test</p>
-            <a href="humanitarian-aid.html"><button data-lang="details">Details</button></a>
+    <!-- Event Modal -->
+    <div class="event-modal" id="event-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-event-title">Event Title</h2>
+            <div class="event-details">
+                <p><i class="fas fa-calendar-day"></i> <span id="modal-event-date">Date</span></p>
+                <p><i class="fas fa-clock"></i> <span id="modal-event-time">Time</span></p>
+                <p><i class="fas fa-map-marker-alt"></i> <span id="modal-event-location">Location</span></p>
+            </div>
+            <div class="event-description" id="modal-event-description">
+                Event description goes here...
+            </div>
+            <img id="modal-event-image" src="" alt="Event Image" class="event-image">
         </div>
-    </section>
-
-    <section class="get-involved">
-        <div class="card">
-            <img src="img/volunteer.webp" alt="Volunteer">
-            <h3 data-lang="volunteer">Volunteer</h3>
-            <p data-lang="volunteer-text">Join our team and make a difference.</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1WP-o-ylaUPzjZCqSv4MMcsphzp3ktA_bP7I1OnsGZHZXIg/viewform"
-                target="_blank">
-                <button data-lang="learn-more">Learn More</button>
-            </a>
-        </div>
-        <div class="card">
-            <img src="img/partner.webp" alt="Partner">
-            <h3 data-lang="partner">Become a Partner</h3>
-            <p data-lang="partner-text">Collaborate with us to create impact.</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1WP-o-ylaUPzjZCqSv4MMcsphzp3ktA_bP7I1OnsGZHZXIg/viewform"
-                target="_blank">
-                <button data-lang="learn-more">Learn More</button>
-            </a>
-        </div>
-        <div class="card">
-            <img src="img/infomed.webp" alt="Stay Informed">
-            <h3 data-lang="stayInformed">Stay Informed</h3>
-            <p data-lang="stayInformed-text">Get the latest updates and news.</p>
-            <a href=" https://docs.google.com/forms/d/e/1FAIpQLSd5bam_5-3S4PCIPL-wyQh0jJbPdBydbBFR_TS9WWe_LTdrWg/viewform"
-                target="_blank">
-                <button data-lang="learn-more">Learn More</button>
-            </a>
-        </div>
-
-        <div id="overlay"></div>
-
-    </section>
+    </div>
 
     <footer>
         <div class="column">
@@ -203,7 +155,7 @@
             <ul>
                 <li><a href="#" data-lang="howWeHelp">How We Help</a></li>
                 <li><a href="#" data-lang="reportsLink">Reports & Results</a></li>
-                <li><a href="#" data-lang="eventsLink">Upcoming Events</a></li>
+                <li><a href="calendar.html" data-lang="eventsLink">Upcoming Events</a></li>
             </ul>
         </div>
         <div class="column">
@@ -225,7 +177,7 @@
     </footer>
 
     <script src="scripts/script.js"></script>
-
+    <script src="scripts/calendar.js"></script>
 </body>
 
 </html>
