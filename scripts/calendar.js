@@ -27,7 +27,7 @@ const events = [
     {
         id: 1,
         title: "UVU Campus Tour",
-        date: "2023-05-21",
+        date: "2025-05-21",
         time: "5:30 PM",
         location: "Welcome Center, UVU Admissions office — Woodbury Building, WB 128",
         description: "Join us for a guided tour of the Utah Valley University campus. Learn about the facilities, programs, and opportunities available for students. This is a great chance for newcomers to familiarize themselves with the university environment.",
@@ -36,7 +36,7 @@ const events = [
     {
         id: 2,
         title: "English Speaking Club",
-        date: "2023-05-22",
+        date: "2025-05-22",
         time: "6:00 PM",
         location: "Murray Park, Pavilion 1",
         description: "Practice your English in a friendly, supportive environment. All levels are welcome! Our volunteers will help you improve your conversation skills and confidence in speaking English.",
@@ -45,7 +45,7 @@ const events = [
     {
         id: 3,
         title: "World Refugee Day Festival",
-        date: "2023-06-20",
+        date: "2025-06-20",
         time: "4:00 PM - 10:00 PM",
         location: "Big Cottonwood Regional Park",
         description: "Celebrate World Refugee Day with us at this free festival! Enjoy cultural performances, food from around the world, children's activities, and community resources. This event celebrates the resilience and contributions of refugees in our community.",
@@ -54,7 +54,7 @@ const events = [
     {
         id: 4,
         title: "Job Search Workshop",
-        date: "2023-05-15",
+        date: "2025-05-15",
         time: "3:00 PM - 5:00 PM",
         location: "UUA Office, Salt Lake City",
         description: "Learn effective job search strategies for the U.S. market. We'll cover resume writing, interview skills, and how to navigate online job platforms. Bring your questions!",
