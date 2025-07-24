@@ -351,3 +351,86 @@ function checkMenuOverflow() {
         header.classList.remove('menu-overflow');
     }
 }
+
+
+
+/*
+function setupEventsCarousel() {
+    const eventsContent = document.querySelector('.events-content');
+    const eventList = document.querySelector('.event-list');
+    const events = document.querySelectorAll('.event');
+
+    if (window.innerWidth > 768) {
+        // Клонируем события для бесшовной анимации
+        events.forEach(event => {
+            const clone = event.cloneNode(true);
+            eventList.appendChild(clone);
+        });
+
+        // Перезапускаем анимацию при завершении
+        eventList.addEventListener('animationiteration', () => {
+            eventList.style.animation = 'none';
+            eventList.offsetHeight; // Триггер рефлоу
+            eventList.style.animation = 'scrollEvents 30s linear infinite';
+        });
+    } else {
+        // Для мобильных оставляем обычную прокрутку
+        eventList.style.animation = 'none';
+    }
+}
+
+// Вызываем функцию при загрузке и изменении размера окна
+window.addEventListener('load', setupEventsCarousel);
+window.addEventListener('resize', setupEventsCarousel); */
+
+
+
+// Управление стрелками
+document.querySelector('.left-arrow').addEventListener('click', () => {
+    document.querySelector('.events-content').scrollBy({
+        left: -300,
+        behavior: 'smooth'
+    });
+});
+
+document.querySelector('.right-arrow').addEventListener('click', () => {
+    document.querySelector('.events-content').scrollBy({
+        left: 300,
+        behavior: 'smooth'
+    });
+});
+
+// Управление колесиком мыши
+const eventsContent = document.querySelector('.events-content');
+let isScrolling = false;
+
+eventsContent.addEventListener('wheel', (e) => {
+    e.preventDefault();
+
+    if (isScrolling) return;
+    isScrolling = true;
+
+    const scrollAmount = e.deltaY > 0 ? 300 : -300;
+    eventsContent.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+
+    setTimeout(() => {
+        isScrolling = false;
+    }, 500);
+}, { passive: false });
+
+// Скрытие стрелок при достижении края
+function checkScrollPosition() {
+    const arrows = document.querySelectorAll('.scroll-arrow');
+    const scrollLeft = eventsContent.scrollLeft;
+    const maxScroll = eventsContent.scrollWidth - eventsContent.clientWidth;
+
+    arrows[0].style.display = scrollLeft <= 10 ? 'none' : 'flex';
+    arrows[1].style.display = scrollLeft >= maxScroll - 10 ? 'none' : 'flex';
+}
+
+eventsContent.addEventListener('scroll', checkScrollPosition);
+window.addEventListener('resize', checkScrollPosition);
+window.addEventListener('load', checkScrollPosition);
