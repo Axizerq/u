@@ -494,7 +494,7 @@ header.menu-overflow .donate-button {
     padding-left: 20px;
     margin-bottom: 20px;
     margin-top: 50px;
-    position: absolute;
+    position: static;
     left: 00px;
     z-index: 1;
     letter-spacing: 2px;
@@ -503,6 +503,7 @@ header.menu-overflow .donate-button {
 
 .support h2 {
     top: -80px;
+    margin-bottom: 30px;
 }
 
 .aid h2 {
@@ -1329,10 +1330,6 @@ footer .social img:hover {
     .support h2 {
         font-size: 1.8rem;
         padding: 8px 15px;
-    }
-
-    .support h2 {
-        top: 20px;
     }
 
     .mission p,
