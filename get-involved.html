@@ -18,7 +18,6 @@
 </head>
 
 <body>
-
     <header>
         <div class="logo-container">
             <img src="img/Logo_white.webp" class="logo white-logo">
@@ -64,7 +63,7 @@
                         <li><a href="#" data-lang="newsletterLink">Sign up for Newsletter</a></li>
                     </ul>
                 </li>
-                <li><a href="#" data-lang="news">News</a>
+                <li><a href="calendar.html" data-lang="news">News</a>
                     <ul class="submenu">
                         <li><a href="calendar.html" data-lang="calendar" class="active">Upcoming Events</a></li>
                         <li><a href="#" data-lang="blogLink">Blog</a></li>
@@ -86,116 +85,74 @@
         </div>
     </header>
 
-
-    <div class="website-notice-overlay" id="websiteNoticeOverlay">
-        <div class="website-notice-popup">
-            <button class="close-notice" id="closeNotice">&times;</button>
-            <p>We are working on improving our website. Follow us on Facebook <a
-                    href="https://www.facebook.com/loveukrainians" target="_blank">@utahukrainians</a></p>
+    <div class="page-hero">
+        <img src="img/involved-hero.webp" alt="Get Involved" class="hero-background">
+        <div class="hero-overlay"></div>
+        <div class="page-container">
+            <h1>Get Involved</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> &gt; <span>Get Involved</span>
+            </div>
         </div>
     </div>
 
-    <div style="height: 70px;" id="header-spacer"></div>
-
-    <section class="mission">
-        <img src="img/index_pic_new.webp" alt="Mission">
-        <div class="mission-content">
-            <h2 data-lang="missionTitle">Our Mission</h2>
-            <p data-lang="missionText">Text Area</p>
-            <p data-lang="missionText2">Text Area 2</p>
-            <a href="about-us.html"><button data-lang="details">Details</button></a>
-        </div>
-    </section>
-
-    <section class="support">
-        <div>
-            <h2 data-lang="supportTitle">Support for Refugees</h2>
-            <p data-lang="service1">1. Housing</p>
-            <p data-lang="service2">2. Driver's license</p>
-            <p data-lang="service3">3. Resume and Job</p>
-            <p data-lang="service4">4. Training and Studying</p>
-            <p data-lang="service5">5. English language</p>
-            <a href="support-for-refugees.html"><button data-lang="details">Details</button></a>
-        </div>
-        <img src="img/support.webp" alt="Support">
-    </section>
-
-    <section class="events">
-        <h2>Our Events</h2>
-        <div class="events-content">
-            <button class="scroll-arrow left-arrow">&#10094;</button>
-            <div class="event-list">
-                <div class="event">
-                    <img src="img/24aug.webp" alt="Event 4">
-                    <h3>August 24, 5:00pm</h3>
-                    <p>Independence Day</p>
-                    <p>Murray Park, Pavilion #2</p>
-                </div>
-                <div class="event">
-                    <img src="img/UVU_sqaure.webp" alt="Event 1">
-                    <h3>May 21, 5:30pm</h3>
-                    <p>UVU Campus Tour</p>
-                    <p>Welcome Center, UVU Admissions office — Woodbury Building, WB 128</p>
-                </div>
-                <div class="event">
-                    <img src="img/ESL_square.webp" alt="Event 2">
-                    <h3>May 22, 6:00pm</h3>
-                    <p>English Speaking Club</p>
-                    <p>Murray Park, Pavilion 1</p>
-                </div>
-                <div class="event">
-                    <img src="img/Refugee_Day.webp" alt="Event 3">
-                    <h3>June 20, 4:00pm-10pm</h3>
-                    <p>Free Festival: World Refugee Day</p>
-                    <p>Big Cottonwood Regional Park</p>
-                </div>
+    <main class="page-content">
+        <section class="involve-options">
+            <div class="option-card volunteer">
+                <h2><i class="fas fa-hands-helping"></i> Volunteer</h2>
+                <p>Join our team and make a difference in the Ukrainian community</p>
+                <ul>
+                    <li>Event support</li>
+                    <li>Translation services</li>
+                    <li>Community outreach</li>
+                </ul>
+                <a href="#" class="action-button">Apply to Volunteer</a>
             </div>
-            <button class="scroll-arrow right-arrow">&#10095;</button>
-        </div>
-        <div class="swipe-indicators"></div>
-    </section>
 
-    <section class="aid">
-        <img src="img/aid.webp" alt="Aid">
-        <div>
-            <h2 data-lang="aidTitle">Humanitarian Aid</h2>
-            <p data-lang="aidText">Test</p>
-            <a href="humanitarian-aid.html"><button data-lang="details">Details</button></a>
-        </div>
-    </section>
+            <div class="option-card donate">
+                <h2><i class="fas fa-donate"></i> Donate</h2>
+                <p>Your financial support helps us continue our mission</p>
+                <div class="donation-options">
+                    <button>One-time Donation</button>
+                    <button>Monthly Support</button>
+                </div>
+                <a href="https://www.paypal.com/donate/?hosted_button_id=U4NAMK72HSP92" class="action-button">Donate
+                    Now</a>
+            </div>
 
-    <section class="get-involved">
-        <div class="card">
-            <img src="img/volunteer.webp" alt="Volunteer">
-            <h3 data-lang="volunteer">Volunteer</h3>
-            <p data-lang="volunteer-text">Join our team and make a difference.</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1WP-o-ylaUPzjZCqSv4MMcsphzp3ktA_bP7I1OnsGZHZXIg/viewform"
-                target="_blank">
-                <button data-lang="learn-more">Learn More</button>
-            </a>
-        </div>
-        <div class="card">
-            <img src="img/partner.webp" alt="Partner">
-            <h3 data-lang="partner">Become a Partner</h3>
-            <p data-lang="partner-text">Collaborate with us to create impact.</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1WP-o-ylaUPzjZCqSv4MMcsphzp3ktA_bP7I1OnsGZHZXIg/viewform"
-                target="_blank">
-                <button data-lang="learn-more">Learn More</button>
-            </a>
-        </div>
-        <div class="card">
-            <img src="img/infomed.webp" alt="Stay Informed">
-            <h3 data-lang="stayInformed">Stay Informed</h3>
-            <p data-lang="stayInformed-text">Get the latest updates and news.</p>
-            <a href=" https://docs.google.com/forms/d/e/1FAIpQLSd5bam_5-3S4PCIPL-wyQh0jJbPdBydbBFR_TS9WWe_LTdrWg/viewform"
-                target="_blank">
-                <button data-lang="learn-more">Learn More</button>
-            </a>
-        </div>
+            <div class="option-card partner">
+                <h2><i class="fas fa-handshake"></i> Partner</h2>
+                <p>Businesses and organizations can support our work</p>
+                <ul>
+                    <li>Corporate sponsorships</li>
+                    <li>In-kind donations</li>
+                    <li>Event partnerships</li>
+                </ul>
+                <a href="#" class="action-button">Become a Partner</a>
+            </div>
+        </section>
 
-        <div id="overlay"></div>
+        <section class="newsletter-section">
+            <h2><i class="fas fa-envelope"></i> Stay Informed</h2>
+            <p>Subscribe to our newsletter for updates and events</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
 
-    </section>
+        <section class="events-section">
+            <h2><i class="fas fa-calendar-alt"></i> Upcoming Volunteer Opportunities</h2>
+            <div class="event-list">
+                <div class="event-item">
+                    <h3>Community Dinner - August 15</h3>
+                    <p>Help serve meals to Ukrainian families</p>
+                    <a href="#" class="event-link">Sign Up</a>
+                </div>
+                <!-- More events -->
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="column">
@@ -231,9 +188,7 @@
             </div>
         </div>
     </footer>
-
     <script src="scripts/script.js"></script>
-
 </body>
 
 </html>

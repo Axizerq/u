@@ -4,34 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" src="img/favicon.png" type="favicon">
-    <title>About Us - Our Website</title>
-    <link rel="stylesheet" href="styles/style_ai.css">
+    <link rel="icon" href="img/favicon.ico" type="favicon">
+    <title>About Us - UUA</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-
     <header>
-        <img src="img/logo.webp" alt="Logo">
+        <div class="logo-container">
+            <img src="img/Logo_white.webp" class="logo white-logo">
+            <img src="img/Logo_black.webp" class="logo black-logo">
+        </div>
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-        <nav>
+        <nav id="nav-menu">
             <ul>
-                <li><a href="index.html" data-lang="about">About Us</a>
+                <li><a href="about-us.html" data-lang="about">About Us</a>
                     <ul class="submenu">
-                        <li><a href="about-us.html" data-lang="missionLink">Our Mission & History</a></li>
-                        <li><a href="about-us.html#team" data-lang="teamLink">Our Team</a></li>
-                        <li><a href="about-us.html#partner" data-lang="partnerLink">Our Partners</a></li>
-                        <li><a href="about-us.html#contact" data-lang="contactLink">Contact Us</a></li>
+                        <li><a href="#" data-lang="missionLink">Our Mission & History</a></li>
+                        <li><a href="#" data-lang="teamLink">Our Team</a></li>
+                        <li><a href="#" data-lang="partnerLink">Our Partners</a></li>
+                        <li><a href="#" data-lang="contactLink">Contact Us</a></li>
                     </ul>
                 </li>
-                <li><a href="humanitarian-aid.html" data-lang="aid">Humanitarian Aid</a></li>
-                <li><a href="support-for-refugees.html" data-lang="support">Support for Refugees</a></li>
-                <li><a href="get-involved.html" data-lang="involved">Get Involved</a></li>
-                <li><a href="news-events.html" data-lang="news">News & Events</a></li>
+                <li><a href="humanitarian-aid.html" data-lang="aid">Humanitarian Aid</a>
+                    <ul class="submenu">
+                        <li><a href="#" data-lang="howWeHelp">How We Help</a></li>
+                        <li><a href="#" data-lang="reportsLink">Reports & Results</a></li>
+                    </ul>
+                </li>
+                <li><a href="support-for-refugees.html" data-lang="support">Support for Refugees</a>
+                    <ul class="submenu">
+                        <li><a href="#" data-lang="housingLink">Housing</a></li>
+                        <li><a href="#" data-lang="licenseLink">Driver’s License</a></li>
+                        <li><a href="#" data-lang="employmentLink">Employment & Career</a></li>
+                        <li><a href="#" data-lang="educationLink">Education</a></li>
+                        <li><a href="#" data-lang="languageLink">English Language</a></li>
+                        <li><a href="#" data-lang="wellnessLink">Youth Wellness Program</a></li>
+                        <li><a href="#" data-lang="assistanceLink">How to Get Assistance</a></li>
+                    </ul>
+                </li>
+                <li><a href="get-involved.html" data-lang="involved">Get Involved</a>
+                    <ul class="submenu">
+                        <li><a href="#" data-lang="volunteerLink">Become a Volunteer</a></li>
+                        <li><a href="#" data-lang="donateLink">Make a Donation</a></li>
+                        <li><a href="#" data-lang="partnerLink">Become a Partner</a></li>
+                        <li><a href="#" data-lang="newsletterLink">Sign up for Newsletter</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-lang="news">News</a>
+                    <ul class="submenu">
+                        <li><a href="calendar.html" data-lang="calendar" class="active">Upcoming Events</a></li>
+                        <li><a href="#" data-lang="blogLink">Blog</a></li>
+                    </ul>
+                </li>
+                <li class="donate-button">
+                    <a href="https://www.paypal.com/donate/?hosted_button_id=U4NAMK72HSP92"
+                        class="donate-link">DONATE</a>
+                </li>
             </ul>
         </nav>
         <div class="language-switcher">
@@ -44,113 +80,99 @@
         </div>
     </header>
 
-    <section id="mission" class="mission">
-        <img src="img/mission.jpg" alt="Our Mission">
-        <div>
-            <h2 data-lang="missionTitle">Our Mission</h2>
-            <p data-lang="missionText">The Utah Ukrainian Association is a nonprofit organization uniting Utah's
-                Ukrainian community to support Ukraine and help Ukrainians adapt to life in the U.S. We provide
-                assistance with housing, jobs, education, and more, while promoting Ukrainian culture through events and
-                collaborations. Join us in making a difference—everyone is welcome!</p>
-        </div>
-    </section>
-
-    <section id="team" class="team">
-        <div>
-            <h2 data-lang="teamTitle">Our Team</h2>
-            <p data-lang="teamText">Our team consists of dedicated professionals and volunteers who are passionate about
-                helping the Ukrainian community. We work tirelessly to provide support and resources to those in need.
-            </p>
-            <div class="team-members">
-                <div class="member">
-                    <img src="img/team1.jpg" alt="Team Member 1">
-                    <h3 data-lang="member1Name">John Doe</h3>
-                    <p data-lang="member1Role">President</p>
-                </div>
-                <div class="member">
-                    <img src="img/team2.jpg" alt="Team Member 2">
-                    <h3 data-lang="member2Name">Jane Smith</h3>
-                    <p data-lang="member2Role">Vice President</p>
-                </div>
-                <div class="member">
-                    <img src="img/team3.jpg" alt="Team Member 3">
-                    <h3 data-lang="member3Name">Michael Brown</h3>
-                    <p data-lang="member3Role">Volunteer Coordinator</p>
-                </div>
+    <div class="page-hero">
+        <img src="img/about-us-hero.webp" alt="About Us" class="hero-background">
+        <div class="hero-overlay"></div>
+        <div class="page-container">
+            <h1>About Utah Ukrainian Association</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> &gt; <span>About Us</span>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="partner" class="partner">
-        <div>
-            <h2 data-lang="partnerTitle">Our Partners</h2>
-            <p data-lang="partnerText">We collaborate with various organizations and businesses to provide the best
-                support for our community. Our partners share our vision and help us achieve our goals.</p>
-            <div class="partners-list">
-                <img src="img/partner1.png" alt="Partner 1">
-                <img src="img/partner2.png" alt="Partner 2">
-                <img src="img/partner3.png" alt="Partner 3">
+    <main class="page-content">
+        <section class="page-section">
+            <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+            <p>Founded in 2022, UUA is dedicated to supporting Ukrainian refugees in Utah through humanitarian aid and
+                community programs.</p>
+        </section>
+
+        <section class="page-section">
+            <h2><i class="fas fa-history"></i> Our History</h2>
+            <p>From our humble beginnings to becoming a key support system for Ukrainian families in Utah.</p>
+        </section>
+
+        <section class="team-section">
+            <h2><i class="fas fa-users"></i> Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="img/team1.webp" alt="Team Member">
+                    <h3>John Smith</h3>
+                    <p>Executive Director</p>
+                </div>
+                <!-- Repeat for other team members -->
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact">
-        <div>
-            <h2 data-lang="contactTitle">Contact Us</h2>
-            <p data-lang="contactText">If you have any questions or would like to get involved, please feel free to
-                reach
-                out to us. We are here to help!</p>
-            <form>
-                <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" data-lang="sendMessage">Send Message</button>
+        <section class="partners-section">
+            <h2><i class="fas fa-handshake"></i> Our Partners</h2>
+            <div class="partners-logos">
+                <img src="img/partner1.webp" alt="Partner">
+                <img src="img/partner2.webp" alt="Partner">
+                <!-- More partners -->
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> 123 Main St, Salt Lake City, UT</p>
+                <p><i class="fas fa-phone"></i> (801) 555-1234</p>
+                <p><i class="fas fa-envelope"></i> info@utahukrainians.org</p>
+            </div>
+            <form class="contact-form">
+                <!-- Form fields -->
             </form>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="column">
             <h3 data-lang="about-us">About Us</h3>
             <ul>
-                <li><a href="about-us.html" data-lang="missionLink">Our Mission</a></li>
-                <li><a href="about-us.html#team" data-lang="teamLink">Our Team</a></li>
-                <li><a href="about-us.html#contact" data-lang="contactLink">Contact Us</a></li>
+                <li><a href="#" data-lang="missionLink">Our Mission</a></li>
+                <li><a href="#" data-lang="teamLink">Our Team</a></li>
+                <li><a href="#" data-lang="contactLink">Contact Us</a></li>
             </ul>
         </div>
         <div class="column">
             <h3 data-lang="our-work">Our Work</h3>
             <ul>
-                <li><a href="humanitarian-aid.html" data-lang="howWeHelp">How We Help</a></li>
-                <li><a href="reports-results.html" data-lang="reportsLink">Reports & Results</a></li>
-                <li><a href="news-events.html" data-lang="eventsLink">Upcoming Events</a></li>
+                <li><a href="#" data-lang="howWeHelp">How We Help</a></li>
+                <li><a href="#" data-lang="reportsLink">Reports & Results</a></li>
+                <li><a href="#" data-lang="eventsLink">Upcoming Events</a></li>
             </ul>
         </div>
         <div class="column">
             <h3 data-lang="get-involved-footer">Get Involved</h3>
             <ul>
-                <li><a href="get-involved.html" data-lang="donateLink">Donate</a></li>
-                <li><a href="get-involved.html" data-lang="volunteerLink">Volunteer</a></li>
-                <li><a href="get-involved.html" data-lang="partnerLink">Partner</a></li>
+                <li><a href="https://www.paypal.com/donate/?hosted_button_id=U4NAMK72HSP92"
+                        data-lang="donateLink">Donate</a></li>
+                <li><a href="#" data-lang="volunteerLink">Volunteer</a></li>
+                <li><a href="#" data-lang="partnerLink">Partner</a></li>
             </ul>
         </div>
         <div class="column">
             <h3 data-lang="follow-us">Follow Us</h3>
             <div class="social">
-                <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
-                <a href="#"><img src="img/fb.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/utahukrainians/"><img src="img/instagram.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com/loveukrainians"><img src="img/fb.png" alt="Facebook"></a>
             </div>
         </div>
     </footer>
 
     <script src="scripts/script.js"></script>
-
 </body>
 
 </html>
