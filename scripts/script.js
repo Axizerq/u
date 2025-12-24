@@ -436,3 +436,179 @@ function checkScrollPosition() {
 eventsContent.addEventListener('scroll', checkScrollPosition);
 window.addEventListener('resize', checkScrollPosition);
 window.addEventListener('load', checkScrollPosition);
+
+
+// Плавная прокрутка для якорных ссылок
+document.addEventListener('DOMContentLoaded', function() {
+    // Находим все ссылки с хешем
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Пропускаем ссылки на другие страницы
+            if (href === '#' || href.includes('.html')) return;
+            
+            e.preventDefault();
+            
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                // Закрываем мобильное меню если открыто
+                const navMenu = document.getElementById('nav-menu');
+                if (navMenu && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    overlay.classList.remove('active');
+                }
+                
+                // Плавная прокрутка с учетом высоты шапки
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Обновляем URL без перезагрузки
+                history.pushState(null, null, href);
+            }
+        });
+    });
+    
+
+
+
+    // Улучшенная плавная прокрутка с учетом динамической высоты шапки
+document.addEventListener('DOMContentLoaded', function() {
+    // Функция для получения ТОЧНОЙ высоты шапки в текущий момент
+    function getCurrentHeaderHeight() {
+        const header = document.querySelector('header');
+        if (!header) return 0;
+        
+        // Если шапка имеет классы при скролле (например, scrolled)
+        // возвращаем актуальную высоту
+        return header.offsetHeight;
+    }
+
+    // Функция для корректировки прокрутки
+    function scrollToElementWithOffset(targetId, offset = 20) {
+        const targetElement = document.getElementById(targetId);
+        
+        if (!targetElement) return;
+        
+        // Закрываем мобильное меню
+        const navMenu = document.getElementById('nav-menu');
+        if (navMenu && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+        
+        // Получаем текущую высоту шапки
+        const headerHeight = getCurrentHeaderHeight();
+        const additionalOffset = offset; // Дополнительный отступ
+        const totalOffset = headerHeight + additionalOffset;
+        
+        // Получаем позицию элемента относительно верха документа
+        const elementTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
+        
+        // Вычисляем финальную позицию прокрутки
+        const scrollPosition = elementTop - totalOffset;
+        
+        // Плавная прокрутка
+        window.scrollTo({
+            top: scrollPosition,
+            behavior: 'smooth'
+        });
+        
+        // Добавляем временный атрибут для визуальной подсветки
+        targetElement.setAttribute('data-scrolled-to', 'true');
+        setTimeout(() => {
+            targetElement.removeAttribute('data-scrolled-to');
+        }, 2000);
+    }
+
+    // Обработчик кликов по всем якорным ссылкам
+    document.addEventListener('click', function(e) {
+        // Проверяем, является ли элемент якорной ссылкой
+        const anchor = e.target.closest('a[href^="#"]');
+        
+        if (!anchor) return;
+        
+        const href = anchor.getAttribute('href');
+        
+        // Пропускаем пустые ссылки и ссылки на другие страницы
+        if (href === '#' || href.includes('.html')) return;
+        
+        e.preventDefault();
+        
+        const targetId = href.substring(1);
+        
+        // Проверяем существование элемента
+        if (document.getElementById(targetId)) {
+            // Небольшая задержка для гарантии расчета правильной высоты
+            setTimeout(() => {
+                scrollToElementWithOffset(targetId);
+            }, 50);
+            
+            // Обновляем URL
+            history.pushState(null, null, href);
+        }
+    });
+
+    // Обработка якорных ссылок при загрузке страницы
+    function handleInitialHash() {
+        if (window.location.hash) {
+            const hash = window.location.hash.substring(1);
+            
+            // Ждем полной загрузки всех стилей и контента
+            if (document.readyState === 'complete') {
+                setTimeout(() => {
+                    scrollToElementWithOffset(hash);
+                }, 300);
+            } else {
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        scrollToElementWithOffset(hash);
+                    }, 300);
+                });
+            }
+        }
+    }
+
+    // Вызываем обработку хеша
+    handleInitialHash();
+    
+    // Также обрабатываем изменение хеша в URL (если пользователь меняет его вручную)
+    window.addEventListener('hashchange', function() {
+        if (window.location.hash) {
+            const hash = window.location.hash.substring(1);
+            setTimeout(() => {
+                scrollToElementWithOffset(hash);
+            }, 100);
+        }
+    });
+});
+
+// Дополнительная функция для принудительного пересчета
+function forceScrollToSection(sectionId) {
+    const header = document.querySelector('header');
+    const section = document.getElementById(sectionId);
+    
+    if (!section || !header) return;
+    
+    // Сбрасываем скролл
+    window.scrollTo(0, 0);
+    
+    // Даем время на перерисовку
+    setTimeout(() => {
+        const headerHeight = header.offsetHeight;
+        const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+        
+        window.scrollTo({
+            top: sectionTop - headerHeight - 20,
+            behavior: 'smooth'
+        });
+    }, 100);
+}
+});

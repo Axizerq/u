@@ -4,24 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/favicon.ico" type="favicon">
-    <title>UUA</title>
+    <meta name="description" content="UUA Humanitarian Aid - Providing medical supplies, food assistance, and essential support to Ukraine">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Humanitarian Aid | UUA</title>
+    
+    <!-- СНАЧАЛА Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ПОТОМ ваши стили -->
     <link rel="stylesheet" href="styles/style.css">
-
+    
+    <!-- Preload critical assets -->
     <link rel="preload" href="img/Logo_black.webp" as="image">
     <link rel="preload" href="img/Logo_white.webp" as="image">
-
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <div class="logo-container">
-            <img src="img/Logo_white.webp" class="logo white-logo">
-            <img src="img/Logo_black.webp" class="logo black-logo">
+            <a href="index.html" class="logo-link">
+                <img src="img/Logo_white.webp" class="logo white-logo" alt="UUA Logo">
+                <img src="img/Logo_black.webp" class="logo black-logo" alt="UUA Logo">
+            </a>
         </div>
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -32,46 +41,48 @@
             <ul>
                 <li><a href="about-us.html" data-lang="about">About Us</a>
                     <ul class="submenu">
-                        <li><a href="#" data-lang="missionLink">Our Mission & History</a></li>
-                        <li><a href="#" data-lang="teamLink">Our Team</a></li>
-                        <li><a href="#" data-lang="partnerLink">Our Partners</a></li>
-                        <li><a href="#" data-lang="contactLink">Contact Us</a></li>
+                        <li><a href="about-us.html#our-mission" data-lang="missionLink">Our Mission & History</a></li>
+                        <li><a href="about-us.html#our-team" data-lang="teamLink">Our Team</a></li>
+                        <li><a href="about-us.html#our-partners" data-lang="partnerLink">Our Partners</a></li>
+                        <li><a href="about-us.html#contact-us" data-lang="contactLink">Contact Us</a></li>
                     </ul>
                 </li>
-                <li><a href="humanitarian-aid.html" data-lang="aid">Humanitarian Aid</a>
+                <li><a href="humanitarian-aid.html" data-lang="aid" class="active">Humanitarian Aid</a>
                     <ul class="submenu">
-                        <li><a href="#" data-lang="howWeHelp">How We Help</a></li>
-                        <li><a href="#" data-lang="reportsLink">Reports & Results</a></li>
+                        <li><a href="#how-we-help" data-lang="howWeHelp">How We Help</a></li>
+                        <li><a href="#reports-results" data-lang="reportsLink">Reports & Results</a></li>
                     </ul>
                 </li>
                 <li><a href="support-for-refugees.html" data-lang="support">Support for Refugees</a>
                     <ul class="submenu">
-                        <li><a href="#" data-lang="housingLink">Housing</a></li>
-                        <li><a href="#" data-lang="licenseLink">Driver’s License</a></li>
-                        <li><a href="#" data-lang="employmentLink">Employment & Career</a></li>
-                        <li><a href="#" data-lang="educationLink">Education</a></li>
-                        <li><a href="#" data-lang="languageLink">English Language</a></li>
-                        <li><a href="#" data-lang="wellnessLink">Youth Wellness Program</a></li>
-                        <li><a href="#" data-lang="assistanceLink">How to Get Assistance</a></li>
+                        <li><a href="support-for-refugees.html#housing" data-lang="housingLink">Housing</a></li>
+                        <li><a href="support-for-refugees.html#drivers-license" data-lang="licenseLink">Driver's License</a></li>
+                        <li><a href="support-for-refugees.html#employment" data-lang="employmentLink">Employment & Career</a></li>
+                        <li><a href="support-for-refugees.html#education" data-lang="educationLink">Education</a></li>
+                        <li><a href="support-for-refugees.html#language" data-lang="languageLink">English Language</a></li>
+                        <li><a href="support-for-refugees.html#wellness" data-lang="wellnessLink">Youth Wellness Program</a></li>
+                        <li><a href="support-for-refugees.html#assistance" data-lang="assistanceLink">How to Get Assistance</a></li>
                     </ul>
                 </li>
                 <li><a href="get-involved.html" data-lang="involved">Get Involved</a>
                     <ul class="submenu">
-                        <li><a href="#" data-lang="volunteerLink">Become a Volunteer</a></li>
-                        <li><a href="#" data-lang="donateLink">Make a Donation</a></li>
-                        <li><a href="#" data-lang="partnerLink">Become a Partner</a></li>
-                        <li><a href="#" data-lang="newsletterLink">Sign up for Newsletter</a></li>
+                        <li><a href="get-involved.html#volunteer" data-lang="volunteerLink">Become a Volunteer</a></li>
+                        <li><a href="get-involved.html#donate" data-lang="donateLink">Make a Donation</a></li>
+                        <li><a href="get-involved.html#partner" data-lang="partnerLink">Become a Partner</a></li>
+                        <li><a href="get-involved.html#newsletter" data-lang="newsletterLink">Sign up for Newsletter</a></li>
                     </ul>
                 </li>
                 <li><a href="calendar.html" data-lang="news">News</a>
                     <ul class="submenu">
-                        <li><a href="calendar.html" data-lang="calendar" class="active">Upcoming Events</a></li>
-                        <li><a href="#" data-lang="blogLink">Blog</a></li>
+                        <li><a href="calendar.html" data-lang="calendar">Upcoming Events</a></li>
+                        <li><a href="blog.html" data-lang="blogLink">Blog</a></li>
                     </ul>
                 </li>
                 <li class="donate-button">
-                    <a href="https://www.paypal.com/donate/?hosted_button_id=U4NAMK72HSP92"
-                        class="donate-link">DONATE</a>
+                    <a href="https://www.paypal.com/donate/?hosted_button_id=U4NAMK72HSP92" 
+                       class="donate-link" 
+                       target="_blank" 
+                       rel="noopener">DONATE</a>
                 </li>
             </ul>
         </nav>
@@ -86,7 +97,7 @@
     </header>
 
     <div class="page-hero">
-        <img src="img/aid-hero.webp" alt="Humanitarian Aid" class="hero-background">
+        <img src="img/index_pic_new.webp" alt="Humanitarian aid workers delivering supplies in Ukraine" class="hero-background">
         <div class="hero-overlay"></div>
         <div class="page-container">
             <h1>Humanitarian Aid</h1>
@@ -97,39 +108,87 @@
     </div>
 
     <main class="page-content">
-        <section class="page-section">
+        <section id="how-we-help" class="page-section">
             <h2><i class="fas fa-hands-helping"></i> How We Help</h2>
             <div class="aid-programs">
                 <div class="program-card">
                     <i class="fas fa-medkit"></i>
                     <h3>Medical Supplies</h3>
-                    <p>Delivering essential medical equipment to hospitals in Ukraine</p>
+                    <p>Delivering essential medical equipment, first aid kits, and medicines to hospitals and clinics in Ukraine.</p>
                 </div>
-                <!-- More program cards -->
+                <div class="program-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Food Assistance</h3>
+                    <p>Providing emergency food packages and hot meals to families affected by the conflict.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Shelter Support</h3>
+                    <p>Supplying temporary shelter materials and heating equipment for displaced families.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Clothing & Essentials</h3>
+                    <p>Distributing warm clothing, blankets, and hygiene kits to those in need.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-tint"></i>
+                    <h3>Clean Water</h3>
+                    <p>Providing water purification systems and clean drinking water to communities.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-child"></i>
+                    <h3>Child Support</h3>
+                    <p>Delivering educational materials, toys, and psychological support for children.</p>
+                </div>
             </div>
         </section>
 
-        <section class="page-section">
+        <section id="reports-results" class="page-section">
             <h2><i class="fas fa-chart-line"></i> Reports & Results</h2>
+            
             <div class="results-stats">
                 <div class="stat">
                     <div class="stat-value">250+</div>
                     <div class="stat-label">Medical Kits Delivered</div>
                 </div>
-                <!-- More stats -->
+                <div class="stat">
+                    <div class="stat-value">5,000+</div>
+                    <div class="stat-label">Food Packages Distributed</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">100+</div>
+                    <div class="stat-label">Communities Served</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">10,000+</div>
+                    <div class="stat-label">People Helped</div>
+                </div>
             </div>
 
             <div class="reports-gallery">
-                <img src="img/report1.webp" alt="Aid Report">
-                <img src="img/report2.webp" alt="Aid Report">
-                <!-- More images -->
+                <img src="img/report1.webp" alt="Volunteers packing medical supplies for Ukraine">
+                <img src="img/report2.webp" alt="Food distribution center serving families in need">
+                <img src="img/report3.webp" alt="Children receiving educational materials and support">
+                <img src="img/report4.webp" alt="Delivery of winter clothing and blankets">
+            </div>
+            
+            <div class="annual-report">
+                <h3><i class="fas fa-file-pdf"></i> 2023 Annual Impact Report</h3>
+                <p>Download our comprehensive report detailing our humanitarian efforts, financial transparency, and plans for the future.</p>
+                <a href="reports/UUA-Annual-Report-2023.pdf" class="download-button" download>
+                    <i class="fas fa-download"></i> Download Full Report (PDF)
+                </a>
             </div>
         </section>
 
-        <section class="donate-section">
+        <section id="donate-now" class="donate-section">
             <h2><i class="fas fa-donate"></i> Support Our Efforts</h2>
-            <p>Your donation makes a direct impact on our humanitarian missions</p>
-            <a href="https://www.paypal.com/donate/?hosted_button_id=U4NAMK72HSP92" class="donate-button">Donate Now</a>
+            <p>Your donation makes a direct impact on our humanitarian missions. Every $50 provides a food package for a family for one week.</p>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=U4NAMK72HSP92" 
+               class="donate-button" 
+               target="_blank" 
+               rel="noopener">Donate Now</a>
         </section>
     </main>
 
@@ -137,37 +196,70 @@
         <div class="column">
             <h3 data-lang="about-us">About Us</h3>
             <ul>
-                <li><a href="#" data-lang="missionLink">Our Mission</a></li>
-                <li><a href="#" data-lang="teamLink">Our Team</a></li>
-                <li><a href="#" data-lang="contactLink">Contact Us</a></li>
+                <li><a href="about-us.html#our-mission" data-lang="missionLink">Our Mission</a></li>
+                <li><a href="about-us.html#our-team" data-lang="teamLink">Our Team</a></li>
+                <li><a href="about-us.html#contact-us" data-lang="contactLink">Contact Us</a></li>
             </ul>
         </div>
         <div class="column">
             <h3 data-lang="our-work">Our Work</h3>
             <ul>
-                <li><a href="#" data-lang="howWeHelp">How We Help</a></li>
-                <li><a href="#" data-lang="reportsLink">Reports & Results</a></li>
-                <li><a href="#" data-lang="eventsLink">Upcoming Events</a></li>
+                <li><a href="#how-we-help" data-lang="howWeHelp">How We Help</a></li>
+                <li><a href="#reports-results" data-lang="reportsLink">Reports & Results</a></li>
+                <li><a href="calendar.html" data-lang="eventsLink">Upcoming Events</a></li>
             </ul>
         </div>
         <div class="column">
             <h3 data-lang="get-involved-footer">Get Involved</h3>
             <ul>
-                <li><a href="https://www.paypal.com/donate/?hosted_button_id=U4NAMK72HSP92"
-                        data-lang="donateLink">Donate</a></li>
-                <li><a href="#" data-lang="volunteerLink">Volunteer</a></li>
-                <li><a href="#" data-lang="partnerLink">Partner</a></li>
+                <li><a href="https://www.paypal.com/donate/?hosted_button_id=U4NAMK72HSP92" 
+                       data-lang="donateLink" 
+                       target="_blank" 
+                       rel="noopener">Donate</a></li>
+                <li><a href="get-involved.html#volunteer" data-lang="volunteerLink">Volunteer</a></li>
+                <li><a href="get-involved.html#partner" data-lang="partnerLink">Partner</a></li>
             </ul>
         </div>
         <div class="column">
             <h3 data-lang="follow-us">Follow Us</h3>
             <div class="social">
-                <a href="https://www.instagram.com/utahukrainians/"><img src="img/instagram.png" alt="Instagram"></a>
-                <a href="https://www.facebook.com/loveukrainians"><img src="img/fb.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/utahukrainians/" 
+                   target="_blank" 
+                   rel="noopener"
+                   aria-label="Instagram">
+                    <img src="img/instagram.png" alt="Instagram icon">
+                </a>
+                <a href="https://www.facebook.com/loveukrainians" 
+                   target="_blank" 
+                   rel="noopener"
+                   aria-label="Facebook">
+                    <img src="img/fb.png" alt="Facebook icon">
+                </a>
             </div>
         </div>
     </footer>
+    
     <script src="scripts/script.js"></script>
+    
+    <script>
+// Дополнительный скрипт для работы шапки
+(function() {
+    const header = document.querySelector('header');
+    if (!header) return;
+    
+    function updateHeader() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+    
+    updateHeader();
+    window.addEventListener('scroll', updateHeader);
+    window.addEventListener('load', updateHeader);
+})();
+</script>
 </body>
 
 </html>

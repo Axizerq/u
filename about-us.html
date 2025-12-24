@@ -15,8 +15,10 @@
 <body>
     <header>
         <div class="logo-container">
+            <a href="index.html" class="logo-link">
             <img src="img/Logo_white.webp" class="logo white-logo">
             <img src="img/Logo_black.webp" class="logo black-logo">
+            </a>
         </div>
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -27,10 +29,10 @@
             <ul>
                 <li><a href="about-us.html" data-lang="about">About Us</a>
                     <ul class="submenu">
-                        <li><a href="#" data-lang="missionLink">Our Mission & History</a></li>
-                        <li><a href="#" data-lang="teamLink">Our Team</a></li>
-                        <li><a href="#" data-lang="partnerLink">Our Partners</a></li>
-                        <li><a href="#" data-lang="contactLink">Contact Us</a></li>
+                        <li><a href="#our-mission" data-lang="missionLink">Our Mission & History</a></li>
+                        <li><a href="#our-team" data-lang="teamLink">Our Team</a></li>
+                        <li><a href="#our-partners" data-lang="partnerLink">Our Partners</a></li>
+                        <li><a href="#contact-us" data-lang="contactLink">Contact Us</a></li>
                     </ul>
                 </li>
                 <li><a href="humanitarian-aid.html" data-lang="aid">Humanitarian Aid</a>
@@ -81,7 +83,7 @@
     </header>
 
     <div class="page-hero">
-        <img src="img/about-us-hero.webp" alt="About Us" class="hero-background">
+        <img src="img/index_pic_new.webp" alt="About Us" class="hero-background">
         <div class="hero-overlay"></div>
         <div class="page-container">
             <h1>About Utah Ukrainian Association</h1>
@@ -92,50 +94,99 @@
     </div>
 
     <main class="page-content">
-        <section class="page-section">
-            <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
-            <p>Founded in 2022, UUA is dedicated to supporting Ukrainian refugees in Utah through humanitarian aid and
-                community programs.</p>
-        </section>
+    <section id="our-mission" class="page-section">
+        <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+        <p>The Utah Ukrainian Association (UUA) is a 501(c)(3) non-profit organization dedicated to supporting the Ukrainian community in Utah and abroad. Our mission is to raise awareness about Ukraine, provide critical humanitarian and medical aid to refugees and victims of war, and organize cultural and educational events to preserve and share our heritage.</p>
+    </section>
 
-        <section class="page-section">
-            <h2><i class="fas fa-history"></i> Our History</h2>
-            <p>From our humble beginnings to becoming a key support system for Ukrainian families in Utah.</p>
-        </section>
-
-        <section class="team-section">
-            <h2><i class="fas fa-users"></i> Our Team</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="img/team1.webp" alt="Team Member">
-                    <h3>John Smith</h3>
-                    <p>Executive Director</p>
-                </div>
-                <!-- Repeat for other team members -->
+    <section id="our-history" class="page-section">
+        <h2><i class="fas fa-history"></i> Our History</h2>
+        <div class="history-timeline">
+            <div class="timeline-item">
+                <h3>2015</h3>
+                <p>The Utah Ukrainian Association was founded to unite the local community.</p>
             </div>
-        </section>
-
-        <section class="partners-section">
-            <h2><i class="fas fa-handshake"></i> Our Partners</h2>
-            <div class="partners-logos">
-                <img src="img/partner1.webp" alt="Partner">
-                <img src="img/partner2.webp" alt="Partner">
-                <!-- More partners -->
+            <div class="timeline-item">
+                <h3>February-March 2022</h3>
+                <p>Responding to the full-scale invasion, UUA organized its first major rally and the impactful "Voices for Ukraine" benefit concert at the Cathedral of the Madeleine, drawing support from across the state.</p>
             </div>
-        </section>
-
-        <section class="contact-section">
-            <h2><i class="fas fa-envelope"></i> Contact Us</h2>
-            <div class="contact-info">
-                <p><i class="fas fa-map-marker-alt"></i> 123 Main St, Salt Lake City, UT</p>
-                <p><i class="fas fa-phone"></i> (801) 555-1234</p>
-                <p><i class="fas fa-envelope"></i> info@utahukrainians.org</p>
+            <div class="timeline-item">
+                <h3>February 2023</h3>
+                <p>Hosted a rally at the Utah State Capitol to mark one year of war, demonstrating sustained community commitment and advocacy.</p>
             </div>
-            <form class="contact-form">
-                <!-- Form fields -->
-            </form>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <section id="our-impact" class="impact-section page-section">
+        <h2><i class="fas fa-chart-line"></i> Our Impact & Key Projects</h2>
+        <div class="impact-grid">
+            <div class="impact-card">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h3>Humanitarian Aid</h3>
+                <p>Coordinating the delivery of medical supplies, food, and essential items to refugees in Utah and to those affected in Ukraine.</p>
+            </div>
+            <div class="impact-card">
+                <i class="fas fa-theater-masks"></i>
+                <h3>Cultural Advocacy</h3>
+                <p>Hosting concerts, art exhibitions ("Art for Peace"), and educational events to share Ukrainian culture and keep public attention on the situation.</p>
+            </div>
+            <div class="impact-card">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Community Building</h3>
+                <p>Providing direct support, resources, and a welcoming network to help Ukrainian refugees integrate and find community in Utah.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="our-team" class="team-section page-section">
+        <h2><i class="fas fa-users"></i> Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="img/team1.webp" alt="John Smith">
+                <h3>John Smith</h3>
+                <p>Executive Director</p>
+                <p class="team-bio">Leads the strategic vision and operations of the UUA.</p>
+            </div>
+            <div class="team-member">
+                <img src="img/team-placeholder.webp" alt="Yevgen Kovalov">
+                <h3>Yevgen Kovalov</h3>
+                <p>Director of Operations</p>
+                <p class="team-bio">Manages the logistics of humanitarian aid and day-to-day activities.</p>
+            </div>
+            <div class="team-member">
+                <img src="img/team-placeholder.webp" alt="Kateryna Hansen">
+                <h3>Kateryna Hansen</h3>
+                <p>Community Advocate</p>
+                <p class="team-bio">A native Ukrainian and active voice, sharing personal experiences to raise awareness.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="our-partners" class="partners-section page-section">
+        <h2><i class="fas fa-handshake"></i> Our Partners</h2>
+        <div class="partners-logos">
+            <img src="img/partner1.webp" alt="Partner Organization">
+            <img src="img/partner2.webp" alt="Partner Organization">
+            <!-- More partners can be added here -->
+        </div>
+    </section>
+
+    <section id="contact-us" class="contact-section page-section">
+        <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+        <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> 3848 S Salt River Way, Salt Lake City, UT</p>
+            <p><i class="fas fa-phone"></i> (801) 759-4154</p>
+            <p><i class="fas fa-envelope"></i> info@utahukrainians.org</p>
+        </div>
+        <form class="contact-form">
+            <!-- Keep your existing form fields here -->
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</main>
 
     <footer>
         <div class="column">
@@ -173,6 +224,37 @@
     </footer>
 
     <script src="scripts/script.js"></script>
+
+<script>
+// Дополнительный скрипт для работы шапки на странице About Us
+(function() {
+    console.log('About Us header script loaded');
+    
+    const header = document.querySelector('header');
+    if (!header) return;
+    
+    function updateHeader() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+            console.log('Added scrolled class');
+        } else {
+            header.classList.remove('scrolled');
+            console.log('Removed scrolled class');
+        }
+    }
+    
+    // Запускаем сразу
+    updateHeader();
+    
+    // И на каждый скролл
+    window.addEventListener('scroll', updateHeader);
+    
+    // Также запускаем при загрузке
+    window.addEventListener('load', updateHeader);
+})();
+</script>
+
+
 </body>
 
 </html>
