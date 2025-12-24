@@ -5,14 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/favicon.ico" type="favicon">
-    <title>UUA</title>
+    <title>Get Involved - UUA</title>
     <link rel="stylesheet" href="styles/style.css">
-
-    <link rel="preload" href="img/Logo_black.webp" as="image">
-    <link rel="preload" href="img/Logo_white.webp" as="image">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
 </head>
@@ -20,8 +15,10 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="img/Logo_white.webp" class="logo white-logo">
-            <img src="img/Logo_black.webp" class="logo black-logo">
+            <a href="index.html" class="logo-link">
+                <img src="img/Logo_white.webp" class="logo white-logo">
+                <img src="img/Logo_black.webp" class="logo black-logo">
+            </a>
         </div>
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -32,38 +29,38 @@
             <ul>
                 <li><a href="about-us.html" data-lang="about">About Us</a>
                     <ul class="submenu">
-                        <li><a href="#" data-lang="missionLink">Our Mission & History</a></li>
-                        <li><a href="#" data-lang="teamLink">Our Team</a></li>
-                        <li><a href="#" data-lang="partnerLink">Our Partners</a></li>
-                        <li><a href="#" data-lang="contactLink">Contact Us</a></li>
+                        <li><a href="about-us.html#our-mission" data-lang="missionLink">Our Mission & History</a></li>
+                        <li><a href="about-us.html#our-team" data-lang="teamLink">Our Team</a></li>
+                        <li><a href="about-us.html#our-partners" data-lang="partnerLink">Our Partners</a></li>
+                        <li><a href="about-us.html#contact-us" data-lang="contactLink">Contact Us</a></li>
                     </ul>
                 </li>
                 <li><a href="humanitarian-aid.html" data-lang="aid">Humanitarian Aid</a>
                     <ul class="submenu">
-                        <li><a href="#" data-lang="howWeHelp">How We Help</a></li>
-                        <li><a href="#" data-lang="reportsLink">Reports & Results</a></li>
+                        <li><a href="humanitarian-aid.html#how-we-help" data-lang="howWeHelp">How We Help</a></li>
+                        <li><a href="humanitarian-aid.html#reports-results" data-lang="reportsLink">Reports & Results</a></li>
                     </ul>
                 </li>
                 <li><a href="support-for-refugees.html" data-lang="support">Support for Refugees</a>
                     <ul class="submenu">
-                        <li><a href="#" data-lang="housingLink">Housing</a></li>
-                        <li><a href="#" data-lang="licenseLink">Driver’s License</a></li>
-                        <li><a href="#" data-lang="employmentLink">Employment & Career</a></li>
-                        <li><a href="#" data-lang="educationLink">Education</a></li>
-                        <li><a href="#" data-lang="languageLink">English Language</a></li>
-                        <li><a href="#" data-lang="wellnessLink">Youth Wellness Program</a></li>
-                        <li><a href="#" data-lang="assistanceLink">How to Get Assistance</a></li>
+                        <li><a href="support-for-refugees.html#housing-support" data-lang="housingLink">Housing</a></li>
+                        <li><a href="support-for-refugees.html#drivers-license" data-lang="licenseLink">Driver's License</a></li>
+                        <li><a href="support-for-refugees.html#employment-career" data-lang="employmentLink">Employment & Career</a></li>
+                        <li><a href="support-for-refugees.html#education" data-lang="educationLink">Education</a></li>
+                        <li><a href="support-for-refugees.html#language-support" data-lang="languageLink">English Language</a></li>
+                        <li><a href="support-for-refugees.html#youth-wellness" data-lang="wellnessLink">Youth Wellness Program</a></li>
+                        <li><a href="#get-assistance" data-lang="assistanceLink">How to Get Assistance</a></li>
                     </ul>
                 </li>
                 <li><a href="get-involved.html" data-lang="involved">Get Involved</a>
                     <ul class="submenu">
-                        <li><a href="#" data-lang="volunteerLink">Become a Volunteer</a></li>
-                        <li><a href="#" data-lang="donateLink">Make a Donation</a></li>
-                        <li><a href="#" data-lang="partnerLink">Become a Partner</a></li>
-                        <li><a href="#" data-lang="newsletterLink">Sign up for Newsletter</a></li>
+                        <li><a href="#volunteer" data-lang="volunteerLink">Become a Volunteer</a></li>
+                        <li><a href="#donate" data-lang="donateLink">Make a Donation</a></li>
+                        <li><a href="#partner" data-lang="partnerLink">Become a Partner</a></li>
+                        <li><a href="#newsletter" data-lang="newsletterLink">Sign up for Newsletter</a></li>
                     </ul>
                 </li>
-                <li><a href="calendar.html" data-lang="news">News</a>
+                <li><a href="#" data-lang="news">News</a>
                     <ul class="submenu">
                         <li><a href="calendar.html" data-lang="calendar" class="active">Upcoming Events</a></li>
                         <li><a href="#" data-lang="blogLink">Blog</a></li>
@@ -85,8 +82,10 @@
         </div>
     </header>
 
+    <div id="overlay"></div>
+
     <div class="page-hero">
-        <img src="img/involved-hero.webp" alt="Get Involved" class="hero-background">
+        <img src="img/index_pic_new.webp" alt="Get Involved" class="hero-background">
         <div class="hero-overlay"></div>
         <div class="page-container">
             <h1>Get Involved</h1>
@@ -97,59 +96,282 @@
     </div>
 
     <main class="page-content">
-        <section class="involve-options">
-            <div class="option-card volunteer">
-                <h2><i class="fas fa-hands-helping"></i> Volunteer</h2>
-                <p>Join our team and make a difference in the Ukrainian community</p>
-                <ul>
-                    <li>Event support</li>
-                    <li>Translation services</li>
-                    <li>Community outreach</li>
-                </ul>
-                <a href="#" class="action-button">Apply to Volunteer</a>
-            </div>
-
-            <div class="option-card donate">
-                <h2><i class="fas fa-donate"></i> Donate</h2>
-                <p>Your financial support helps us continue our mission</p>
-                <div class="donation-options">
-                    <button>One-time Donation</button>
-                    <button>Monthly Support</button>
+        <section id="volunteer" class="page-section">
+            <h2><i class="fas fa-hands-helping"></i> Become a Volunteer</h2>
+            <p>Join our dedicated team of volunteers and make a direct impact on the lives of Ukrainian refugees. Whether you have a few hours a week or can commit to regular assistance, your time and skills are invaluable.</p>
+            
+            <div class="opportunities-grid">
+                <div class="opportunity-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Host Family</h3>
+                    <p>Provide temporary housing for newly arrived refugee families</p>
+                    <ul class="opportunity-details">
+                        <li>Minimum 30-day commitment</li>
+                        <li>Private room required</li>
+                        <li>Background check</li>
+                    </ul>
                 </div>
-                <a href="https://www.paypal.com/donate/?hosted_button_id=U4NAMK72HSP92" class="action-button">Donate
-                    Now</a>
+                
+                <div class="opportunity-card">
+                    <i class="fas fa-car"></i>
+                    <h3>Transportation Assistant</h3>
+                    <p>Help refugees with appointments, shopping, and orientation</p>
+                    <ul class="opportunity-details">
+                        <li>Valid driver's license</li>
+                        <li>Own vehicle with insurance</li>
+                        <li>Flexible schedule</li>
+                    </ul>
+                </div>
+                
+                <div class="opportunity-card">
+                    <i class="fas fa-language"></i>
+                    <h3>Language Tutor</h3>
+                    <p>Teach English or help with translation services</p>
+                    <ul class="opportunity-details">
+                        <li>Fluency in English</li>
+                        <li>Ukrainian/Russian helpful</li>
+                        <li>Teaching experience preferred</li>
+                    </ul>
+                </div>
+                
+                <div class="opportunity-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Food & Supply Distribution</h3>
+                    <p>Assist with our weekly food pantry and supply distribution</p>
+                    <ul class="opportunity-details">
+                        <li>Thursday afternoons</li>
+                        <li>Heavy lifting may be required</li>
+                        <li>Team environment</li>
+                    </ul>
+                </div>
+                
+                <div class="opportunity-card">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Administrative Support</h3>
+                    <p>Help with office work, data entry, and communications</p>
+                    <ul class="opportunity-details">
+                        <li>Computer skills required</li>
+                        <li>Office hours (9-5 weekdays)</li>
+                        <li>Detail-oriented</li>
+                    </ul>
+                </div>
+                
+                <div class="opportunity-card">
+                    <i class="fas fa-child"></i>
+                    <h3>Youth Mentor</h3>
+                    <p>Work with refugee children and teenagers</p>
+                    <ul class="opportunity-details">
+                        <li>Background check required</li>
+                        <li>Experience with youth</li>
+                        <li>After-school hours</li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="option-card partner">
-                <h2><i class="fas fa-handshake"></i> Partner</h2>
-                <p>Businesses and organizations can support our work</p>
-                <ul>
-                    <li>Corporate sponsorships</li>
-                    <li>In-kind donations</li>
-                    <li>Event partnerships</li>
-                </ul>
-                <a href="#" class="action-button">Become a Partner</a>
+            
+            <div class="volunteer-form-container">
+                <h3>Volunteer Application</h3>
+                <form class="volunteer-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number" required>
+                        <select required>
+                            <option value="" disabled selected>Select Volunteer Role</option>
+                            <option value="host">Host Family</option>
+                            <option value="transport">Transportation Assistant</option>
+                            <option value="tutor">Language Tutor</option>
+                            <option value="food">Food Distribution</option>
+                            <option value="admin">Administrative Support</option>
+                            <option value="youth">Youth Mentor</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tell us about your skills, experience, and availability..." rows="4" required></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" required>
+                            I agree to undergo a background check if required
+                        </label>
+                        <label>
+                            <input type="checkbox" required>
+                            I have read and agree to the volunteer guidelines
+                        </label>
+                    </div>
+                    <button type="submit" class="submit-button">Submit Application</button>
+                </form>
             </div>
         </section>
 
-        <section class="newsletter-section">
-            <h2><i class="fas fa-envelope"></i> Stay Informed</h2>
-            <p>Subscribe to our newsletter for updates and events</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
+        <section id="donate" class="page-section">
+            <h2><i class="fas fa-donate"></i> Make a Donation</h2>
+            <p>Your financial support enables us to continue providing critical services to Ukrainian refugees. Every dollar makes a difference.</p>
+            
+            <div class="donation-options">
+                <div class="donation-card">
+                    <div class="donation-amount">$25</div>
+                    <h3>Basic Necessities</h3>
+                    <p>Provides a food package for one family for a week</p>
+                    <button class="donate-now-button" data-amount="25">Donate Now</button>
+                </div>
+                
+                <div class="donation-card featured">
+                    <div class="donation-amount">$50</div>
+                    <h3>Monthly Support</h3>
+                    <p>Covers transportation costs for medical appointments</p>
+                    <button class="donate-now-button" data-amount="50">Donate Now</button>
+                </div>
+                
+                <div class="donation-card">
+                    <div class="donation-amount">$100</div>
+                    <h3>Essential Support</h3>
+                    <p>Provides one month of English classes for a refugee</p>
+                    <button class="donate-now-button" data-amount="100">Donate Now</button>
+                </div>
+                
+                <div class="donation-card">
+                    <div class="donation-amount">Custom</div>
+                    <h3>Other Amount</h3>
+                    <p>Choose your own donation amount</p>
+                    <div class="custom-donation">
+                        <input type="number" placeholder="$" min="1" class="custom-amount">
+                        <button class="custom-donate-button">Donate</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="other-ways-to-donate">
+                <h3>Other Ways to Donate</h3>
+                <div class="donation-methods">
+                    <div class="method">
+                        <i class="fas fa-credit-card"></i>
+                        <h4>Credit/Debit Card</h4>
+                        <p>Secure online donation through PayPal</p>
+                    </div>
+                    <div class="method">
+                        <i class="fas fa-university"></i>
+                        <h4>Bank Transfer</h4>
+                        <p>Direct transfer to our account</p>
+                    </div>
+                    <div class="method">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Check by Mail</h4>
+                        <p>Mail to: UUA, 3848 S Salt River Way, SLC, UT</p>
+                    </div>
+                    <div class="method">
+                        <i class="fas fa-box"></i>
+                        <h4>In-Kind Donations</h4>
+                        <p>Furniture, clothing, household items</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="events-section">
-            <h2><i class="fas fa-calendar-alt"></i> Upcoming Volunteer Opportunities</h2>
-            <div class="event-list">
-                <div class="event-item">
-                    <h3>Community Dinner - August 15</h3>
-                    <p>Help serve meals to Ukrainian families</p>
-                    <a href="#" class="event-link">Sign Up</a>
+        <section id="partner" class="page-section">
+            <h2><i class="fas fa-handshake"></i> Become a Partner</h2>
+            <p>Businesses and organizations can partner with us to amplify our impact. We offer various partnership levels with mutual benefits.</p>
+            
+            <div class="partnership-levels">
+                <div class="partnership-card">
+                    <h3>Community Partner</h3>
+                    <div class="partnership-price">$500+</div>
+                    <ul class="benefits">
+                        <li>Logo on our website</li>
+                        <li>Social media recognition</li>
+                        <li>Quarterly impact reports</li>
+                    </ul>
+                    <button class="partner-button">Learn More</button>
                 </div>
-                <!-- More events -->
+                
+                <div class="partnership-card featured">
+                    <h3>Impact Partner</h3>
+                    <div class="partnership-price">$2,500+</div>
+                    <ul class="benefits">
+                        <li>All Community benefits</li>
+                        <li>Featured in newsletter</li>
+                        <li>Event sponsorship</li>
+                        <li>Employee volunteer days</li>
+                    </ul>
+                    <button class="partner-button">Learn More</button>
+                </div>
+                
+                <div class="partnership-card">
+                    <h3>Leadership Partner</h3>
+                    <div class="partnership-price">$5,000+</div>
+                    <ul class="benefits">
+                        <li>All Impact benefits</li>
+                        <li>Board seat nomination</li>
+                        <li>Annual recognition event</li>
+                        <li>Customized partnership</li>
+                    </ul>
+                    <button class="partner-button">Learn More</button>
+                </div>
+            </div>
+            
+            <div class="partnership-form-container">
+                <h3>Partnership Inquiry</h3>
+                <form class="partnership-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Organization Name" required>
+                        <input type="text" placeholder="Contact Person" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" required>
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="" disabled selected>Partnership Interest</option>
+                            <option value="community">Community Partner</option>
+                            <option value="impact">Impact Partner</option>
+                            <option value="leadership">Leadership Partner</option>
+                            <option value="custom">Custom Partnership</option>
+                        </select>
+                        <input type="text" placeholder="Website (optional)">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tell us about your organization and partnership interests..." rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Submit Inquiry</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="newsletter" class="page-section">
+            <h2><i class="fas fa-newspaper"></i> Sign up for Newsletter</h2>
+            <p>Stay updated on our work, upcoming events, and ways to help. We send monthly newsletters with impact stories and opportunities.</p>
+            
+            <div class="newsletter-container">
+                <div class="newsletter-benefits">
+                    <h3>What You'll Receive:</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Monthly impact reports</li>
+                        <li><i class="fas fa-check-circle"></i> Event invitations</li>
+                        <li><i class="fas fa-check-circle"></i> Volunteer opportunities</li>
+                        <li><i class="fas fa-check-circle"></i> Success stories</li>
+                        <li><i class="fas fa-check-circle"></i> Ukrainian culture highlights</li>
+                    </ul>
+                </div>
+                
+                <div class="newsletter-form">
+                    <h3>Subscribe Now</h3>
+                    <form class="subscribe-form">
+                        <input type="text" placeholder="First Name" required>
+                        <input type="text" placeholder="Last Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" required>
+                                I agree to receive email updates from UUA
+                            </label>
+                        </div>
+                        <button type="submit" class="subscribe-button">Subscribe</button>
+                    </form>
+                    <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
             </div>
         </section>
     </main>
@@ -158,26 +380,25 @@
         <div class="column">
             <h3 data-lang="about-us">About Us</h3>
             <ul>
-                <li><a href="#" data-lang="missionLink">Our Mission</a></li>
-                <li><a href="#" data-lang="teamLink">Our Team</a></li>
-                <li><a href="#" data-lang="contactLink">Contact Us</a></li>
+                <li><a href="about-us.html#our-mission" data-lang="missionLink">Our Mission</a></li>
+                <li><a href="about-us.html#our-team" data-lang="teamLink">Our Team</a></li>
+                <li><a href="about-us.html#contact-us" data-lang="contactLink">Contact Us</a></li>
             </ul>
         </div>
         <div class="column">
             <h3 data-lang="our-work">Our Work</h3>
             <ul>
-                <li><a href="#" data-lang="howWeHelp">How We Help</a></li>
-                <li><a href="#" data-lang="reportsLink">Reports & Results</a></li>
-                <li><a href="#" data-lang="eventsLink">Upcoming Events</a></li>
+                <li><a href="humanitarian-aid.html" data-lang="howWeHelp">Humanitarian Aid</a></li>
+                <li><a href="support-for-refugees.html" data-lang="reportsLink">Refugee Support</a></li>
+                <li><a href="calendar.html" data-lang="eventsLink">Upcoming Events</a></li>
             </ul>
         </div>
         <div class="column">
             <h3 data-lang="get-involved-footer">Get Involved</h3>
             <ul>
-                <li><a href="https://www.paypal.com/donate/?hosted_button_id=U4NAMK72HSP92"
-                        data-lang="donateLink">Donate</a></li>
-                <li><a href="#" data-lang="volunteerLink">Volunteer</a></li>
-                <li><a href="#" data-lang="partnerLink">Partner</a></li>
+                <li><a href="#volunteer" data-lang="volunteerLink">Volunteer</a></li>
+                <li><a href="#donate" data-lang="donateLink">Donate</a></li>
+                <li><a href="#partner" data-lang="partnerLink">Partner</a></li>
             </ul>
         </div>
         <div class="column">
@@ -188,7 +409,76 @@
             </div>
         </div>
     </footer>
+
     <script src="scripts/script.js"></script>
+    
+    <script>
+    // Дополнительный скрипт для работы шапки
+    (function() {
+        const header = document.querySelector('header');
+        if (!header) return;
+        
+        function updateHeader() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+        
+        updateHeader();
+        window.addEventListener('scroll', updateHeader);
+        window.addEventListener('load', updateHeader);
+        
+        // Плавный скролл к якорным ссылкам
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Обработка кнопок пожертвований
+        document.querySelectorAll('.donate-now-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const amount = this.getAttribute('data-amount');
+                alert(`Redirecting to donation page for $${amount}`);
+                // Здесь можно добавить реальный редирект на PayPal с указанной суммой
+                // window.location.href = `https://www.paypal.com/donate/?hosted_button_id=U4NAMK72HSP92&amount=${amount}`;
+            });
+        });
+        
+        document.querySelector('.custom-donate-button').addEventListener('click', function() {
+            const amount = document.querySelector('.custom-amount').value;
+            if(amount && amount > 0) {
+                alert(`Redirecting to donation page for $${amount}`);
+                // window.location.href = `https://www.paypal.com/donate/?hosted_button_id=U4NAMK72HSP92&amount=${amount}`;
+            } else {
+                alert('Please enter a valid donation amount');
+            }
+        });
+        
+        // Обработка форм
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your submission! We will contact you soon.');
+                this.reset();
+            });
+        });
+    })();
+    </script>
+
 </body>
 
 </html>
