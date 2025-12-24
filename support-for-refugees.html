@@ -5,14 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/favicon.ico" type="favicon">
-    <title>UUA</title>
+    <title>Support for Refugees - UUA</title>
     <link rel="stylesheet" href="styles/style.css">
-
-    <link rel="preload" href="img/Logo_black.webp" as="image">
-    <link rel="preload" href="img/Logo_white.webp" as="image">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
 </head>
@@ -20,8 +15,10 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="img/Logo_white.webp" class="logo white-logo">
-            <img src="img/Logo_black.webp" class="logo black-logo">
+            <a href="index.html" class="logo-link">
+                <img src="img/Logo_white.webp" class="logo white-logo">
+                <img src="img/Logo_black.webp" class="logo black-logo">
+            </a>
         </div>
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -32,10 +29,10 @@
             <ul>
                 <li><a href="about-us.html" data-lang="about">About Us</a>
                     <ul class="submenu">
-                        <li><a href="#" data-lang="missionLink">Our Mission & History</a></li>
-                        <li><a href="#" data-lang="teamLink">Our Team</a></li>
-                        <li><a href="#" data-lang="partnerLink">Our Partners</a></li>
-                        <li><a href="#" data-lang="contactLink">Contact Us</a></li>
+                        <li><a href="#our-mission" data-lang="missionLink">Our Mission & History</a></li>
+                        <li><a href="#our-team" data-lang="teamLink">Our Team</a></li>
+                        <li><a href="#our-partners" data-lang="partnerLink">Our Partners</a></li>
+                        <li><a href="#contact-us" data-lang="contactLink">Contact Us</a></li>
                     </ul>
                 </li>
                 <li><a href="humanitarian-aid.html" data-lang="aid">Humanitarian Aid</a>
@@ -46,13 +43,13 @@
                 </li>
                 <li><a href="support-for-refugees.html" data-lang="support">Support for Refugees</a>
                     <ul class="submenu">
-                        <li><a href="#" data-lang="housingLink">Housing</a></li>
-                        <li><a href="#" data-lang="licenseLink">Driver’s License</a></li>
-                        <li><a href="#" data-lang="employmentLink">Employment & Career</a></li>
-                        <li><a href="#" data-lang="educationLink">Education</a></li>
-                        <li><a href="#" data-lang="languageLink">English Language</a></li>
-                        <li><a href="#" data-lang="wellnessLink">Youth Wellness Program</a></li>
-                        <li><a href="#" data-lang="assistanceLink">How to Get Assistance</a></li>
+                        <li><a href="#housing-support" data-lang="housingLink">Housing</a></li>
+                        <li><a href="#drivers-license" data-lang="licenseLink">Driver's License</a></li>
+                        <li><a href="#employment-career" data-lang="employmentLink">Employment & Career</a></li>
+                        <li><a href="#education" data-lang="educationLink">Education</a></li>
+                        <li><a href="#language-support" data-lang="languageLink">English Language</a></li>
+                        <li><a href="#youth-wellness" data-lang="wellnessLink">Youth Wellness Program</a></li>
+                        <li><a href="#get-assistance" data-lang="assistanceLink">How to Get Assistance</a></li>
                     </ul>
                 </li>
                 <li><a href="get-involved.html" data-lang="involved">Get Involved</a>
@@ -63,7 +60,7 @@
                         <li><a href="#" data-lang="newsletterLink">Sign up for Newsletter</a></li>
                     </ul>
                 </li>
-                <li><a href="calendar.html" data-lang="news">News</a>
+                <li><a href="#" data-lang="news">News</a>
                     <ul class="submenu">
                         <li><a href="calendar.html" data-lang="calendar" class="active">Upcoming Events</a></li>
                         <li><a href="#" data-lang="blogLink">Blog</a></li>
@@ -85,8 +82,10 @@
         </div>
     </header>
 
+    <div id="overlay"></div>
+
     <div class="page-hero">
-        <img src="img/support-hero.webp" alt="Refugee Support" class="hero-background">
+        <img src="img/index_pic_new.webp" alt="Support for Refugees" class="hero-background">
         <div class="hero-overlay"></div>
         <div class="page-container">
             <h1>Support for Refugees</h1>
@@ -97,48 +96,183 @@
     </div>
 
     <main class="page-content">
-        <div class="support-services">
-            <div class="service-card">
-                <i class="fas fa-home"></i>
-                <h3>Housing Assistance</h3>
-                <p>Temporary and long-term housing solutions</p>
-                <a href="#" class="service-link">Learn More</a>
-            </div>
-
-            <div class="service-card">
-                <i class="fas fa-id-card"></i>
-                <h3>Driver's License</h3>
-                <p>Help with obtaining Utah driver's license</p>
-                <a href="#" class="service-link">Learn More</a>
-            </div>
-
-            <!-- More services: Employment, Education, Language, Wellness -->
-        </div>
-
-        <section class="assistance-section">
-            <h2><i class="fas fa-question-circle"></i> How to Get Assistance</h2>
-            <ol class="assistance-steps">
-                <li>Contact our support team</li>
-                <li>Complete the intake form</li>
-                <li>Schedule an appointment</li>
-                <li>Receive personalized support</li>
-            </ol>
-
-            <div class="assistance-cta">
-                <a href="#" class="cta-button">Contact Support Team</a>
-                <p>Available Monday-Friday, 9am-5pm</p>
+        <section id="housing-support" class="page-section">
+            <h2><i class="fas fa-home"></i> Housing Assistance</h2>
+            <p>We provide temporary and permanent housing solutions for Ukrainian refugees arriving in Utah. Our network of host families and partner organizations helps newcomers find safe and comfortable accommodations.</p>
+            
+            <div class="support-services">
+                <div class="service-card">
+                    <i class="fas fa-bed"></i>
+                    <h3>Temporary Shelter</h3>
+                    <p>Short-term housing with host families for the first 30-90 days</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Apartment Assistance</h3>
+                    <p>Help with finding and securing long-term rental housing</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Host Family Program</h3>
+                    <p>Community members offering their homes to refugee families</p>
+                </div>
             </div>
         </section>
 
-        <section class="resources-section">
-            <h2><i class="fas fa-file-download"></i> Resources & Guides</h2>
-            <div class="resource-list">
-                <a href="#" class="resource-item">
-                    <i class="fas fa-file-pdf"></i>
-                    <span>Housing Application Form</span>
-                </a>
-                <!-- More resources -->
+        <section id="drivers-license" class="page-section">
+            <h2><i class="fas fa-car"></i> Driver's License & Transportation</h2>
+            <p>Navigating Utah's transportation system is essential for independence. We assist with driver's license applications, vehicle donations, and public transportation orientation.</p>
+            
+            <div class="support-services">
+                <div class="service-card">
+                    <i class="fas fa-id-card"></i>
+                    <h3>License Application</h3>
+                    <p>Step-by-step guidance for obtaining a Utah driver's license</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Study Materials</h3>
+                    <p>Ukrainian-language study guides for written driving tests</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bus"></i>
+                    <h3>Transit Training</h3>
+                    <p>Orientation to Utah's public transportation system</p>
+                </div>
             </div>
+        </section>
+
+        <section id="employment-career" class="page-section">
+            <h2><i class="fas fa-briefcase"></i> Employment & Career Support</h2>
+            <p>We help refugees find meaningful employment and rebuild their careers in Utah through job placement, resume assistance, and professional networking.</p>
+            
+            <div class="support-services">
+                <div class="service-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Resume Building</h3>
+                    <p>Creating effective resumes for the American job market</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Job Placement</h3>
+                    <p>Connections with local employers seeking diverse talent</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Career Counseling</h3>
+                    <p>Professional guidance for career transitions in the US</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="page-section">
+            <h2><i class="fas fa-graduation-cap"></i> Education Support</h2>
+            <p>Children and adults receive educational support including school enrollment assistance, tutoring, and access to higher education resources.</p>
+            
+            <div class="support-services">
+                <div class="service-card">
+                    <i class="fas fa-school"></i>
+                    <h3>School Enrollment</h3>
+                    <p>Assistance with registering children in Utah schools</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-book-reader"></i>
+                    <h3>Tutoring Services</h3>
+                    <p>Academic support for students adjusting to new curriculum</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-university"></i>
+                    <h3>College Guidance</h3>
+                    <p>Information on scholarships and university applications</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="language-support" class="page-section">
+            <h2><i class="fas fa-language"></i> English Language Learning</h2>
+            <p>Language is key to integration. We offer English classes at various levels, conversation practice, and translation services.</p>
+            
+            <div class="support-services">
+                <div class="service-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>ESL Classes</h3>
+                    <p>Beginner to advanced English as a Second Language courses</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Conversation Practice</h3>
+                    <p>Weekly conversation groups with native English speakers</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-translate"></i>
+                    <h3>Translation Services</h3>
+                    <p>Document translation and interpreter assistance</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="youth-wellness" class="page-section">
+            <h2><i class="fas fa-heart"></i> Youth Wellness Program</h2>
+            <p>Specialized support for young refugees dealing with trauma and adjustment challenges. Our program includes counseling, recreational activities, and peer support.</p>
+            
+            <div class="support-services">
+                <div class="service-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Counseling Services</h3>
+                    <p>Trauma-informed therapy with Ukrainian-speaking counselors</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Recreational Activities</h3>
+                    <p>Sports, arts, and social events for youth integration</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Peer Support Groups</h3>
+                    <p>Safe spaces for sharing experiences with other youth</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="get-assistance" class="page-section">
+            <h2><i class="fas fa-question-circle"></i> How to Get Assistance</h2>
+            <p>Ready to access our services? Here's how to get started:</p>
+            
+            <div class="assistance-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Contact Our Office</h3>
+                    <p>Call or email to schedule an initial consultation</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Needs Assessment</h3>
+                    <p>We'll discuss your specific situation and needs</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Service Plan</h3>
+                    <p>Create a personalized plan to address your priorities</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Ongoing Support</h3>
+                    <p>Regular check-ins and adjustments as needed</p>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> <strong>Contact:</strong> (801) 759-4154</p>
+                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> support@utahukrainians.org</p>
+                <p><i class="fas fa-clock"></i> <strong>Office Hours:</strong> Monday-Friday, 9 AM - 5 PM</p>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> 3848 S Salt River Way, Salt Lake City, UT</p>
+            </div>
+        </section>
+
+        <section class="donate-section">
+            <h2><i class="fas fa-hands-helping"></i> Support Our Refugee Programs</h2>
+            <p>Your donation helps provide housing, education, and essential services to Ukrainian refugees rebuilding their lives in Utah.</p>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=U4NAMK72HSP92" class="donate-button">Donate Now</a>
         </section>
     </main>
 
@@ -146,17 +280,17 @@
         <div class="column">
             <h3 data-lang="about-us">About Us</h3>
             <ul>
-                <li><a href="#" data-lang="missionLink">Our Mission</a></li>
-                <li><a href="#" data-lang="teamLink">Our Team</a></li>
-                <li><a href="#" data-lang="contactLink">Contact Us</a></li>
+                <li><a href="about-us.html#our-mission" data-lang="missionLink">Our Mission</a></li>
+                <li><a href="about-us.html#our-team" data-lang="teamLink">Our Team</a></li>
+                <li><a href="about-us.html#contact-us" data-lang="contactLink">Contact Us</a></li>
             </ul>
         </div>
         <div class="column">
             <h3 data-lang="our-work">Our Work</h3>
             <ul>
-                <li><a href="#" data-lang="howWeHelp">How We Help</a></li>
-                <li><a href="#" data-lang="reportsLink">Reports & Results</a></li>
-                <li><a href="#" data-lang="eventsLink">Upcoming Events</a></li>
+                <li><a href="humanitarian-aid.html" data-lang="howWeHelp">Humanitarian Aid</a></li>
+                <li><a href="support-for-refugees.html" data-lang="reportsLink">Refugee Support</a></li>
+                <li><a href="calendar.html" data-lang="eventsLink">Upcoming Events</a></li>
             </ul>
         </div>
         <div class="column">
@@ -164,8 +298,8 @@
             <ul>
                 <li><a href="https://www.paypal.com/donate/?hosted_button_id=U4NAMK72HSP92"
                         data-lang="donateLink">Donate</a></li>
-                <li><a href="#" data-lang="volunteerLink">Volunteer</a></li>
-                <li><a href="#" data-lang="partnerLink">Partner</a></li>
+                <li><a href="get-involved.html" data-lang="volunteerLink">Volunteer</a></li>
+                <li><a href="get-involved.html" data-lang="partnerLink">Partner</a></li>
             </ul>
         </div>
         <div class="column">
@@ -176,7 +310,47 @@
             </div>
         </div>
     </footer>
+
     <script src="scripts/script.js"></script>
+    
+    <script>
+    // Дополнительный скрипт для работы шапки
+    (function() {
+        const header = document.querySelector('header');
+        if (!header) return;
+        
+        function updateHeader() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+        
+        updateHeader();
+        window.addEventListener('scroll', updateHeader);
+        window.addEventListener('load', updateHeader);
+        
+        // Плавный скролл к якорным ссылкам
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    })();
+    </script>
+
 </body>
 
 </html>
